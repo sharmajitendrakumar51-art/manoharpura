@@ -1,0 +1,247 @@
+/* ===========================
+   View Member Page
+=========================== */
+
+.view-member-page {
+    padding: 30px;
+    background: #f4f7fb;
+    min-height: 100vh;
+}
+
+/* ===========================
+   Header
+=========================== */
+
+.page-header {
+    margin-bottom: 25px;
+}
+
+.page-header h2 {
+    font-size: 30px;
+    font-weight: 700;
+    color: #0d6efd;
+}
+
+.page-header p {
+    color: #6c757d;
+    margin-top: 6px;
+}
+
+/* ===========================
+   Main Card
+=========================== */
+
+.member-view-card {
+    background: #fff;
+    border-radius: 18px;
+    padding: 30px;
+    box-shadow: 0 10px 30px rgba(0,0,0,.08);
+}
+
+/* ===========================
+   Profile Section
+=========================== */
+
+.profile-section {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.profile-image {
+    width: 170px;
+    height: 170px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 6px solid #0d6efd;
+    box-shadow: 0 8px 20px rgba(13,110,253,.25);
+}
+
+.profile-section h3 {
+    margin-top: 18px;
+    font-size: 28px;
+    font-weight: 700;
+}
+
+.profile-section h6 {
+    margin-top: 12px;
+    color: #6c757d;
+}
+
+/* ===========================
+   Information Cards
+=========================== */
+
+.info-card {
+    background: #fff;
+    border-radius: 14px;
+    padding: 25px;
+    margin-bottom: 25px;
+    box-shadow: 0 5px 18px rgba(0,0,0,.06);
+}
+
+.info-card h4 {
+    color: #0d6efd;
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 22px;
+    border-bottom: 2px solid #edf2f7;
+    padding-bottom: 10px;
+}
+
+.info-card strong {
+    display: block;
+    font-size: 14px;
+    color: #6c757d;
+    margin-bottom: 5px;
+}
+
+.info-card p {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 600;
+    color: #212529;
+}
+
+/* ===========================
+   Badges
+=========================== */
+
+.badge {
+    font-size: 13px;
+    padding: 8px 14px;
+    border-radius: 30px;
+}
+
+/* ===========================
+   Documents
+=========================== */
+
+.document-card {
+    background: #f8f9fa;
+    border-radius: 15px;
+    padding: 18px;
+    text-align: center;
+    transition: .3s;
+    border: 1px solid #ececec;
+}
+
+.document-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 10px 25px rgba(0,0,0,.12);
+}
+
+.document-card h6 {
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+.document-image {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 10px;
+    border: 2px solid #dee2e6;
+}
+
+/* ===========================
+   Buttons
+=========================== */
+
+.button-group {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 35px;
+    flex-wrap: wrap;
+}
+
+.button-group .btn {
+    min-width: 150px;
+    border-radius: 10px;
+    font-weight: 600;
+    padding: 10px 22px;
+}
+
+/* ===========================
+   Responsive
+=========================== */
+
+@media(max-width:992px){
+
+    .member-view-card{
+        padding:20px;
+    }
+
+    .profile-image{
+        width:140px;
+        height:140px;
+    }
+
+    .page-header h2{
+        font-size:26px;
+    }
+
+}
+
+@media(max-width:768px){
+
+    .view-member-page{
+        padding:15px;
+    }
+
+    .profile-image{
+        width:120px;
+        height:120px;
+    }
+
+    .profile-section h3{
+        font-size:22px;
+    }
+
+    .info-card{
+        padding:18px;
+    }
+
+    .info-card h4{
+        font-size:20px;
+    }
+
+    .document-image{
+        height:180px;
+    }
+
+    .button-group{
+        flex-direction:column;
+    }
+
+    .button-group .btn{
+        width:100%;
+    }
+
+}
+
+/* ===========================
+   Print
+=========================== */
+
+@media print{
+
+    .button-group{
+        display:none;
+    }
+
+    .page-header{
+        text-align:center;
+    }
+
+    body{
+        background:#fff;
+    }
+
+    .member-view-card,
+    .info-card{
+        box-shadow:none;
+        border:1px solid #ddd;
+    }
+
+}

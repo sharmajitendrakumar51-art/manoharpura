@@ -1,0 +1,48 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html,body,#root{
+    width:100%;
+    min-height:100%;
+    overflow-x:hidden;
+}
+
+body{
+    background:#f5f7fb;
+    font-family:'Poppins',sans-serif;
+}
+
+.admin-layout{
+    display:flex;
+    width:100%;
+    min-height:100vh;
+}
+
+.admin-main{
+    flex:1;
+    min-width:0;
+    margin-left:260px;
+    transition:.3s;
+}
+
+.admin-content{
+    width:100%;
+    padding:25px;
+    margin-top:70px;
+}
+
+@media(max-width:991px){
+
+.admin-main{
+    margin-left:0;
+}
+
+.admin-content{
+    padding:15px;
+}
+
+}
+

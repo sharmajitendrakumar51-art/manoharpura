@@ -1,0 +1,225 @@
+/* ==========================
+   Page
+========================== */
+
+.add-member-page{
+    background:#f5f7fb;
+    min-height:100vh;
+    padding:30px;
+}
+
+/* ==========================
+   Header
+========================== */
+
+.page-header{
+    margin-bottom:25px;
+}
+
+.page-header h2{
+    font-size:30px;
+    font-weight:600;
+    color:#0d47a1;
+}
+
+.page-header p{
+    color:#777;
+    margin-top:5px;
+}
+
+/* ==========================
+   Main Card
+========================== */
+
+.member-card{
+    background:#fff;
+    border-radius:15px;
+    padding:30px;
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+}
+
+/* ==========================
+   Section Card
+========================== */
+
+.card-section{
+    margin-bottom:35px;
+    border:1px solid #e9ecef;
+    border-radius:12px;
+    padding:25px;
+}
+
+.card-section h4{
+    color:#0d47a1;
+    font-size:15px;
+    font-weight:600;
+    margin-bottom:25px;
+    display:flex;
+    align-items:center;
+    gap:10px;
+    border-bottom:2px solid #f1f1f1;
+    padding-bottom:12px;
+}
+
+/* ==========================
+   Label
+========================== */
+
+label{
+    font-size:13px;
+    font-weight:600;
+    margin-bottom:8px;
+    color:#444;
+}
+
+/* ==========================
+   Inputs
+========================== */
+
+.form-control,
+.form-select{
+
+    height:35px;
+    border-radius:10px;
+
+}
+
+textarea.form-control{
+
+    height:auto;
+
+}
+
+.form-control:focus,
+.form-select:focus{
+
+    border-color:#0d47a1;
+
+    box-shadow:0 0 8px rgba(13,71,161,.25);
+
+}
+
+/* ==========================
+   Photo Preview
+========================== */
+
+.photo-preview{
+
+    width:180px;
+
+    height:180px;
+
+    border:2px dashed #ccc;
+
+    border-radius:12px;
+
+    overflow:hidden;
+
+    margin:auto;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    background:#fafafa;
+
+}
+
+.photo-preview img{
+    width:160px;
+    height:160px;
+    object-fit:cover;
+    border-radius:10px;
+}
+
+
+
+.empty-photo{
+
+    text-align:center;
+
+    color:#999;
+
+}
+
+.empty-photo i{
+
+    font-size:70px;
+
+}
+
+.empty-photo p{
+
+    margin-top:10px;
+
+}
+
+/* ==========================
+   Buttons
+========================== */
+
+.button-group{
+
+    display:flex;
+
+    justify-content:flex-end;
+
+    gap:15px;
+
+    margin-top:20px;
+
+}
+
+.button-group .btn{
+
+    min-width:140px;
+
+    height:40px;
+
+    border-radius:10px;
+
+    font-weight:600;
+
+}
+
+/* ==========================
+   Responsive
+========================== */
+
+@media(max-width:768px){
+
+.add-member-page{
+
+padding:15px;
+
+}
+
+.member-card{
+
+padding:20px;
+
+}
+
+.button-group{
+
+flex-direction:column;
+
+}
+
+.button-group .btn{
+
+width:100%;
+
+}
+
+.photo-preview{
+
+width:150px;
+
+height:150px;
+
+}
+
+}

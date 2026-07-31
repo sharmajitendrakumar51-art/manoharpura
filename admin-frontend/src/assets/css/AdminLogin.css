@@ -1,0 +1,275 @@
+/* ===================================
+        GOOGLE FONT
+=================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+/* ===================================
+        PAGE
+=================================== */
+
+.admin-login-page{
+    min-height:100vh;
+    display:flex;
+}
+
+/* ===================================
+        LEFT SIDE
+=================================== */
+
+.admin-left{
+    width:50%;
+    background:linear-gradient(135deg,#0D47A1,#1976D2);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    color:#fff;
+    position:relative;
+}
+
+.admin-overlay{
+    text-align:center;
+    padding:40px;
+}
+
+.admin-logo{
+    width:130px;
+    height:130px;
+    object-fit:contain;
+    margin-bottom:25px;
+    background:#fff;
+    border-radius:50%;
+    padding:10px;
+    box-shadow:0 15px 35px rgba(0,0,0,.2);
+}
+
+.admin-overlay h1{
+    font-size:42px;
+    font-weight:700;
+}
+
+.admin-overlay h3{
+    color:#FFD54F;
+    margin:15px 0;
+    font-weight:600;
+}
+
+.admin-overlay p{
+    font-size:17px;
+    line-height:1.8;
+    opacity:.95;
+}
+
+/* ===================================
+        RIGHT SIDE
+=================================== */
+
+.admin-right{
+    width:50%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:#f4f8fd;
+    padding:40px;
+}
+
+/* ===================================
+        LOGIN CARD
+=================================== */
+
+.admin-card{
+    width:100%;
+    max-width:470px;
+    background:#fff;
+    border-radius:25px;
+    padding:40px;
+    box-shadow:0 15px 45px rgba(0,0,0,.08);
+}
+
+.login-icon{
+    width:80px;
+    height:80px;
+    margin:auto;
+    border-radius:50%;
+    background:linear-gradient(135deg,#0D47A1,#1976D2);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    margin-bottom:25px;
+}
+
+.login-icon i{
+    font-size:35px;
+    color:#fff;
+}
+
+.admin-card h2{
+    text-align:center;
+    color:#0D47A1;
+    font-weight:700;
+}
+
+.admin-card p{
+    text-align:center;
+    color:#666;
+    margin-bottom:30px;
+}
+
+/* ===================================
+        FORM
+=================================== */
+
+.form-group{
+    margin-bottom:20px;
+}
+
+.form-group label{
+    display:block;
+    margin-bottom:8px;
+    font-weight:600;
+    color:#333;
+}
+
+.input-box{
+    position:relative;
+}
+
+.input-box input{
+    width:100%;
+    height:55px;
+    border:1px solid #ddd;
+    border-radius:12px;
+    padding-left:45px;
+    padding-right:45px;
+    outline:none;
+    transition:.3s;
+}
+
+.input-box input:focus{
+    border-color:#0D47A1;
+    box-shadow:0 0 10px rgba(13,71,161,.15);
+}
+
+.input-box i:first-child{
+    position:absolute;
+    left:15px;
+    top:17px;
+    color:#0D47A1;
+}
+
+.eye-icon{
+    position:absolute;
+    right:15px;
+    top:17px;
+    cursor:pointer;
+    color:#777;
+}
+
+/* ===================================
+        OPTIONS
+=================================== */
+
+.admin-options{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin:20px 0;
+    font-size:14px;
+}
+
+.admin-options a{
+    color:#0D47A1;
+    text-decoration:none;
+    font-weight:600;
+}
+
+.admin-options a:hover{
+    color:#ff9800;
+}
+
+/* ===================================
+        BUTTON
+=================================== */
+
+.admin-btn{
+    width:100%;
+    height:55px;
+    border:none;
+    border-radius:12px;
+    background:linear-gradient(135deg,#0D47A1,#1976D2);
+    color:#fff;
+    font-size:17px;
+    font-weight:600;
+    transition:.3s;
+}
+
+.admin-btn:hover{
+    transform:translateY(-3px);
+    box-shadow:0 10px 25px rgba(13,71,161,.3);
+}
+
+/* ===================================
+        RESPONSIVE
+=================================== */
+
+@media(max-width:991px){
+
+.admin-login-page{
+    flex-direction:column;
+}
+
+.admin-left,
+.admin-right{
+    width:100%;
+}
+
+.admin-left{
+    padding:50px 20px;
+}
+
+.admin-right{
+    padding:30px 20px;
+}
+
+.admin-overlay h1{
+    font-size:34px;
+}
+
+}
+
+@media(max-width:576px){
+
+.admin-logo{
+    width:90px;
+    height:90px;
+}
+
+.admin-overlay h1{
+    font-size:28px;
+}
+
+.admin-overlay h3{
+    font-size:20px;
+}
+
+.admin-card{
+    padding:25px;
+}
+
+.login-icon{
+    width:65px;
+    height:65px;
+}
+
+.login-icon i{
+    font-size:28px;
+}
+
+}

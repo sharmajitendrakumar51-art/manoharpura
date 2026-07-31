@@ -1,0 +1,401 @@
+/* ==========================================
+            GOOGLE FONT
+========================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    background:#f4f7fc;
+}
+
+/* ==========================================
+            AUTH PAGE
+========================================== */
+
+.auth-page{
+    min-height:100vh;
+    display:flex;
+}
+
+/* ==========================================
+            LEFT SIDE
+========================================== */
+
+.auth-left{
+    flex:1;
+    background:url("../images/auth-bg.jpg") center center/cover no-repeat;
+    position:relative;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.auth-left::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:rgba(13,71,161,.82);
+}
+
+.overlay{
+    position:relative;
+    z-index:2;
+    color:#fff;
+    text-align:center;
+    max-width:500px;
+    padding:40px;
+}
+
+.auth-logo{
+    width:110px;
+    height:110px;
+    border-radius:50%;
+    object-fit:cover;
+    background:#fff;
+    padding:6px;
+    margin-bottom:25px;
+    box-shadow:0 10px 30px rgba(0,0,0,.25);
+}
+
+.overlay h1{
+    font-size:36px;
+    font-weight:700;
+    margin-bottom:10px;
+}
+
+.overlay h4{
+    color:#FFD54F;
+    margin-bottom:20px;
+    font-weight:500;
+}
+
+.overlay p{
+    line-height:1.8;
+    font-size:17px;
+}
+
+/* ==========================================
+            RIGHT SIDE
+========================================== */
+
+.auth-right{
+    flex:1;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:#f7f9fc;
+    padding:40px;
+}
+
+/* ==========================================
+            CARD
+========================================== */
+
+.auth-card{
+    width:100%;
+    max-width:500px;
+    background:rgba(255,255,255,.92);
+    backdrop-filter:blur(15px);
+    border-radius:22px;
+    padding:45px;
+    box-shadow:0 20px 45px rgba(0,0,0,.12);
+    animation:fadeUp .7s ease;
+}
+
+.auth-card h2{
+    color:#0D47A1;
+    font-size:32px;
+    font-weight:700;
+    margin-bottom:8px;
+}
+
+.auth-card p{
+    color:#777;
+    margin-bottom:30px;
+}
+
+
+/* ==========================================
+            FORM GROUP
+========================================== */
+
+.form-group{
+    margin-bottom:22px;
+}
+
+.form-group label{
+    display:block;
+    margin-bottom:8px;
+    color:#1f2937;
+    font-weight:600;
+    font-size:15px;
+}
+
+/* ==========================================
+            INPUT BOX
+========================================== */
+
+.input-box{
+    display:flex;
+    align-items:center;
+    background:#fff;
+    border:2px solid #e5e7eb;
+    border-radius:14px;
+    padding:0 16px;
+    transition:.3s;
+}
+
+.input-box:focus-within{
+    border-color:#1565C0;
+    box-shadow:0 0 0 4px rgba(21,101,192,.12);
+}
+
+.input-box i:first-child{
+    color:#1565C0;
+    font-size:18px;
+    margin-right:12px;
+}
+
+.input-box input{
+    width:100%;
+    height:55px;
+    border:none;
+    outline:none;
+    background:transparent;
+    font-size:15px;
+    color:#333;
+}
+
+.input-box input::placeholder{
+    color:#9ca3af;
+}
+
+.input-box i:last-child{
+    color:#9ca3af;
+    cursor:pointer;
+    font-size:18px;
+    transition:.3s;
+}
+
+.input-box i:last-child:hover{
+    color:#1565C0;
+}
+
+/* ==========================================
+            REMEMBER & FORGOT
+========================================== */
+
+.auth-options{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:25px;
+    font-size:14px;
+}
+
+.auth-options label{
+    display:flex;
+    align-items:center;
+    gap:8px;
+    cursor:pointer;
+    color:#555;
+}
+
+.auth-options a{
+    color:#1565C0;
+    text-decoration:none;
+    font-weight:600;
+}
+
+.auth-options a:hover{
+    color:#0D47A1;
+}
+
+/* ==========================================
+            BUTTON
+========================================== */
+
+.auth-btn{
+    width:100%;
+    height:55px;
+    border:none;
+    border-radius:14px;
+    background:linear-gradient(135deg,#1565C0,#0D47A1);
+    color:#fff;
+    font-size:17px;
+    font-weight:600;
+    cursor:pointer;
+    transition:.35s;
+}
+
+.auth-btn:hover{
+    transform:translateY(-3px);
+    box-shadow:0 15px 25px rgba(13,71,161,.25);
+}
+
+/* ==========================================
+            DIVIDER
+========================================== */
+
+.divider{
+    display:flex;
+    align-items:center;
+    margin:30px 0;
+}
+
+.divider::before,
+.divider::after{
+    content:"";
+    flex:1;
+    height:1px;
+    background:#ddd;
+}
+
+.divider span{
+    padding:0 18px;
+    color:#888;
+    font-weight:500;
+}
+
+/* ==========================================
+            GOOGLE BUTTON
+========================================== */
+
+.google-btn{
+    width:100%;
+    height:55px;
+    border:2px solid #e5e7eb;
+    border-radius:14px;
+    background:#fff;
+    font-weight:600;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:12px;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.google-btn i{
+    color:#EA4335;
+    font-size:20px;
+}
+
+.google-btn:hover{
+    background:#f8fafc;
+    border-color:#1565C0;
+}
+
+/* ==========================================
+            BOTTOM TEXT
+========================================== */
+
+.bottom-text{
+    margin-top:28px;
+    text-align:center;
+    color:#555;
+}
+
+.bottom-text a{
+    margin-left:8px;
+    color:#1565C0;
+    font-weight:700;
+    text-decoration:none;
+}
+
+.bottom-text a:hover{
+    color:#0D47A1;
+}
+
+/* ==========================================
+            ANIMATION
+========================================== */
+
+@keyframes fadeUp{
+
+    from{
+        opacity:0;
+        transform:translateY(40px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+
+}
+
+/* ==========================================
+            RESPONSIVE
+========================================== */
+
+@media(max-width:992px){
+
+.auth-left{
+    display:none;
+}
+
+.auth-right{
+    flex:1;
+    padding:30px;
+}
+
+.auth-card{
+    max-width:100%;
+}
+
+}
+
+@media(max-width:576px){
+
+.auth-right{
+    padding:20px;
+}
+
+.auth-card{
+    padding:25px;
+    border-radius:18px;
+}
+
+.auth-card h2{
+    font-size:26px;
+}
+
+.auth-card p{
+    font-size:14px;
+}
+
+.input-box input{
+    height:50px;
+}
+
+.auth-btn,
+.google-btn{
+    height:50px;
+}
+
+.auth-options{
+    flex-direction:column;
+    align-items:flex-start;
+    gap:10px;
+}
+
+}
+
+.eye-icon{
+    cursor:pointer;
+    font-size:18px;
+    color:#8b8b8b;
+    transition:.3s;
+}
+
+.eye-icon:hover{
+    color:#1565C0;
+}

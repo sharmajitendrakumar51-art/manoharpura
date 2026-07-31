@@ -1,0 +1,303 @@
+/* ===========================================
+   EVENTS PAGE
+=========================================== */
+
+.events-page{
+    background:#f4f7fb;
+    min-height:100vh;
+    padding:30px;
+}
+
+/* ===========================================
+   HEADER
+=========================================== */
+
+.events-header{
+    margin-bottom:25px;
+}
+
+.event-title{
+    font-size:32px;
+    font-weight:700;
+    color:#1f2937;
+    margin:0;
+    letter-spacing:.5px;
+}
+
+.event-title::after{
+    content:"";
+    display:block;
+    width:80px;
+    height:4px;
+    margin-top:8px;
+    border-radius:20px;
+    background:linear-gradient(90deg,#2563eb,#38bdf8);
+}
+
+/* ===========================================
+   ADD BUTTON
+=========================================== */
+
+.add-event-btn{
+    background:linear-gradient(135deg,#2563eb,#1d4ed8)!important;
+    border:none!important;
+    border-radius:12px!important;
+    padding:11px 24px!important;
+    font-weight:600;
+    box-shadow:0 10px 25px rgba(37,99,235,.25);
+    transition:.35s;
+}
+
+.add-event-btn:hover{
+    transform:translateY(-3px);
+    box-shadow:0 18px 35px rgba(37,99,235,.35);
+}
+
+/* ===========================================
+   SEARCH
+=========================================== */
+
+.search-card{
+    border-radius:18px!important;
+    overflow:hidden;
+    box-shadow:0 8px 22px rgba(0,0,0,.08)!important;
+}
+
+.search-card .card-body{
+    padding:22px;
+}
+
+.search-input{
+    border-radius:12px!important;
+    border:1px solid #dbe3ec!important;
+    height:50px;
+    font-size:15px;
+    transition:.3s;
+}
+
+.search-input:focus{
+    border-color:#2563eb!important;
+    box-shadow:0 0 0 .18rem rgba(37,99,235,.15)!important;
+}
+
+/* ===========================================
+   EVENT CARD
+=========================================== */
+
+.event-card{
+    border-radius:22px!important;
+    overflow:hidden;
+    background:#fff;
+    transition:.35s;
+    box-shadow:0 10px 25px rgba(15,23,42,.08)!important;
+    position:relative;
+}
+
+.event-card::before{
+    content:"";
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:5px;
+    background:linear-gradient(90deg,#2563eb,#38bdf8);
+}
+
+.event-card:hover{
+    transform:translateY(-8px);
+    box-shadow:0 20px 40px rgba(15,23,42,.15)!important;
+}
+
+/* ===========================================
+   IMAGE
+=========================================== */
+
+.event-image{
+    width:100%;
+    height:220px!important;
+    object-fit:cover;
+    transition:.5s;
+}
+
+.event-card:hover .event-image{
+    transform:scale(1.08);
+}
+
+/* ===========================================
+   BODY
+=========================================== */
+
+.event-body{
+    padding:22px!important;
+}
+
+.event-name{
+    font-size:21px;
+    color:#111827;
+    margin-bottom:15px;
+}
+
+.event-description{
+    line-height:1.7;
+    font-size:15px;
+    color:#64748b!important;
+    min-height:75px;
+}
+
+/* ===========================================
+   TEXT
+=========================================== */
+
+.event-body p{
+    margin-bottom:9px;
+}
+
+.event-body p.text-muted{
+    font-size:14px;
+}
+
+/* ===========================================
+   BADGES
+=========================================== */
+
+.status-badge{
+    border-radius:40px!important;
+    padding:8px 16px!important;
+    font-weight:600;
+    letter-spacing:.4px;
+}
+
+.featured-badge{
+    background:linear-gradient(135deg,#f59e0b,#fbbf24)!important;
+    color:#fff!important;
+    border-radius:40px!important;
+    padding:8px 16px!important;
+    font-weight:600;
+}
+
+/* ===========================================
+   CATEGORY BADGE
+=========================================== */
+
+.bg-info{
+    border-radius:30px!important;
+    padding:7px 14px!important;
+}
+
+/* ===========================================
+   FOOTER
+=========================================== */
+
+.event-footer{
+    padding:18px 22px!important;
+}
+
+/* ===========================================
+   BUTTONS
+=========================================== */
+
+.btn-view,
+.btn-edit,
+.btn-delete{
+    border-radius:10px!important;
+    font-weight:600;
+    transition:.3s;
+}
+
+.btn-view:hover{
+    background:#2563eb!important;
+    color:#fff!important;
+}
+
+.btn-edit:hover{
+    background:#f59e0b!important;
+    color:#fff!important;
+}
+
+.btn-delete:hover{
+    background:#ef4444!important;
+    color:#fff!important;
+}
+
+/* ===========================================
+   LOADING
+=========================================== */
+
+.spinner-border{
+    width:3.5rem;
+    height:3.5rem;
+}
+
+/* ===========================================
+   ALERT
+=========================================== */
+
+.alert-warning{
+    border:none;
+    border-radius:18px;
+    padding:18px;
+}
+
+/* ===========================================
+   SCROLLBAR
+=========================================== */
+
+::-webkit-scrollbar{
+    width:8px;
+}
+
+::-webkit-scrollbar-thumb{
+    background:#2563eb;
+    border-radius:30px;
+}
+
+/* ===========================================
+   RESPONSIVE
+=========================================== */
+
+@media(max-width:992px){
+
+.event-title{
+    font-size:28px;
+}
+
+}
+
+@media(max-width:768px){
+
+.events-page{
+    padding:18px;
+}
+
+.events-header{
+    flex-direction:column;
+    align-items:flex-start!important;
+    gap:18px;
+}
+
+.add-event-btn{
+    width:100%;
+}
+
+.event-footer .d-flex{
+    flex-direction:column;
+    gap:10px;
+}
+
+.event-footer .btn{
+    width:100%;
+}
+
+}
+
+@media(max-width:576px){
+
+.event-image{
+    height:190px!important;
+}
+
+.event-name{
+    font-size:18px;
+}
+
+}
