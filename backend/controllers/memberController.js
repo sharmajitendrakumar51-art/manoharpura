@@ -544,8 +544,10 @@ export const deleteMember = async (req, res) => {
 
 export const updateMemberStatus = async (req, res) => {
   try {
+
     const { id } = req.params;
-    const { status } = req.body;
+
+    const { status, inactiveRemark } = req.body;
 
     if (!["Active", "Inactive"].includes(status)) {
       return res.status(400).json({
@@ -554,11 +556,7 @@ export const updateMemberStatus = async (req, res) => {
       });
     }
 
-    const member = await Member.findByIdAndUpdate(
-      id,
-      { status },
-      { new: true }
-    );
+    const member = await Member.findById(id);
 
     if (!member) {
       return res.status(404).json({
@@ -567,12 +565,32 @@ export const updateMemberStatus = async (req, res) => {
       });
     }
 
+    member.status = status;
+
+    if (status === "Inactive") {
+
+      member.inactiveRemark = inactiveRemark;
+
+      member.inactiveDate = new Date();
+
+    } else {
+
+      member.inactiveRemark = "";
+
+      member.inactiveDate = null;
+
+    }
+
+    await member.save();
+
     res.status(200).json({
       success: true,
       message: "Member status updated successfully",
       member,
     });
+
   } catch (error) {
+
     console.log(error);
 
     res.status(500).json({
@@ -580,6 +598,7 @@ export const updateMemberStatus = async (req, res) => {
       message: "Server Error",
       error: error.message,
     });
+
   }
 };
 

@@ -75,38 +75,77 @@ const InactiveMember = () => {
     }
   };
 
-  const handleStatusChange = async (id, currentStatus) => {
+ const handleStatusChange = async (id) => {
 
-    try {
+  try {
 
-      const newStatus =
-        currentStatus === "Inactive" ? "Active" : "Inactive";
+    const result = await Swal.fire({
 
-      const res = await api.put(`/member/update-status/${id}`, {
-        status: newStatus,
+      title: "Activate Member?",
+
+      text: "Do you really want to activate this member?",
+
+      icon: "question",
+
+      showCancelButton: true,
+
+      confirmButtonColor: "#198754",
+
+      cancelButtonColor: "#6c757d",
+
+      confirmButtonText: "Yes, Activate",
+
+      cancelButtonText: "Cancel",
+
+    });
+
+    if (!result.isConfirmed) return;
+
+    const res = await api.put(`/member/update-status/${id}`, {
+
+      status: "Active",
+
+    });
+
+    if (res.data.success) {
+
+      Swal.fire({
+
+        icon: "success",
+
+        title: "Activated!",
+
+        text: "Member activated successfully.",
+
+        timer: 1500,
+
+        showConfirmButton: false,
+
       });
 
-      if (res.data.success) {
-
-        Swal.fire({
-          icon: "success",
-          title: "Success",
-          text: "Member Activated Successfully",
-          timer: 1200,
-          showConfirmButton: false,
-        });
-
-        getInactiveMembers();
-      }
-
-    } catch (error) {
-
-      console.log(error);
+      getInactiveMembers();
 
     }
 
-  };
+  } catch (error) {
 
+    console.log(error);
+
+    Swal.fire({
+
+      icon: "error",
+
+      title: "Error",
+
+      text:
+        error.response?.data?.message ||
+        "Something went wrong",
+
+    });
+
+  }
+
+};
   return (
     <>
       <div className="members-page">
@@ -216,12 +255,7 @@ const InactiveMember = () => {
                           className="form-check-input custom-switch"
                           type="checkbox"
                           checked={false}
-                          onChange={() =>
-                            handleStatusChange(
-                              member._id,
-                              member.status
-                            )
-                          }
+                          onChange={() => handleStatusChange(member._id)}
                         />
 
                         <span className="fw-bold text-danger">

@@ -12,22 +12,48 @@ export const createEvent = async (req, res) => {
         const {
             title,
             description,
-            eventDate,
-            eventTime,
+            dateFrom,
+            dateTo,
+            timeFrom,
+            timeTo,
             location,
             category,
             status,
             featured,
         } = req.body;
 
+
+        console.log("BODY DATA");
+console.log({
+  title,
+  description,
+  dateFrom,
+  dateTo,
+  timeFrom,
+  timeTo,
+  location,
+  category,
+  status,
+  featured,
+});
+
+
+console.log("BODY :", req.body);
+console.log("FILES :", req.files);
+
         // Validation
         if (
             !title ||
             !description ||
-            !eventDate ||
-            !eventTime ||
+             !dateFrom ||
+            !dateTo ||
+             !timeFrom ||
+            !timeTo ||
             !location
         ) {
+
+           console.log("Validation Failed");
+
             return res.status(400).json({
                 success: false,
                 message: "Please fill all required fields",
@@ -70,24 +96,28 @@ export const createEvent = async (req, res) => {
 
         const event = await Event.create({
 
-            title,
-            description,
+    title,
+    description,
 
-            coverImage: {
-                url: coverUpload.url,
-                public_id: coverUpload.public_id,
-            },
+    coverImage: {
+        url: coverUpload.url,
+        public_id: coverUpload.public_id,
+    },
 
-            galleryImages,
+    galleryImages,
 
-            eventDate,
-            eventTime,
-            location,
-            category,
-            status,
-            featured,
+    dateFrom,
+    dateTo,
 
-        });
+    timeFrom,
+    timeTo,
+
+    location,
+    category,
+    status,
+    featured,
+
+});
 
         res.status(201).json({
             success: true,
@@ -129,7 +159,13 @@ export const getAllEvents = async (req, res) => {
 
     } catch (error) {
 
-        console.log(error);
+        console.log("Error :", error);
+
+console.log("Response :", error.response);
+
+console.log("Data :", error.response?.data);
+
+console.log("Message :", error.response?.data?.message);
 
         res.status(500).json({
             success: false,
@@ -203,8 +239,10 @@ export const updateEvent = async (req, res) => {
     const {
       title,
       description,
-      eventDate,
-      eventTime,
+      dateFrom,
+      dateTo,
+      timeFrom,
+      timeTo,
       location,
       category,
       status,
@@ -213,8 +251,10 @@ export const updateEvent = async (req, res) => {
 
     if (title) event.title = title;
     if (description) event.description = description;
-    if (eventDate) event.eventDate = eventDate;
-    if (eventTime) event.eventTime = eventTime;
+     if (dateFrom) event.dateFrom = dateFrom;
+    if (dateTo) event.dateTo = dateTo; 
+    if (timeFrom) event.timeFrom = timeFrom;
+   if (timeTo) event.timeTo = timeTo;
     if (location) event.location = location;
     if (category) event.category = category;
     if (status) event.status = status;

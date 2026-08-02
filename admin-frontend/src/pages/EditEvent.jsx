@@ -15,8 +15,10 @@ const EditEvent = () => {
 
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
-  const [eventDate, setEventDate] = useState("");
-  const [eventTime, setEventTime] = useState("");
+  const [dateFrom, setDateFrom] = useState("");
+  const [dateTo, setDateTo] = useState("");
+  const [timeFrom, setTimeFrom] = useState("");
+  const [timeTo, setTimeTo] = useState("");
   const [location, setLocation] = useState("");
   const [category, setCategory] = useState("Religious");
   const [status, setStatus] = useState("Upcoming");
@@ -52,8 +54,10 @@ const EditEvent = () => {
 
         setTitle(event.title);
         setDescription(event.description);
-        setEventDate(event.eventDate?.split("T")[0]);
-        setEventTime(event.eventTime);
+        setDateFrom(event.dateFrom?.split("T")[0]);
+        setDateTo(event.dateTo?.split("T")[0]);
+        setTimeFrom(event.timeFrom);
+        setTimeTo(event.timeTo);
         setLocation(event.location);
         setCategory(event.category);
         setStatus(event.status);
@@ -135,6 +139,25 @@ const EditEvent = () => {
 
     e.preventDefault();
 
+    if (dateTo < dateFrom) {
+  return Swal.fire(
+    "Error",
+    "Date To cannot be earlier than Date From",
+    "error"
+  );
+}
+
+if (
+  dateFrom === dateTo &&
+  timeTo <= timeFrom
+) {
+  return Swal.fire(
+    "Error",
+    "Time To must be later than Time From",
+    "error"
+  );
+}
+
     try {
 
       setLoading(true);
@@ -143,8 +166,10 @@ const EditEvent = () => {
 
       formData.append("title", title);
       formData.append("description", description);
-      formData.append("eventDate", eventDate);
-      formData.append("eventTime", eventTime);
+      formData.append("dateFrom", dateFrom);
+      formData.append("dateTo", dateTo);
+      formData.append("timeFrom", timeFrom);
+      formData.append("timeTo", timeTo);
       formData.append("location", location);
       formData.append("category", category);
       formData.append("status", status);
@@ -266,45 +291,79 @@ const EditEvent = () => {
 
             <div className="row">
 
-              {/* Date */}
+  <div className="col-md-6 mb-3">
 
-              <div className="col-md-6 mb-3">
+    <label className="form-label">
+      Date From
+    </label>
 
-                <label className="form-label">
-                  Event Date
-                </label>
+    <input
+      type="date"
+      className="form-control"
+      value={dateFrom}
+      onChange={(e) =>
+        setDateFrom(e.target.value)
+      }
+    />
 
-                <input
-                  type="date"
-                  className="form-control"
-                  value={eventDate}
-                  onChange={(e) =>
-                    setEventDate(e.target.value)
-                  }
-                />
+  </div>
 
-              </div>
+  <div className="col-md-6 mb-3">
 
-              {/* Time */}
+    <label className="form-label">
+      Date To
+    </label>
 
-              <div className="col-md-6 mb-3">
+    <input
+      type="date"
+      className="form-control"
+      value={dateTo}
+      onChange={(e) =>
+        setDateTo(e.target.value)
+      }
+    />
 
-                <label className="form-label">
-                  Event Time
-                </label>
+  </div>
 
-                <input
-                  type="time"
-                  className="form-control"
-                  value={eventTime}
-                  onChange={(e) =>
-                    setEventTime(e.target.value)
-                  }
-                />
+</div>
 
-              </div>
+<div className="row">
 
-            </div>
+  <div className="col-md-6 mb-3">
+
+    <label className="form-label">
+      Time From
+    </label>
+
+    <input
+      type="time"
+      className="form-control"
+      value={timeFrom}
+      onChange={(e) =>
+        setTimeFrom(e.target.value)
+      }
+    />
+
+  </div>
+
+  <div className="col-md-6 mb-3">
+
+    <label className="form-label">
+      Time To
+    </label>
+
+    <input
+      type="time"
+      className="form-control"
+      value={timeTo}
+      onChange={(e) =>
+        setTimeTo(e.target.value)
+      }
+    />
+
+  </div>
+
+</div>
 
             <div className="mb-3">
 

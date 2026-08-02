@@ -12,8 +12,10 @@ const AddEvent = () => {
   const [formData, setFormData] = useState({
     title: "",
     description: "",
-    eventDate: "",
-    eventTime: "",
+    dateFrom: "",
+    dateTo: "",
+    timeFrom: "",
+    timeTo: "",
     location: "",
     category: "Religious",
     status: "Upcoming",
@@ -76,8 +78,10 @@ const AddEvent = () => {
     setFormData({
       title: "",
       description: "",
-      eventDate: "",
-      eventTime: "",
+      dateFrom: "",
+      dateTo: "",
+      timeFrom: "",
+      timeTo: "",
       location: "",
       category: "Religious",
       status: "Upcoming",
@@ -106,14 +110,21 @@ const AddEvent = () => {
       return Swal.fire("Error", "Description is required", "error");
     }
 
-    if (!formData.eventDate) {
-      return Swal.fire("Error", "Event Date is required", "error");
-    }
+    if (!formData.dateFrom) {
+    return Swal.fire("Error", "Date From is required", "error");
+}
 
-    if (!formData.eventTime) {
-      return Swal.fire("Error", "Event Time is required", "error");
-    }
+if (!formData.dateTo) {
+    return Swal.fire("Error", "Date To is required", "error");
+}
 
+if (!formData.timeFrom) {
+    return Swal.fire("Error", "Time From is required", "error");
+}
+
+if (!formData.timeTo) {
+    return Swal.fire("Error", "Time To is required", "error");
+}
     if (!formData.location.trim()) {
       return Swal.fire("Error", "Location is required", "error");
     }
@@ -129,8 +140,10 @@ const AddEvent = () => {
 
       data.append("title", formData.title);
       data.append("description", formData.description);
-      data.append("eventDate", formData.eventDate);
-      data.append("eventTime", formData.eventTime);
+      data.append("dateFrom", formData.dateFrom);
+      data.append("dateTo", formData.dateTo);
+      data.append("timeFrom", formData.timeFrom);
+      data.append("timeTo", formData.timeTo);
       data.append("location", formData.location);
       data.append("category", formData.category);
       data.append("status", formData.status);
@@ -141,6 +154,9 @@ const AddEvent = () => {
       galleryImages.forEach((img) => {
         data.append("galleryImages", img);
       });
+      for (let pair of data.entries()) {
+  console.log(pair[0], ":", pair[1]);
+}
 
       const response = await api.post("/event/create", data);
 
@@ -209,39 +225,75 @@ const AddEvent = () => {
 
             <div className="row">
 
-              <div className="col-md-6 mb-3">
+  <div className="col-md-6 mb-3">
 
-                <label className="form-label">
-                  Event Date
-                </label>
+    <label className="form-label">
+      Date From
+    </label>
 
-                <input
-                  type="date"
-                  className="form-control"
-                  name="eventDate"
-                  value={formData.eventDate}
-                  onChange={handleChange}
-                />
+    <input
+      type="date"
+      className="form-control"
+      name="dateFrom"
+      value={formData.dateFrom || ""}
+      onChange={handleChange}
+    />
 
-              </div>
+  </div>
 
-              <div className="col-md-6 mb-3">
+  <div className="col-md-6 mb-3">
 
-                <label className="form-label">
-                  Event Time
-                </label>
+    <label className="form-label">
+      Date To
+    </label>
 
-                <input
-                  type="time"
-                  className="form-control"
-                  name="eventTime"
-                  value={formData.eventTime}
-                  onChange={handleChange}
-                />
+    <input
+      type="date"
+      className="form-control"
+      name="dateTo"
+      value={formData.dateTo || ""}
+      onChange={handleChange}
+    />
 
-              </div>
+  </div>
 
-            </div>
+</div>
+
+<div className="row">
+
+  <div className="col-md-6 mb-3">
+
+    <label className="form-label">
+      Time From
+    </label>
+
+    <input
+      type="time"
+      className="form-control"
+      name="timeFrom"
+      value={formData.timeFrom || ""}
+      onChange={handleChange}
+    />
+
+  </div>
+
+  <div className="col-md-6 mb-3">
+
+    <label className="form-label">
+      Time To
+    </label>
+
+    <input
+      type="time"
+      className="form-control"
+      name="timeTo"
+      value={formData.timeTo || ""}
+      onChange={handleChange}
+    />
+
+  </div>
+
+</div>
 
             <div className="mb-3">
 

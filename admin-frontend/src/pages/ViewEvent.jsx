@@ -125,31 +125,57 @@ const ViewEvent = () => {
 
           <div className="row">
 
-            {/* Date */}
+            {/* Date From */}
 
-            <div className="col-md-6 mb-3">
+<div className="col-md-6 mb-3">
 
-              <h6 className="fw-bold">
-                📅 Event Date
-              </h6>
+  <h6 className="fw-bold">
+    📅 Date From
+  </h6>
 
-              <p>
-                {new Date(event.eventDate).toLocaleDateString()}
-              </p>
+  <p>
+    {new Date(event.dateFrom).toLocaleDateString("en-IN")}
+  </p>
 
-            </div>
+</div>
 
-            {/* Time */}
+{/* Date To */}
 
-            <div className="col-md-6 mb-3">
+<div className="col-md-6 mb-3">
 
-              <h6 className="fw-bold">
-                🕒 Event Time
-              </h6>
+  <h6 className="fw-bold">
+    📅 Date To
+  </h6>
 
-              <p>{event.eventTime}</p>
+  <p>
+    {new Date(event.dateTo).toLocaleDateString("en-IN")}
+  </p>
 
-            </div>
+</div>
+
+{/* Time From */}
+
+<div className="col-md-6 mb-3">
+
+  <h6 className="fw-bold">
+    🕒 Time From
+  </h6>
+
+  <p>{event.timeFrom}</p>
+
+</div>
+
+{/* Time To */}
+
+<div className="col-md-6 mb-3">
+
+  <h6 className="fw-bold">
+    🕒 Time To
+  </h6>
+
+  <p>{event.timeTo}</p>
+
+</div>
 
             {/* Location */}
 

@@ -71,21 +71,145 @@ const filteredMembers = members.filter((member) =>
 };
 
 const handleStatusChange = async (id, currentStatus) => {
+
   try {
-    const newStatus =
-      currentStatus === "Active" ? "Inactive" : "Active";
+
+    // ==========================
+    // ACTIVE
+    // ==========================
+
+    if (currentStatus === "Inactive") {
+
+      const result = await Swal.fire({
+
+        title: "Activate Member?",
+
+        text: "Do you want to activate this member?",
+
+        icon: "question",
+
+        showCancelButton: true,
+
+        confirmButtonColor: "#198754",
+
+        cancelButtonColor: "#6c757d",
+
+        confirmButtonText: "Yes, Activate",
+
+      });
+
+      if (!result.isConfirmed) return;
+
+      const res = await api.put(`/member/update-status/${id}`, {
+
+        status: "Active",
+
+      });
+
+      if (res.data.success) {
+
+        Swal.fire({
+
+          icon: "success",
+
+          title: "Activated!",
+
+          text: "Member activated successfully.",
+
+        });
+
+        getMembers();
+
+      }
+
+      return;
+
+    }
+
+    // ==========================
+    // INACTIVE
+    // ==========================
+
+    const result = await Swal.fire({
+
+      title: "Inactive Member",
+
+      text: "Please enter the reason.",
+
+      icon: "warning",
+
+      input: "textarea",
+
+      inputPlaceholder: "Write inactive remark...",
+
+      inputAttributes: {
+
+        rows: 4,
+
+      },
+
+      showCancelButton: true,
+
+      confirmButtonColor: "#dc3545",
+
+      cancelButtonColor: "#6c757d",
+
+      confirmButtonText: "Inactive",
+
+      inputValidator: (value) => {
+
+        if (!value) {
+
+          return "Inactive remark is required.";
+
+        }
+
+      },
+
+    });
+
+    if (!result.isConfirmed) return;
 
     const res = await api.put(`/member/update-status/${id}`, {
-      status: newStatus,
+
+      status: "Inactive",
+
+      inactiveRemark: result.value,
+
     });
 
     if (res.data.success) {
-      getMembers(); // Table Refresh
+
+      Swal.fire({
+
+        icon: "success",
+
+        title: "Inactive!",
+
+        text: "Member marked as inactive.",
+
+      });
+
+      getMembers();
+
     }
 
   } catch (error) {
+
     console.log(error);
+
+    Swal.fire({
+
+      icon: "error",
+
+      title: "Error",
+
+      text: error.response?.data?.message || "Something went wrong",
+
+    });
+
   }
+
 };
 
  return (

@@ -186,6 +186,16 @@ panCard: {
   enum: ["Active", "Inactive"],
   default: "Active",
 },
+inactiveRemark: {
+  type: String,
+  default: "",
+  trim: true,
+},
+
+inactiveDate: {
+  type: Date,
+  default: null,
+},
   },
   {
     timestamps: true,
