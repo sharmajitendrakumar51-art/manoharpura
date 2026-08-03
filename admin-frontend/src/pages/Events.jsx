@@ -218,25 +218,24 @@ const Events = () => {
                   <h5 className="fw-bold event-name">
                     {event.title}
                   </h5>
+{/* Date */}
 
-                  {/* Date */}
+<p className="mb-1 text-muted">
 
-                  <p className="mb-1 text-muted">
+  📅{" "}
+  {new Date(event.dateFrom).toLocaleDateString("en-IN")}
+  {" - "}
+  {new Date(event.dateTo).toLocaleDateString("en-IN")}
 
-                    📅{" "}
-                    {new Date(
-                      event.eventDate
-                    ).toLocaleDateString()}
+</p>
 
-                  </p>
+{/* Time */}
 
-                  {/* Time */}
+<p className="mb-1 text-muted">
 
-                  <p className="mb-1 text-muted">
+  🕒 {event.timeFrom} - {event.timeTo}
 
-                    🕒 {event.eventTime}
-
-                  </p>
+</p>
 
                   {/* Location */}
 
