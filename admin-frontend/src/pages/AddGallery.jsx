@@ -11,6 +11,7 @@ const AddGallery = () => {
     const [description, setDescription] = useState("");
     const [images, setImages] = useState([]);
     const [preview, setPreview] = useState([]);
+    const [galleryDate, setGalleryDate] = useState("");
 
     // ==========================
     // Image Change
@@ -46,9 +47,17 @@ const AddGallery = () => {
 
             formData.append("description", description);
 
+            formData.append("galleryDate", galleryDate);
+
             images.forEach((image) => {
                 formData.append("images", image);
             });
+
+console.log("Gallery Date:", galleryDate);
+
+for (let pair of formData.entries()) {
+  console.log(pair[0], pair[1]);
+}
 
             const res = await api.post(
                 "/gallery/create",
@@ -141,6 +150,24 @@ const AddGallery = () => {
                             ></textarea>
 
                         </div>
+
+                        {/* Gallery Date */}
+
+<div className="mb-3">
+
+    <label className="form-label">
+         Date
+    </label>
+
+    <input
+        type="date"
+        className="form-control"
+        value={galleryDate}
+        onChange={(e) => setGalleryDate(e.target.value)}
+        required
+    />
+
+</div>
 
                         {/* Images */}
 

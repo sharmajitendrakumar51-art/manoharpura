@@ -10,6 +10,7 @@ const EditGallery = () => {
 
     const [title, setTitle] = useState("");
     const [description, setDescription] = useState("");
+    const [galleryDate, setGalleryDate] = useState("");
 
     const [oldImages, setOldImages] = useState([]);
 
@@ -32,6 +33,8 @@ const EditGallery = () => {
 
                 setTitle(gallery.title);
                 setDescription(gallery.description);
+                setGalleryDate( gallery.galleryDate
+                 ? gallery.galleryDate.split("T")[0] : "");
                 setOldImages(gallery.images);
 
             }
@@ -118,6 +121,8 @@ const EditGallery = () => {
 
             formData.append("description", description);
 
+            formData.append("galleryDate", galleryDate);
+
             images.forEach(image => {
 
                 formData.append("images", image);
@@ -202,6 +207,21 @@ const EditGallery = () => {
                             />
 
                         </div>
+
+                        <div className="mb-3">
+
+    <label>Gallery Date</label>
+
+    <input
+        type="date"
+        className="form-control"
+        value={galleryDate}
+        onChange={(e) =>
+            setGalleryDate(e.target.value)
+        }
+    />
+
+</div>
 
                         <h5 className="mb-3">
 

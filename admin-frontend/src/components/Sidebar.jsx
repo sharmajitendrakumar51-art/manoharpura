@@ -91,7 +91,18 @@ const Sidebar = ({ mobileOpen, setMobileOpen }) => {
 
               <i className="bi bi-calendar-event-fill"></i>
 
-              <span>Events & News</span>
+              <span>Events</span>
+
+            </NavLink>
+
+          </li>
+          <li>
+
+            <NavLink to="/news" onClick={closeSidebar}>
+
+              <i className="bi bi-newspaper"></i>
+
+              <span>News</span>
 
             </NavLink>
 
@@ -111,13 +122,10 @@ const Sidebar = ({ mobileOpen, setMobileOpen }) => {
 
           <li>
 
-            <NavLink to="/contact-messages" onClick={closeSidebar}>
-
-              <i className="bi bi-chat-dots-fill"></i>
-
-              <span>Messages</span>
-
-            </NavLink>
+            <NavLink to="/notifications" onClick={closeSidebar}>
+    <i className="bi bi-bell-fill"></i>
+    <span>Notifications</span>
+</NavLink>
 
           </li>
 

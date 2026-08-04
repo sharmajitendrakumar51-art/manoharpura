@@ -160,19 +160,139 @@
    BADGES
 =========================================== */
 
+
+/*==========================
+Upcoming Badge
+==========================*/
+
 .status-badge{
-    border-radius:40px!important;
-    padding:8px 16px!important;
-    font-weight:600;
-    letter-spacing:.4px;
+
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    padding:5px 14px;
+
+    border-radius:30px;
+
+    font-size:12px;
+
+    font-weight:700;
+
+    letter-spacing:.3px;
+
+    color:#fff;
+
+    transition:.3s;
+
+}
+
+/* Upcoming */
+
+.upcoming-badge{
+
+    background:linear-gradient(135deg,#10b981,#059669);
+
+    box-shadow:0 4px 12px rgba(16,185,129,.35);
+
+    animation:upcomingPulse 2s infinite;
+
+}
+
+/* Completed */
+
+.completed-badge{
+
+    background:linear-gradient(135deg,#64748b,#334155);
+
+    box-shadow:0 4px 12px rgba(100,116,139,.25);
+
+}
+
+/* Hover */
+
+.status-badge:hover{
+
+    transform:translateY(-2px) scale(1.05);
+
+}
+
+/* Pulse Animation */
+
+@keyframes upcomingPulse{
+
+    0%{
+        box-shadow:0 0 0 0 rgba(16,185,129,.5);
+    }
+
+    70%{
+        box-shadow:0 0 0 8px rgba(16,185,129,0);
+    }
+
+    100%{
+        box-shadow:0 0 0 0 rgba(16,185,129,0);
+    }
+
 }
 
 .featured-badge{
-    background:linear-gradient(135deg,#f59e0b,#fbbf24)!important;
-    color:#fff!important;
-    border-radius:40px!important;
-    padding:8px 16px!important;
-    font-weight:600;
+
+    position: relative;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 5px;
+
+    overflow: hidden;
+
+    padding: 4px 10px;
+
+    border-radius: 30px;
+
+    background: linear-gradient(135deg,#ff9800,#ff5722);
+
+    color: #fff;
+
+    font-size: 11px;
+
+    font-weight: 600;
+
+    box-shadow: 0 4px 10px rgba(255,87,34,.25);
+
+    animation: floating 2.2s ease-in-out infinite;
+
+}
+
+.featured-badge i{
+
+    font-size: 11px;
+
+    animation: rotateStar 4s linear infinite;
+
+}
+
+.shine{
+
+    position:absolute;
+
+    top:0;
+
+    left:-100%;
+
+    width:40%;
+
+    height:100%;
+
+    background:rgba(255,255,255,.45);
+
+    transform:skewX(-20deg);
+
+    animation:shine 2.5s infinite;
+
 }
 
 /* ===========================================

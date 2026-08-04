@@ -1,0 +1,347 @@
+/* ===========================
+   View News
+=========================== */
+
+.view-news-page{
+
+    padding:30px;
+
+    background:#f8fafc;
+
+    min-height:100vh;
+
+}
+
+/* ===========================
+   Header
+=========================== */
+
+.view-news-header{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:25px;
+
+}
+
+.view-news-header h2{
+
+    font-size:32px;
+
+    font-weight:700;
+
+    color:#0f172a;
+
+}
+
+/* ===========================
+   Image Card
+=========================== */
+
+.news-image-card{
+
+    border:none;
+
+    border-radius:18px;
+
+    overflow:hidden;
+
+    box-shadow:0 10px 30px rgba(0,0,0,.08);
+
+    margin-bottom:25px;
+
+}
+
+.news-image{
+
+    width:100%;
+
+    height:450px;
+
+    object-fit:cover;
+
+    transition:.4s;
+
+}
+
+.news-image:hover{
+
+    transform:scale(1.03);
+
+}
+
+/* ===========================
+   Details Card
+=========================== */
+
+.news-details{
+
+    border:none;
+
+    border-radius:18px;
+
+    box-shadow:0 10px 30px rgba(0,0,0,.08);
+
+}
+
+.news-details .card-body{
+
+    padding:35px;
+
+}
+
+.news-title{
+
+    font-size:34px;
+
+    font-weight:700;
+
+    color:#111827;
+
+    margin-bottom:18px;
+
+}
+
+.news-description{
+
+    color:#475569;
+
+    line-height:1.9;
+
+    text-align:justify;
+
+    font-size:16px;
+
+}
+
+/* ===========================
+   Info Box
+=========================== */
+
+.info-box{
+
+    background:#f8fafc;
+
+    border-radius:12px;
+
+    padding:18px;
+
+    height:100%;
+
+    border:1px solid #e5e7eb;
+
+}
+
+.info-box h6{
+
+    font-weight:700;
+
+    color:#334155;
+
+    margin-bottom:10px;
+
+}
+
+.info-box p{
+
+    margin:0;
+
+    color:#64748b;
+
+}
+
+/* ===========================
+   Status Badge
+=========================== */
+
+.status-badge{
+
+    display:inline-block;
+
+    padding:8px 18px;
+
+    border-radius:30px;
+
+    color:#fff;
+
+    font-size:14px;
+
+    font-weight:600;
+
+}
+
+.published{
+
+    background:linear-gradient(135deg,#10b981,#34d399);
+
+}
+
+.draft{
+
+    background:linear-gradient(135deg,#64748b,#94a3b8);
+
+}
+
+/* ===========================
+   Featured Badge
+=========================== */
+
+.featured-badge{
+
+    position: relative;
+
+    overflow: hidden;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 8px;
+
+    min-width: 120px;
+
+    height: 40px;
+
+    padding: 0 18px;
+
+    border-radius: 50px;
+
+    background: linear-gradient(135deg,#f59e0b,#fbbf24);
+
+    color: #fff;
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+    letter-spacing: .3px;
+
+    box-shadow: 0 8px 20px rgba(245,158,11,.35);
+
+}
+
+.featured-badge i{
+
+    font-size:16px;
+
+    z-index:2;
+
+}
+
+.featured-badge .shine{
+
+    position:absolute;
+
+    top:0;
+
+    left:-80%;
+
+    width:45%;
+
+    height:100%;
+
+    background:rgba(255,255,255,.45);
+
+    transform:skewX(-25deg);
+
+    animation:featuredShine 2.2s linear infinite;
+
+}
+
+@keyframes featuredShine{
+
+    100%{
+
+        left:170%;
+
+    }
+
+}
+
+/* ===========================
+   Buttons
+=========================== */
+
+.view-news-buttons{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    margin-top:30px;
+
+}
+
+.view-news-buttons .btn{
+
+    padding:10px 24px;
+
+    border-radius:10px;
+
+    font-weight:600;
+
+    transition:.3s;
+
+}
+
+.view-news-buttons .btn:hover{
+
+    transform:translateY(-3px);
+
+}
+
+/* ===========================
+   Responsive
+=========================== */
+
+@media(max-width:768px){
+
+.news-image{
+
+height:250px;
+
+}
+
+.news-title{
+
+font-size:26px;
+
+}
+
+.news-details .card-body{
+
+padding:22px;
+
+}
+
+.view-news-header{
+
+flex-direction:column;
+
+align-items:flex-start;
+
+gap:15px;
+
+}
+
+.view-news-buttons{
+
+flex-direction:column;
+
+gap:15px;
+
+}
+
+.view-news-buttons .btn{
+
+width:100%;
+
+}
+
+}

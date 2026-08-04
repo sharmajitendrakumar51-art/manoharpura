@@ -1,0 +1,224 @@
+/* ===========================
+   Edit News Page
+=========================== */
+
+.edit-news-page{
+
+    padding:30px;
+
+    background:#f8fafc;
+
+    min-height:100vh;
+
+}
+
+/* ===========================
+   Card
+=========================== */
+
+.edit-news-card{
+
+    border:none;
+
+    border-radius:18px;
+
+    overflow:hidden;
+
+    box-shadow:0 12px 30px rgba(0,0,0,.08);
+
+}
+
+/* ===========================
+   Header
+=========================== */
+
+.edit-news-header{
+
+    background:linear-gradient(135deg,#2563eb,#1d4ed8);
+
+    color:#fff;
+
+    padding:18px 25px;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+}
+
+.edit-news-header h3{
+
+    margin:0;
+
+    font-weight:700;
+
+}
+
+/* ===========================
+   Body
+=========================== */
+
+.edit-news-body{
+
+    padding:30px;
+
+}
+
+/* ===========================
+   Labels
+=========================== */
+
+.edit-news-body .form-label{
+
+    font-weight:600;
+
+    color:#374151;
+
+}
+
+/* ===========================
+   Inputs
+=========================== */
+
+.edit-news-body .form-control,
+.edit-news-body .form-select{
+
+    border-radius:12px;
+
+    padding:12px 15px;
+
+    border:1px solid #d1d5db;
+
+    transition:.3s;
+
+}
+
+.edit-news-body .form-control:focus,
+.edit-news-body .form-select:focus{
+
+    border-color:#2563eb;
+
+    box-shadow:0 0 0 .2rem rgba(37,99,235,.15);
+
+}
+
+/* ===========================
+   Switch
+=========================== */
+
+.form-check-input{
+
+    width:50px;
+
+    height:25px;
+
+    cursor:pointer;
+
+}
+
+.form-check-label{
+
+    font-weight:600;
+
+    margin-left:10px;
+
+}
+
+/* ===========================
+   Images
+=========================== */
+
+.current-image,
+.preview-image{
+
+    width:260px;
+
+    height:180px;
+
+    object-fit:cover;
+
+    border-radius:12px;
+
+    border:3px solid #fff;
+
+    box-shadow:0 8px 18px rgba(0,0,0,.15);
+
+    transition:.3s;
+
+}
+
+.current-image:hover,
+.preview-image:hover{
+
+    transform:scale(1.03);
+
+}
+
+/* ===========================
+   Buttons
+=========================== */
+
+.edit-news-buttons{
+
+    display:flex;
+
+    gap:15px;
+
+    margin-top:25px;
+
+}
+
+.edit-news-buttons .btn{
+
+    padding:10px 25px;
+
+    border-radius:12px;
+
+    font-weight:600;
+
+    transition:.3s;
+
+}
+
+.edit-news-buttons .btn:hover{
+
+    transform:translateY(-3px);
+
+}
+
+/* ===========================
+   Responsive
+=========================== */
+
+@media(max-width:768px){
+
+.edit-news-body{
+
+padding:20px;
+
+}
+
+.current-image,
+.preview-image{
+
+width:100%;
+
+height:220px;
+
+}
+
+.edit-news-buttons{
+
+flex-direction:column;
+
+}
+
+.edit-news-buttons .btn{
+
+width:100%;
+
+}
+
+}

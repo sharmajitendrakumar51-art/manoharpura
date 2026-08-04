@@ -47,6 +47,29 @@ const ViewEvent = () => {
     getEvent();
   }, []);
 
+  // ==========================
+// Format Time (AM / PM)
+// ==========================
+
+const formatTime = (time) => {
+
+  if (!time) return "";
+
+  const [hour, minute] = time.split(":");
+
+  const date = new Date();
+
+  date.setHours(parseInt(hour));
+  date.setMinutes(parseInt(minute));
+
+  return date.toLocaleTimeString("en-IN", {
+    hour: "numeric",
+    minute: "2-digit",
+    hour12: true,
+  });
+
+};
+
   if (loading) {
     return (
       <div className="container py-5 text-center">
@@ -161,8 +184,7 @@ const ViewEvent = () => {
     🕒 Time From
   </h6>
 
-  <p>{event.timeFrom}</p>
-
+  <p>{formatTime(event.timeFrom)}</p>
 </div>
 
 {/* Time To */}
@@ -173,7 +195,7 @@ const ViewEvent = () => {
     🕒 Time To
   </h6>
 
-  <p>{event.timeTo}</p>
+  <p>{formatTime(event.timeTo)}</p>
 
 </div>
 
@@ -190,7 +212,7 @@ const ViewEvent = () => {
             </div>
 
             {/* Category */}
-
+{/* 
             <div className="col-md-6 mb-3">
 
               <h6 className="fw-bold">
@@ -201,7 +223,7 @@ const ViewEvent = () => {
                 {event.category}
               </span>
 
-            </div>
+            </div> */}
 
             {/* Status */}
 

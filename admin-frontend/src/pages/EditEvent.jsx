@@ -364,8 +364,8 @@ if (
   </div>
 
 </div>
-
-            <div className="mb-3">
+      <div className="row">
+            <div className="col-md-6 mb-3">
 
               <label className="form-label">
                 Location
@@ -382,11 +382,11 @@ if (
 
             </div>
 
-                        <div className="row">
+                        
 
               {/* Category */}
 
-              <div className="col-md-6 mb-3">
+              {/* <div className="col-md-6 mb-3">
 
                 <label className="form-label">
                   Category
@@ -407,7 +407,7 @@ if (
                   <option value="Other">Other</option>
                 </select>
 
-              </div>
+              </div> */}
 
               {/* Status */}
 

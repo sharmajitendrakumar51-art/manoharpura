@@ -294,8 +294,8 @@ if (!formData.timeTo) {
   </div>
 
 </div>
-
-            <div className="mb-3">
+          <div className="row">
+            <div className="col-md-6 mb-3">
 
               <label className="form-label">
                 Location
@@ -311,8 +311,8 @@ if (!formData.timeTo) {
 
             </div>
 
-            <div className="row">
-
+            
+{/* 
               <div className="col-md-6 mb-3">
 
                 <label className="form-label">
@@ -333,7 +333,7 @@ if (!formData.timeTo) {
                   <option>Other</option>
                 </select>
 
-              </div>
+              </div> */}
 
               <div className="col-md-6 mb-3">
 

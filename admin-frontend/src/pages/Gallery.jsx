@@ -173,17 +173,27 @@ const Gallery = () => {
 
                             <div className="card-body">
 
-                                <h4>
+                               <h4>
+    {gallery.title}
+</h4>
 
-                                    {gallery.title}
+<p className="gallery-date">
 
-                                </h4>
+    <i className="bi bi-calendar-event-fill me-2"></i>
 
-                                <p>
+    {gallery.galleryDate
+        ? new Date(gallery.galleryDate).toLocaleDateString("en-IN", {
+              day: "numeric",
+              month: "long",
+              year: "numeric",
+          })
+        : "No Date"}
 
-                                    {gallery.description}
+</p>
 
-                                </p>
+<p>
+    {gallery.description}
+</p>
 
                             </div>
 

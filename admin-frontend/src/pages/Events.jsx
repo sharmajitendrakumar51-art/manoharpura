@@ -95,6 +95,21 @@ const Events = () => {
       );
     }
   };
+  const formatTime = (time) => {
+  if (!time) return "";
+
+  const [hour, minute] = time.split(":");
+
+  const date = new Date();
+  date.setHours(hour);
+  date.setMinutes(minute);
+
+  return date.toLocaleTimeString("en-IN", {
+    hour: "numeric",
+    minute: "2-digit",
+    hour12: true,
+  });
+};
 
   return (
     <div className="container-fluid py-4 events-page">
@@ -196,20 +211,22 @@ const Events = () => {
                   <div className="d-flex justify-content-between mb-3">
 
                     <span
-                      className={`badge ${
-                        event.status === "Upcoming"
-                          ? "bg-success"
-                          : "bg-secondary"
-                      }`}
-                    >
-                      {event.status}
-                    </span>
+  className={`status-badge ${
+    event.status === "Upcoming"
+      ? "upcoming-badge"
+      : "completed-badge"
+  }`}
+>
+  {event.status}
+</span>
 
                     {event.featured && (
-                      <span className="badge bg-warning text-dark">
-                        ⭐ Featured
-                      </span>
-                    )}
+  <span className="featured-badge">
+    <span className="shine"></span>
+    <i className="bi bi-stars"></i>
+    Featured
+  </span>
+)}
 
                   </div>
 
@@ -232,11 +249,9 @@ const Events = () => {
 {/* Time */}
 
 <p className="mb-1 text-muted">
-
-  🕒 {event.timeFrom} - {event.timeTo}
-
+  🕒 {formatTime(event.timeFrom)} - {formatTime(event.timeTo)}
 </p>
-
+        
                   {/* Location */}
 
                   <p className="mb-1 text-muted">
@@ -245,7 +260,7 @@ const Events = () => {
 
                   </p>
 
-                  {/* Category */}
+                  {/* Category
 
                   <p className="mb-3">
 
@@ -253,7 +268,9 @@ const Events = () => {
                       {event.category}
                     </span>
 
-                  </p>
+                  </p> */}
+
+                  <hr></hr>
 
                   {/* Description */}
 

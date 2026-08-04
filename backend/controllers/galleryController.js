@@ -4,16 +4,29 @@ import cloudinary from "../config/cloudinary.js";
 
 // Create Gallery
 export const createGallery = async (req, res) => {
+
   try {
 
-    const { title, description } = req.body;
+    console.log("BODY:", req.body);
+    console.log("FILES:", req.files);
 
-    if (!title) {
-      return res.status(400).json({
-        success: false,
-        message: "Gallery title is required",
-      });
-    }
+   const {
+  title,
+  description,
+  galleryDate,
+} = req.body;
+
+   if (
+  !title ||
+  !galleryDate
+) {
+  return res.status(400).json({
+    success: false,
+    message: "Title and Gallery Date are required",
+  });
+}
+
+    
 
     if (!req.files || req.files.length === 0) {
       return res.status(400).json({
@@ -41,6 +54,7 @@ export const createGallery = async (req, res) => {
     const gallery = await Gallery.create({
       title,
       description,
+      galleryDate,
       images,
     });
 
@@ -135,7 +149,11 @@ export const updateGallery = async (req, res) => {
   try {
 
     const { id } = req.params;
-    const { title, description } = req.body;
+  const {
+  title,
+  description,
+  galleryDate,
+} = req.body;
 
     const gallery = await Gallery.findById(id);
 
@@ -148,6 +166,9 @@ export const updateGallery = async (req, res) => {
 
     if (title) gallery.title = title;
     if (description) gallery.description = description;
+
+    if (galleryDate)
+    gallery.galleryDate = galleryDate;
 
     // Agar new images upload hui hain
     if (req.files && req.files.length > 0) {

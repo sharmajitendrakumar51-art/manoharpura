@@ -1,0 +1,291 @@
+/* ===========================
+   Edit Notification Page
+=========================== */
+
+.edit-notification-page{
+
+    padding:30px;
+
+    background:#f8fafc;
+
+    min-height:100vh;
+
+}
+
+/* ===========================
+   Card
+=========================== */
+
+.edit-notification-card{
+
+    border:none;
+
+    border-radius:18px;
+
+    overflow:hidden;
+
+    box-shadow:0 12px 30px rgba(0,0,0,.08);
+
+    background:#fff;
+
+}
+
+/* ===========================
+   Header
+=========================== */
+
+.edit-notification-header{
+
+    background:linear-gradient(135deg,#2563eb,#1d4ed8);
+
+    color:#fff;
+
+    padding:20px 25px;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+}
+
+.edit-notification-header h3{
+
+    margin:0;
+
+    font-size:28px;
+
+    font-weight:700;
+
+}
+
+.edit-notification-header .btn{
+
+    font-weight:600;
+
+    border-radius:10px;
+
+}
+
+/* ===========================
+   Body
+=========================== */
+
+.edit-notification-body{
+
+    padding:30px;
+
+}
+
+/* ===========================
+   Labels
+=========================== */
+
+.edit-notification-body .form-label{
+
+    font-weight:600;
+
+    color:#374151;
+
+    margin-bottom:8px;
+
+}
+
+/* ===========================
+   Inputs
+=========================== */
+
+.edit-notification-body .form-control,
+.edit-notification-body .form-select{
+
+    border-radius:12px;
+
+    padding:12px 15px;
+
+    border:1px solid #d1d5db;
+
+    transition:.3s;
+
+}
+
+.edit-notification-body .form-control:focus,
+.edit-notification-body .form-select:focus{
+
+    border-color:#2563eb;
+
+    box-shadow:0 0 0 .2rem rgba(37,99,235,.15);
+
+}
+
+/* ===========================
+   Current Image
+=========================== */
+
+.current-image{
+
+    width:280px;
+
+    height:180px;
+
+    object-fit:cover;
+
+    border-radius:14px;
+
+    border:3px solid #fff;
+
+    box-shadow:0 10px 22px rgba(0,0,0,.15);
+
+    transition:.3s;
+
+}
+
+.current-image:hover{
+
+    transform:scale(1.03);
+
+}
+
+/* ===========================
+   Preview Image
+=========================== */
+
+.preview-image{
+
+    width:280px;
+
+    height:180px;
+
+    object-fit:cover;
+
+    border-radius:14px;
+
+    border:3px solid #fff;
+
+    box-shadow:0 10px 22px rgba(0,0,0,.15);
+
+    transition:.3s;
+
+}
+
+.preview-image:hover{
+
+    transform:scale(1.03);
+
+}
+
+/* ===========================
+   Buttons
+=========================== */
+
+.edit-notification-buttons{
+
+    display:flex;
+
+    gap:15px;
+
+    margin-top:30px;
+
+}
+
+.edit-notification-buttons .btn{
+
+    padding:11px 24px;
+
+    border-radius:12px;
+
+    font-weight:600;
+
+    transition:.3s;
+
+}
+
+.edit-notification-buttons .btn:hover{
+
+    transform:translateY(-3px);
+
+}
+
+/* ===========================
+   Responsive
+=========================== */
+
+@media(max-width:768px){
+
+.edit-notification-page{
+
+padding:15px;
+
+}
+
+.edit-notification-header{
+
+flex-direction:column;
+
+align-items:flex-start;
+
+gap:15px;
+
+}
+
+.edit-notification-header h3{
+
+font-size:24px;
+
+}
+
+.edit-notification-body{
+
+padding:20px;
+
+}
+
+.current-image,
+.preview-image{
+
+width:100%;
+
+height:220px;
+
+}
+
+.edit-notification-buttons{
+
+flex-direction:column;
+
+}
+
+.edit-notification-buttons .btn{
+
+width:100%;
+
+}
+
+}
+
+/* .edit-notification-body .form-select{
+
+    height:30px;
+
+    padding:0 15px;
+
+    line-height:50px;
+
+    font-size:16px;
+
+    color:#212529;
+
+} */
+
+
+.edit-notification-body .form-select{
+
+    min-height:30px !important;
+
+    padding-top:2px !important;
+
+    padding-bottom:5px !important;
+
+    line-height:1.5 !important;
+
+}

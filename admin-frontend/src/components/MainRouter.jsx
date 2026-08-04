@@ -10,7 +10,7 @@ import Members from "../pages/Members";
 import AddMember from "../pages/AddMember";
 import InactiveMember from "../pages/InactiveMember";
 
-import Events from "../pages/Events";
+
 import ContactMessages from "../pages/ContactMessages";
 import Settings from "../pages/Settings";
 
@@ -22,9 +22,21 @@ import AddGallery from "../pages/AddGallery";
 import EditGallery from "../pages/EditGallery";
 import ViewGallery from "../pages/ViewGallery";
 
+import Events from "../pages/Events";
 import AddEvent from "../pages/AddEvent";
 import EditEvent from "../pages/EditEvent";
 import ViewEvent from "../pages/ViewEvent";
+
+import News from "../pages/News";
+import AddNews from "../pages/AddNews";
+import EditNews from "../pages/EditNews";
+import ViewNews from "../pages/ViewNews";
+
+import Notifications from "../pages/Notifications";
+import AddNotification from "../pages/AddNotification";
+import EditNotification from "../pages/EditNotification";
+import ViewNotification from "../pages/ViewNotification";
+
 
 const MainRouter = () => {
   return (
@@ -78,6 +90,8 @@ const MainRouter = () => {
 <Route path="/members/view/:id" element={<AdminLayout><ViewMember /></AdminLayout>} />
 <Route path="/members/edit/:id" element={<AdminLayout><EditMember /></AdminLayout>} />
 
+
+
         {/* Committee */}
 
         <Route
@@ -125,6 +139,83 @@ const MainRouter = () => {
   element={
     <AdminLayout>
       <ViewEvent />
+    </AdminLayout>
+  }
+/>
+
+  {/* News */}
+
+        <Route
+          path="/news"
+          element={
+            <AdminLayout>
+              <News />
+            </AdminLayout>
+          }
+        />
+
+        <Route
+  path="/news/add"
+  element={
+    <AdminLayout>
+      <AddNews />
+    </AdminLayout>
+  }
+/>
+
+<Route
+  path="/news/edit/:id"
+  element={
+    <AdminLayout>
+      <EditNews />
+    </AdminLayout>
+  }
+/>
+
+<Route
+  path="/news/view/:id"
+  element={
+    <AdminLayout>
+      <ViewNews />
+    </AdminLayout>
+  }
+/>
+
+
+{/* Notifications */}
+
+<Route
+  path="/notifications"
+  element={
+    <AdminLayout>
+      <Notifications />
+    </AdminLayout>
+  }
+/>
+
+<Route
+  path="/notifications/add"
+  element={
+    <AdminLayout>
+      <AddNotification />
+    </AdminLayout>
+  }
+/>
+
+<Route
+  path="/notifications/edit/:id"
+  element={
+    <AdminLayout>
+      <EditNotification />
+    </AdminLayout>
+  }
+/>
+
+<Route
+  path="/notifications/view/:id"
+  element={
+    <AdminLayout>
+      <ViewNotification />
     </AdminLayout>
   }
 />

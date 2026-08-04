@@ -97,16 +97,19 @@ const ViewGallery = () => {
                             📷 {gallery.images.length} Photos
 
                         </span>
+<span>
 
-                        <span>
+    📅{" "}
 
-                            📅{" "}
+    {gallery.galleryDate
+        ? new Date(gallery.galleryDate).toLocaleDateString("en-IN", {
+              day: "numeric",
+              month: "long",
+              year: "numeric",
+          })
+        : "No Date"}
 
-                            {new Date(
-                                gallery.createdAt
-                            ).toLocaleDateString()}
-
-                        </span>
+</span>
 
                     </div>
 

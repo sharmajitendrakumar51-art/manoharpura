@@ -13,6 +13,11 @@ const gallerySchema = new mongoose.Schema(
       trim: true,
       default: "",
     },
+    
+      galleryDate: {
+    type: Date,
+    required: true,
+  },
 
     images: [
       {
@@ -20,6 +25,7 @@ const gallerySchema = new mongoose.Schema(
           type: String,
           required: true,
         },
+
 
         public_id: {
           type: String,
