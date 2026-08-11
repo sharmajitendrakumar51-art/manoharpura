@@ -425,9 +425,23 @@ export const getMemberById = async (req, res) => {
 export const updateMember = async (req, res) => {
   try {
 
-      console.log("BODY =>", req.body);
-console.log("FILES =>", req.files);
+    console.log("=================================");
+    console.log("UPDATE MEMBER API HIT");
+    console.log("=================================");
+
+    console.log("MEMBER ID:", req.params.id);
+
+    console.log("BODY =>", req.body);
+
+    console.log("FILES =>", req.files);
+
+
     const { id } = req.params;
+
+
+    // ==========================
+    // Find Member
+    // ==========================
 
     const member = await Member.findById(id);
 
@@ -438,75 +452,197 @@ console.log("FILES =>", req.files);
       });
     }
 
+
+    // ==========================
+    // Status Conversion
+    // ==========================
+
     if (req.body.status === "true") {
-  req.body.status = "Active";
-}
+      req.body.status = "Active";
+    }
 
-if (req.body.status === "false") {
-  req.body.status = "Inactive";
-} 
+    if (req.body.status === "false") {
+      req.body.status = "Inactive";
+    }
 
-    console.log(req.body);
-    // Update text fields
-   Object.keys(req.body).forEach((key) => {
 
-  if (
-    req.body[key] === "null" ||
-    req.body[key] === "" ||
-    req.body[key] === undefined
-  ) {
+    // ==========================
+    // Update Text Fields
+    // ==========================
 
-    member[key] = null;
+    Object.keys(req.body).forEach((key) => {
 
-  } else {
-
-    member[key] = req.body[key];
-
-  }
-
-});
-
-    // Helper function
-    const uploadImage = async (fieldName, folder) => {
-      if (req.files?.[fieldName]) {
-        const result = await uploadToCloudinary(
-          req.files[fieldName][0].buffer,
-          folder
-        );
-
-        member[fieldName] = {
-          url: result.secure_url,
-          public_id: result.public_id,
-        };
+      // Don't overwrite files
+      if (
+        key === "profilePhoto" ||
+        key === "aadhaarFront" ||
+        key === "aadhaarBack" ||
+        key === "janAadhaarCard" ||
+        key === "panCard"
+      ) {
+        return;
       }
+
+
+      // Convert null/empty values
+      if (
+        req.body[key] === "null" ||
+        req.body[key] === "" ||
+        req.body[key] === undefined
+      ) {
+
+        member[key] = null;
+
+      } else {
+
+        member[key] = req.body[key];
+
+      }
+
+    });
+
+
+    // ==========================
+    // Upload Image Helper
+    // ==========================
+
+    const uploadImage = async (fieldName, folder) => {
+
+      // Check file
+      if (!req.files?.[fieldName]?.[0]) {
+        console.log(`No new ${fieldName} selected`);
+        return;
+      }
+
+
+      const file = req.files[fieldName][0];
+
+
+      console.log(`Uploading ${fieldName}:`);
+
+      console.log({
+        originalname: file.originalname,
+        mimetype: file.mimetype,
+        size: file.size,
+      });
+
+
+      // ==========================
+      // Upload To Cloudinary
+      // ==========================
+
+      const result = await uploadToCloudinary(
+        file.buffer,
+        folder
+      );
+
+
+      console.log(
+        `${fieldName} Cloudinary URL:`,
+        result.secure_url
+      );
+
+
+      console.log(
+        `${fieldName} Cloudinary ID:`,
+        result.public_id
+      );
+
+
+      // ==========================
+      // Replace Old Image
+      // ==========================
+
+     member[fieldName] = {
+  url: result.url,
+  public_id: result.public_id,
+};
+
     };
 
-    // Upload new images if selected
-    await uploadImage("profilePhoto", "members/profilePhoto");
-    await uploadImage("aadhaarFront", "members/aadhaar");
-    await uploadImage("aadhaarBack", "members/aadhaar");
-    await uploadImage("janAadhaarCard", "members/janAadhaar");
-    await uploadImage("panCard", "members/panCard");
+
+    // ==========================
+    // Upload New Images
+    // ==========================
+
+    await uploadImage(
+      "profilePhoto",
+      "members/profilePhoto"
+    );
+
+
+    await uploadImage(
+      "aadhaarFront",
+      "members/aadhaar"
+    );
+
+
+    await uploadImage(
+      "aadhaarBack",
+      "members/aadhaar"
+    );
+
+
+    await uploadImage(
+      "janAadhaarCard",
+      "members/janAadhaar"
+    );
+
+
+    await uploadImage(
+      "panCard",
+      "members/panCard"
+    );
+
+
+    // ==========================
+    // Save Member
+    // ==========================
 
     await member.save();
 
-    res.status(200).json({
+
+    console.log(
+      "UPDATED PROFILE PHOTO =>",
+      member.profilePhoto
+    );
+
+
+    // ==========================
+    // Response
+    // ==========================
+
+    return res.status(200).json({
+
       success: true,
+
       message: "Member updated successfully",
+
       member,
+
     });
+
 
   } catch (error) {
-    console.error("Update Member Error:", error);
 
-    res.status(500).json({
+    console.error(
+      "Update Member Error:",
+      error
+    );
+
+
+    return res.status(500).json({
+
       success: false,
+
       message: "Failed to update member",
+
       error: error.message,
+
     });
+
   }
 };
-
 // ==========================
 // Delete Member
 // ==========================

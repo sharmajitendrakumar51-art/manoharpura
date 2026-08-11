@@ -2,6 +2,8 @@ import { NavLink, Link } from "react-router-dom";
 import mokshdhamlogo from "../assets/images/mokshdhamlogo.jpg";
 import "../assets/css/Header.css";
 
+import NotificationDropdown from "./NotificationDropdown";
+
 const Header = () => {
   return (
     <>
@@ -23,7 +25,7 @@ const Header = () => {
 
                   <i className="bi bi-telephone-fill"></i>
 
-                  +91 9876543210
+                  +91 9828226516
 
                 </span>
 
@@ -31,7 +33,7 @@ const Header = () => {
 
                   <i className="bi bi-envelope-fill"></i>
 
-                  info@manoharpura.com
+                  mmvsjaipur@gmail.com
 
                 </span>
 
@@ -95,6 +97,11 @@ const Header = () => {
       {/* ================= Desktop Right ================= */}
 
       <div className="header-right d-none d-lg-flex">
+       
+
+       {/* Notifications */}
+
+        <NotificationDropdown />
 
         {/* Login Signup */}
 
@@ -146,48 +153,13 @@ const Header = () => {
         <div className="dropdown">
 
           <button
-            className="btn profile-btn dropdown-toggle"
+            className="btn profile-btn "
             data-bs-toggle="dropdown"
           >
 
-            My Profile
+            Donate Now
 
           </button>
-
-          <ul className="dropdown-menu dropdown-menu-end">
-
-            <li>
-              <Link className="dropdown-item" to="/profile">
-                Profile
-              </Link>
-            </li>
-
-            <li>
-              <Link className="dropdown-item" to="/membership-card">
-                Membership Card
-              </Link>
-            </li>
-
-            <li>
-              <Link className="dropdown-item" to="/settings">
-                Settings
-              </Link>
-            </li>
-
-            <li>
-              <hr />
-            </li>
-
-            <li>
-              <Link
-                className="dropdown-item text-danger"
-                to="/logout"
-              >
-                Logout
-              </Link>
-            </li>
-
-          </ul>
 
         </div>
 
@@ -303,8 +275,17 @@ const Header = () => {
 
         <li className="nav-item">
 
-          <NavLink className="nav-link" to="/event">
-            Events & News
+          <NavLink className="nav-link" to="/events">
+            Events
+          </NavLink>
+
+        </li>
+
+
+        <li className="nav-item">
+
+          <NavLink className="nav-link" to="/news">
+             News
           </NavLink>
 
         </li>

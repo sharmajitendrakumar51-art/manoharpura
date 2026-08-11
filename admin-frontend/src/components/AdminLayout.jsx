@@ -1,4 +1,6 @@
 import { useState } from "react";
+import { Navigate } from "react-router-dom";
+
 import Sidebar from "./Sidebar";
 import Topbar from "./Topbar";
 
@@ -8,8 +10,15 @@ const AdminLayout = ({ children }) => {
 
   const [mobileOpen, setMobileOpen] = useState(false);
 
-  return (
+  const token = localStorage.getItem("adminToken");
 
+  console.log("ADMIN TOKEN:", token);
+
+  if (!token) {
+    return <Navigate to="/" replace />;
+  }
+
+  return (
     <div className="admin-layout">
 
       <Sidebar
@@ -24,17 +33,13 @@ const AdminLayout = ({ children }) => {
         />
 
         <main className="admin-content">
-
           {children}
-
         </main>
 
       </div>
 
     </div>
-
   );
-
 };
 
 export default AdminLayout;

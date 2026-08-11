@@ -160,91 +160,208 @@ const handleChange = (e) => {
     setFormData(updatedData);
 };
 
-   const handlePhoto = (e) => {
-  const file = e.target.files[0];
+  const handlePhoto = (e) => {
 
-  if (file) {
-    setProfilePhoto(file);
-    setPhotoPreview(URL.createObjectURL(file));
-  }
-};
+  const file = e.target.files?.[0];
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
+  if (!file) return;
 
-    try {
 
-        const form = new FormData();
-
-        // Form Data
-        Object.keys(formData).forEach((key) => {
-            if (
-                key !== "profilePhoto" &&
-                key !== "aadhaarFront" &&
-                key !== "aadhaarBack" &&
-                key !== "janAadhaarCard" &&
-                key !== "panCard"
-            ) {
-                form.append(key, formData[key]);
-            }
-        });
-
-        // Files
-        if (profilePhoto) {
-            form.append("profilePhoto", profilePhoto);
-        }
-
-        if (aadhaarFront) {
-            form.append("aadhaarFront", aadhaarFront);
-        }
-
-        if (aadhaarBack) {
-            form.append("aadhaarBack", aadhaarBack);
-        }
-
-        if (janAadhaarCard) {
-            form.append("janAadhaarCard", janAadhaarCard);
-        }
-
-        if (panCard) {
-            form.append("panCard", panCard);
-        }
-
-        const response = await api.put(
-            `/member/update-member/${id}`,
-            form,
-            {
-                headers: {
-                    "Content-Type": "multipart/form-data",
-                },
-            }
-        );
-
-        if (response.data.success) {
-
-            Swal.fire({
-                icon: "success",
-                title: "Success",
-                text: response.data.message,
-                timer: 2000,
-                showConfirmButton: false,
-            });
-
-            navigate("/members");
-        }
-
-    } catch (error) {
-
-    console.log("Full Error:", error);
-    console.log("Response:", error.response);
-    console.log("Response Data:", error.response?.data);
+  // Image validation
+  if (!file.type.startsWith("image/")) {
 
     Swal.fire({
-        icon: "error",
-        title: "Error",
-        text: error.response?.data?.message || "Failed to update member",
+      icon: "error",
+      title: "Invalid File",
+      text: "Please select an image file.",
     });
-}
+
+    return;
+  }
+
+
+  // Size validation - 5MB
+  if (file.size > 5 * 1024 * 1024) {
+
+    Swal.fire({
+      icon: "error",
+      title: "File Too Large",
+      text: "Profile photo must be less than 5MB.",
+    });
+
+    return;
+  }
+
+
+  console.log("NEW PROFILE PHOTO:", {
+    name: file.name,
+    type: file.type,
+    size: file.size,
+  });
+
+
+  setProfilePhoto(file);
+
+  setPhotoPreview(
+    URL.createObjectURL(file)
+  );
+};
+
+const handleSubmit = async (e) => {
+  e.preventDefault();
+
+  try {
+    const form = new FormData();
+
+    // ==========================
+    // Text Fields
+    // ==========================
+
+    Object.keys(formData).forEach((key) => {
+
+      if (
+        key !== "profilePhoto" &&
+        key !== "aadhaarFront" &&
+        key !== "aadhaarBack" &&
+        key !== "janAadhaarCard" &&
+        key !== "panCard"
+      ) {
+        form.append(key, formData[key] ?? "");
+      }
+
+    });
+
+
+    // ==========================
+    // Profile Photo
+    // ==========================
+
+    if (profilePhoto) {
+      form.append("profilePhoto", profilePhoto);
+    }
+
+
+    // ==========================
+    // Aadhaar Front
+    // ==========================
+
+    if (aadhaarFront) {
+      form.append("aadhaarFront", aadhaarFront);
+    }
+
+
+    // ==========================
+    // Aadhaar Back
+    // ==========================
+
+    if (aadhaarBack) {
+      form.append("aadhaarBack", aadhaarBack);
+    }
+
+
+    // ==========================
+    // Jan Aadhaar
+    // ==========================
+
+    if (janAadhaarCard) {
+      form.append("janAadhaarCard", janAadhaarCard);
+    }
+
+
+    // ==========================
+    // PAN Card
+    // ==========================
+
+    if (panCard) {
+      form.append("panCard", panCard);
+    }
+
+
+    // ==========================
+    // DEBUG
+    // ==========================
+
+    console.log("Selected Profile Photo:", profilePhoto);
+
+    for (const [key, value] of form.entries()) {
+      console.log(
+        "FORM DATA:",
+        key,
+        value instanceof File
+          ? {
+              name: value.name,
+              type: value.type,
+              size: value.size,
+            }
+          : value
+      );
+    }
+
+
+    // ==========================
+    // UPDATE API
+    // ==========================
+
+    const response = await api.put(
+      `/member/update-member/${id}`,
+      form
+    );
+
+
+    // ==========================
+    // RESPONSE
+    // ==========================
+
+    console.log(
+      "UPDATE MEMBER RESPONSE:",
+      response.data
+    );
+
+    console.log(
+      "UPDATED PROFILE PHOTO:",
+      response.data?.member?.profilePhoto
+    );
+
+
+    // ==========================
+    // SUCCESS
+    // ==========================
+
+    if (response.data.success) {
+
+      Swal.fire({
+        icon: "success",
+        title: "Success",
+        text: "Member updated successfully",
+        timer: 2000,
+        showConfirmButton: false,
+      });
+
+      navigate("/members");
+    }
+
+  } catch (error) {
+
+    console.log("FULL UPDATE ERROR:", error);
+
+    console.log(
+      "UPDATE RESPONSE:",
+      error.response
+    );
+
+    console.log(
+      "UPDATE RESPONSE DATA:",
+      error.response?.data
+    );
+
+    Swal.fire({
+      icon: "error",
+      title: "Error",
+      text:
+        error.response?.data?.message ||
+        "Failed to update member",
+    });
+  }
 };
     return (
 

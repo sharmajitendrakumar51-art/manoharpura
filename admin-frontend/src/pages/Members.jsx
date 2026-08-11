@@ -22,14 +22,28 @@ const getMembers = async () => {
 
     const res = await api.get("/member/get-members");
 
+    // API ka complete response
+    console.log("GET MEMBERS RESPONSE:", res.data);
+
     if (res.data.success) {
+
+      // First member ki profile photo check
+      console.log(
+        "FIRST MEMBER PHOTO:",
+        res.data.members?.[0]?.profilePhoto
+      );
+
       setMembers(res.data.members);
     }
 
   } catch (error) {
-    console.log(error);
+
+    console.log("GET MEMBERS ERROR:", error);
+
   } finally {
+
     setLoading(false);
+
   }
 };
 
@@ -317,13 +331,19 @@ const handleStatusChange = async (id, currentStatus) => {
       <tr key={member._id}>
         <td>{index + 1}</td>
 
-        <td>
-          <img
-            src={member.profilePhoto?.url}
-            alt={member.fullName}
-            className="member-photo"
-          />
-        </td>
+       <td>
+  {member.profilePhoto?.url ? (
+    <img
+      src={member.profilePhoto.url}
+      alt={member.fullName}
+      className="member-photo"
+    />
+  ) : (
+    <div className="member-photo-placeholder">
+      <i className="bi bi-person-fill"></i>
+    </div>
+  )}
+</td>
 
         <td>
           <h6>{member.fullName}</h6>

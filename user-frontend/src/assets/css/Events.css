@@ -1,0 +1,841 @@
+/* =========================================================
+   EVENTS PAGE
+========================================================= */
+
+.events-page {
+  background: #f7faff;
+  color: #172b4d;
+}
+
+
+/* =========================================================
+   CONTAINER
+========================================================= */
+
+.events-container {
+  width: min(1120px, 92%);
+  margin: auto;
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.events-hero {
+  position: relative;
+
+  min-height: 280px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+
+  padding: 50px 20px;
+
+  overflow: hidden;
+
+  background:
+    linear-gradient(
+      135deg,
+      #eaf3ff,
+      #ffffff 50%,
+      #fff6e6
+    );
+}
+
+
+.events-hero::before {
+  content: "";
+
+  position: absolute;
+
+  width: 240px;
+  height: 240px;
+
+  border-radius: 50%;
+
+  background:
+    rgba(255, 152, 0, 0.09);
+
+  top: -125px;
+  right: 8%;
+
+  animation:
+    eventFloat 7s ease-in-out infinite;
+}
+
+
+.events-hero::after {
+  content: "";
+
+  position: absolute;
+
+  width: 180px;
+  height: 180px;
+
+  border-radius: 50%;
+
+  background:
+    rgba(13, 71, 161, 0.06);
+
+  bottom: -100px;
+  left: 8%;
+
+  animation:
+    eventFloat 8s ease-in-out infinite reverse;
+}
+
+
+.events-hero-content {
+  position: relative;
+
+  z-index: 2;
+
+  max-width: 700px;
+
+  animation:
+    eventHeroFade 0.7s ease both;
+}
+
+
+.events-eyebrow {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 7px;
+
+  padding: 7px 16px;
+
+  margin-bottom: 12px;
+
+  border-radius: 25px;
+
+  background:
+    rgba(255, 152, 0, 0.10);
+
+  border:
+    1px solid rgba(255, 152, 0, 0.22);
+
+  color: #e88900;
+
+  font-size: 12px;
+
+  font-weight: 700;
+}
+
+
+.events-hero h1 {
+  margin: 0;
+
+  color: #104d96;
+
+  font-size: clamp(
+    35px,
+    5vw,
+    52px
+  );
+
+  font-weight: 800;
+
+  line-height: 1.1;
+}
+
+
+.events-hero p {
+  max-width: 650px;
+
+  margin: 13px auto 0;
+
+  color: #607795;
+
+  font-size: 14px;
+
+  line-height: 1.65;
+}
+
+
+/* =========================================================
+   EVENTS SECTION
+========================================================= */
+
+.events-section {
+  padding: 55px 0;
+}
+
+
+.events-heading {
+  display: flex;
+
+  align-items: flex-end;
+
+  justify-content: space-between;
+
+  gap: 25px;
+
+  margin-bottom: 28px;
+}
+
+
+.events-heading > div:first-child span {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 6px;
+
+  color: #e88900;
+
+  font-size: 12px;
+
+  font-weight: 700;
+
+  margin-bottom: 6px;
+}
+
+
+.events-heading h2 {
+  margin: 0;
+
+  color: #104d96;
+
+  font-size: 30px;
+
+  font-weight: 800;
+}
+
+
+/* =========================================================
+   FILTERS
+========================================================= */
+
+.event-filters {
+  display: flex;
+
+  flex-wrap: wrap;
+
+  justify-content: flex-end;
+
+  gap: 6px;
+}
+
+
+.event-filters button {
+  border: 1px solid #dce6f1;
+
+  border-radius: 20px;
+
+  padding: 6px 12px;
+
+  background: white;
+
+  color: #64758a;
+
+  font-size: 11px;
+
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: 0.2s ease;
+}
+
+
+.event-filters button:hover {
+  border-color: #104d96;
+
+  color: #104d96;
+}
+
+
+.event-filters button.active {
+  background: #104d96;
+
+  border-color: #104d96;
+
+  color: white;
+}
+
+
+/* =========================================================
+   EVENT GRID
+========================================================= */
+
+.events-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, 1fr);
+
+  gap: 20px;
+}
+
+
+/* =========================================================
+   EVENT CARD
+========================================================= */
+
+.event-card {
+  overflow: hidden;
+
+  background: white;
+
+  border:
+    1px solid #e2eaf4;
+
+  border-radius: 15px;
+
+  box-shadow:
+    0 6px 22px rgba(
+      20,
+      77,
+      150,
+      0.06
+    );
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+
+.event-card:hover {
+  transform:
+    translateY(-7px);
+
+  box-shadow:
+    0 15px 32px rgba(
+      20,
+      77,
+      150,
+      0.12
+    );
+}
+
+
+/* =========================================================
+   CARD IMAGE
+========================================================= */
+
+.event-card-image {
+  position: relative;
+
+  height: 200px;
+
+  overflow: hidden;
+
+  background: #eaf1f9;
+}
+
+
+.event-card-image img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  transition:
+    transform 0.5s ease;
+}
+
+
+.event-card:hover
+.event-card-image img {
+  transform:
+    scale(1.06);
+}
+
+
+/* =========================================
+   NEW / FEATURED BADGE
+========================================= */
+
+.event-featured {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+
+  padding: 8px 14px;
+
+  background: linear-gradient(
+    135deg,
+    #ff9800,
+    #ffb52e
+  );
+
+  color: #fff;
+
+  font-size: 13px;
+  font-weight: 700;
+
+  border-radius: 30px;
+
+  box-shadow:
+    0 6px 18px rgba(255, 152, 0, 0.35);
+
+  z-index: 5;
+
+  /* Animation */
+  animation:
+    newBadgeFloat 2s ease-in-out infinite,
+    newBadgeGlow 2s ease-in-out infinite;
+
+  transform-origin: center;
+}
+
+
+/* Star Icon */
+
+.event-featured i {
+  font-size: 12px;
+
+  animation:
+    newStarSpin 2.5s linear infinite;
+}
+
+
+/* =========================================
+   FLOAT ANIMATION
+========================================= */
+
+@keyframes newBadgeFloat {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-4px);
+  }
+
+}
+
+
+/* =========================================
+   GLOW ANIMATION
+========================================= */
+
+@keyframes newBadgeGlow {
+
+  0%,
+  100% {
+    box-shadow:
+      0 6px 18px
+      rgba(255, 152, 0, 0.30);
+  }
+
+  50% {
+    box-shadow:
+      0 8px 25px
+      rgba(255, 152, 0, 0.65);
+  }
+
+}
+
+
+/* =========================================
+   STAR ROTATION
+========================================= */
+
+@keyframes newStarSpin {
+
+  0% {
+    transform: rotate(0deg) scale(1);
+  }
+
+  25% {
+    transform: rotate(-12deg) scale(1.1);
+  }
+
+  50% {
+    transform: rotate(0deg) scale(1.2);
+  }
+
+  75% {
+    transform: rotate(12deg) scale(1.1);
+  }
+
+  100% {
+    transform: rotate(0deg) scale(1);
+  }
+
+}
+/* =========================================================
+   CATEGORY
+========================================================= */
+
+.event-category {
+  position: absolute;
+
+  right: 12px;
+  bottom: 12px;
+
+  padding: 5px 10px;
+
+  border-radius: 15px;
+
+  background:
+    rgba(16, 77, 150, 0.90);
+
+  color: white;
+
+  font-size: 10px;
+
+  font-weight: 600;
+}
+
+
+/* =========================================================
+   CARD CONTENT
+========================================================= */
+
+.event-card-content {
+  padding: 17px;
+}
+
+
+.event-date {
+  display: flex;
+
+  align-items: center;
+
+  gap: 6px;
+
+  margin-bottom: 8px;
+
+  color: #e88900;
+
+  font-size: 11px;
+
+  font-weight: 700;
+}
+
+
+.event-card-content h3 {
+  margin: 0 0 8px;
+
+  color: #174f98;
+
+  font-size: 18px;
+
+  line-height: 1.35;
+
+  font-weight: 750;
+}
+
+
+.event-card-content > p {
+  margin: 0 0 13px;
+
+  color: #687b91;
+
+  font-size: 12px;
+
+  line-height: 1.6;
+}
+
+
+/* =========================================================
+   EVENT INFO
+========================================================= */
+
+.event-info {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 6px;
+
+  padding:
+    10px 0;
+
+  border-top:
+    1px solid #edf1f6;
+
+  border-bottom:
+    1px solid #edf1f6;
+
+  margin-bottom: 12px;
+}
+
+
+.event-info span {
+  display: flex;
+
+  align-items: center;
+
+  gap: 7px;
+
+  color: #687b91;
+
+  font-size: 11px;
+}
+
+
+.event-info i {
+  color: #104d96;
+}
+
+
+/* =========================================================
+   VIEW BUTTON
+========================================================= */
+
+.event-view-btn {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  width: 100%;
+
+  padding: 8px 11px;
+
+  border: none;
+
+  border-radius: 7px;
+
+  background: #104d96;
+
+  color: white;
+
+  font-size: 12px;
+
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition: 0.25s ease;
+}
+
+
+.event-view-btn:hover {
+  background: #0b3d78;
+
+  padding-left: 14px;
+}
+
+
+/* =========================================================
+   STATES
+========================================================= */
+
+.events-state {
+  min-height: 280px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  justify-content: center;
+
+  text-align: center;
+
+  color: #718198;
+}
+
+
+.events-state > i {
+  margin-bottom: 10px;
+
+  font-size: 35px;
+
+  color: #a5b3c3;
+}
+
+
+.events-state p {
+  font-size: 13px;
+}
+
+
+.events-state.error i {
+  color: #dc3545;
+}
+
+
+.events-state button {
+  padding: 7px 15px;
+
+  border: none;
+
+  border-radius: 7px;
+
+  background: #104d96;
+
+  color: white;
+
+  font-size: 12px;
+
+  cursor: pointer;
+}
+
+
+/* =========================================================
+   CTA
+========================================================= */
+
+.events-cta {
+  padding: 45px 20px;
+
+  text-align: center;
+
+  background:
+    linear-gradient(
+      135deg,
+      #104d96,
+      #1765b5
+    );
+
+  color: white;
+}
+
+
+.events-cta h2 {
+  margin: 0 0 7px;
+
+  font-size: 27px;
+
+  font-weight: 800;
+}
+
+
+.events-cta p {
+  margin: 0;
+
+  color:
+    rgba(255,255,255,0.85);
+
+  font-size: 13px;
+}
+
+
+/* =========================================================
+   ANIMATIONS
+========================================================= */
+
+@keyframes eventFloat {
+
+  0%,
+  100% {
+    transform:
+      translateY(0);
+  }
+
+  50% {
+    transform:
+      translateY(-14px);
+  }
+
+}
+
+
+@keyframes eventHeroFade {
+
+  from {
+    opacity: 0;
+
+    transform:
+      translateY(18px);
+  }
+
+  to {
+    opacity: 1;
+
+    transform:
+      translateY(0);
+  }
+
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 950px) {
+
+  .events-grid {
+    grid-template-columns:
+      repeat(2, 1fr);
+  }
+
+
+  .events-heading {
+    align-items: flex-start;
+
+    flex-direction: column;
+  }
+
+
+  .event-filters {
+    justify-content: flex-start;
+  }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+  .events-hero {
+    min-height: 250px;
+
+    padding: 45px 18px;
+  }
+
+
+  .events-hero h1 {
+    font-size: 38px;
+  }
+
+
+  .events-hero p {
+    font-size: 13px;
+  }
+
+
+  .events-section {
+    padding: 40px 0;
+  }
+
+
+  .events-heading h2 {
+    font-size: 25px;
+  }
+
+
+  .events-grid {
+    grid-template-columns: 1fr;
+  }
+
+
+  .event-card-image {
+    height: 210px;
+  }
+
+
+  .events-cta {
+    padding: 40px 18px;
+  }
+
+
+  .events-cta h2 {
+    font-size: 24px;
+  }
+
+}

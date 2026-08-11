@@ -7,6 +7,7 @@ import galleryRoutes from "./routes/galleryRoutes.js";
 import eventRoutes from "./routes/eventRoutes.js";
 import newsRoutes from "./routes/newsRoutes.js";
 import notificationRoutes from "./routes/notificationRoutes.js";
+import authRoutes from "./routes/authRoutes.js";
 
 dotenv.config();
 
@@ -16,6 +17,8 @@ connectDB();
 
 app.use(cors());
 app.use(express.json());
+
+app.use("/api/auth", authRoutes);
 
 app.use("/api/member", memberRoutes);
 app.use("/api/gallery", galleryRoutes);

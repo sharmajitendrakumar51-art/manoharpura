@@ -224,7 +224,7 @@ const Events = () => {
   <span className="featured-badge">
     <span className="shine"></span>
     <i className="bi bi-stars"></i>
-    Featured
+    New
   </span>
 )}
 

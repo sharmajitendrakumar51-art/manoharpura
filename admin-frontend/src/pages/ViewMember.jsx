@@ -69,11 +69,17 @@ if (!member) {
 
     <div className="profile-section">
 
-        <img
-             src={member.profilePhoto?.url}
-            alt="Profile"
-            className="profile-image"
-        />
+        {member.profilePhoto?.url ? (
+  <img
+    src={member.profilePhoto.url}
+    alt="Profile"
+    className="profile-image"
+  />
+) : (
+  <div className="profile-image-placeholder">
+    <i className="bi bi-person-fill"></i>
+  </div>
+)}
 
         <h3>
 

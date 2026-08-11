@@ -115,7 +115,7 @@ const Footer = () => {
 
                   <i className="bi bi-telephone-fill"></i>
 
-                  +91 9876543210
+                  +91 9828226516
 
                 </li>
 
@@ -123,7 +123,7 @@ const Footer = () => {
 
                   <i className="bi bi-envelope-fill"></i>
 
-                  info@mokshdham.com
+                  mmvsjaipur@gmail.com
 
                 </li>
 
