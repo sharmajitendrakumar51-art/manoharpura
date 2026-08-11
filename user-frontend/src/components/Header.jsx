@@ -346,7 +346,7 @@ const Header = () => {
 
             <li><NavLink className="nav-link" to="/committee">Executive Committee</NavLink></li>
 
-            <li><NavLink className="nav-link" to="/event">Event</NavLink></li>
+            <li><NavLink className="nav-link" to="/events">Event</NavLink></li>
 
             <li><NavLink className="nav-link" to="/gallery">Gallery</NavLink></li>
 
