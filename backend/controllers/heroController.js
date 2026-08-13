@@ -20,17 +20,6 @@ export const createHero = async (req, res) => {
     console.log("HERO FILE:", req.file);
 
     // ==========================
-    // Validation
-    // ==========================
-
-    if (!title) {
-      return res.status(400).json({
-        success: false,
-        message: "Title is required",
-      });
-    }
-
-    // ==========================
     // Image Required
     // ==========================
 
@@ -55,9 +44,9 @@ export const createHero = async (req, res) => {
     // ==========================
 
     const hero = await Hero.create({
-      smallHeading,
-      title,
-      description,
+      smallHeading: smallHeading || "",
+      title: title || "",
+      description: description || "",
 
       image: {
         url: uploaded.url,

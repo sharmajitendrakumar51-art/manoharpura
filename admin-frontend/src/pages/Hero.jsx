@@ -243,15 +243,15 @@ const handleSubmit = async (e) => {
   // VALIDATION
   // ==============================
 
-  if (!formData.title.trim()) {
-    Swal.fire({
-      icon: "warning",
-      title: "Title Required",
-      text: "Please enter hero title.",
-    });
+  // if (!formData.title.trim()) {
+  //   Swal.fire({
+  //     icon: "warning",
+  //     title: "Title Required",
+  //     text: "Please enter hero title.",
+  //   });
 
-    return;
-  }
+  //   return;
+  // }
 
   // Image required only while creating
   if (!editingHero && !formData.image) {
@@ -864,7 +864,7 @@ const handleSubmit = async (e) => {
                   value={formData.title}
                   onChange={handleChange}
                   placeholder="Serving Society With Dedication"
-                  required
+                 // required
                 />
 
               </div>

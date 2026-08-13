@@ -16,9 +16,9 @@ const heroSchema = new mongoose.Schema(
     // ==========================
     title: {
       type: String,
-     required: true,
+    // required: true,
       trim: true,
-      //default: "",
+      default: "",
     },
 
     // ==========================
