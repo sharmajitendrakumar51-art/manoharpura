@@ -62,6 +62,13 @@ const Sidebar = ({ mobileOpen, setMobileOpen }) => {
           </li>
 
           <li>
+           <NavLink to="/hero" onClick={closeSidebar}>
+           <i className="bi bi-images"></i>
+           <span>Hero Carousel</span>
+           </NavLink>
+          </li>
+
+          <li>
 
             <NavLink to="/members" onClick={closeSidebar}>
 

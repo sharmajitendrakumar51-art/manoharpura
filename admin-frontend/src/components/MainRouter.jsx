@@ -6,6 +6,7 @@ import AdminLogin from "../pages/AdminLogin";
 import AdminForgotPassword from "../pages/AdminForgotPassword";
 
 import Dashboard from "../pages/Dashboard";
+import Hero from "../pages/Hero";
 import Members from "../pages/Members";
 import AddMember from "../pages/AddMember";
 import InactiveMember from "../pages/InactiveMember";
@@ -64,6 +65,17 @@ const MainRouter = () => {
             <AdminLayout>
               <Dashboard />
             </AdminLayout>
+          }
+        />
+
+        {/* Hero Carousel */}
+
+        <Route
+            path="/hero"
+            element={
+              <AdminLayout>
+                <Hero />
+              </AdminLayout>
           }
         />
 

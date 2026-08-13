@@ -8,6 +8,7 @@ import eventRoutes from "./routes/eventRoutes.js";
 import newsRoutes from "./routes/newsRoutes.js";
 import notificationRoutes from "./routes/notificationRoutes.js";
 import authRoutes from "./routes/authRoutes.js";
+import heroRoutes from "./routes/heroRoutes.js";
 
 dotenv.config();
 
@@ -25,6 +26,7 @@ app.use("/api/gallery", galleryRoutes);
 app.use("/api/event", eventRoutes);
 app.use("/api/news", newsRoutes);
 app.use("/api/notification", notificationRoutes);
+app.use("/api/hero", heroRoutes);
 
 const PORT = process.env.PORT || 3000;
 
