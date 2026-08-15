@@ -187,15 +187,15 @@ const News = () => {
 
 
           <h1>
-            News & Updates
+            News
           </h1>
 
 
-          <p>
+          {/* <p>
             Stay updated with the latest news,
             announcements and activities of
             Manoharpura Mokshdham Vikas Samiti.
-          </p>
+          </p> */}
 
         </div>
 
@@ -213,7 +213,7 @@ const News = () => {
 
           {/* SECTION HEADING */}
 
-          <div className="news-heading">
+          {/* <div className="news-heading">
 
             <span>
 
@@ -234,7 +234,7 @@ const News = () => {
               announcements from our organization.
             </p>
 
-          </div>
+          </div> */}
 
 
           {/* =================================================
@@ -402,7 +402,7 @@ const News = () => {
           BOTTOM CTA
       ================================================= */}
 
-      <section className="news-cta">
+      {/* <section className="news-cta">
 
         <div className="news-cta-content">
 
@@ -423,7 +423,7 @@ const News = () => {
 
         </div>
 
-      </section>
+      </section> */}
 
     </div>
 

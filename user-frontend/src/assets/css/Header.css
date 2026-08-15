@@ -634,3 +634,407 @@ body {
     }
 
 }
+
+/* =====================================================
+   MOBILE OFFCANVAS MENU
+===================================================== */
+
+.mobile-menu {
+    width: 290px !important;
+    max-width: 85vw;
+
+    background: #ffffff;
+
+    border: none !important;
+
+    box-shadow:
+        8px 0 35px rgba(0, 0, 0, 0.15);
+}
+
+
+/* =====================================================
+   MOBILE MENU HEADER
+===================================================== */
+
+.mobile-menu-header {
+
+    min-height: 78px;
+
+    padding: 14px 15px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    border-bottom: 1px solid #eeeeee;
+
+    background: #ffffff;
+}
+
+
+/* =====================================================
+   MOBILE MENU TITLE
+===================================================== */
+
+.mobile-menu-title {
+
+    display: flex;
+    align-items: center;
+
+    gap: 10px;
+
+    min-width: 0;
+}
+
+
+.mobile-menu-title img {
+
+    width: 43px;
+    height: 43px;
+
+    object-fit: contain;
+
+    border-radius: 50%;
+
+    flex-shrink: 0;
+}
+
+
+.mobile-menu-title h5 {
+
+    margin: 0;
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+    color: #0d47a1;
+
+    white-space: nowrap;
+
+    overflow: hidden;
+
+    text-overflow: ellipsis;
+}
+
+
+.mobile-menu-title small {
+
+    display: block;
+
+    margin-top: 2px;
+
+    font-size: 8px;
+
+    color: #ff9800;
+
+    font-weight: 600;
+
+    white-space: nowrap;
+}
+
+
+/* =====================================================
+   CUSTOM CLOSE BUTTON
+===================================================== */
+
+.mobile-menu-close {
+
+    width: 40px;
+    height: 40px;
+
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: none;
+
+    border-radius: 10px;
+
+    background: #f5f7fb;
+
+    color: #0d47a1;
+
+    cursor: pointer;
+
+    transition: all 0.25s ease;
+}
+
+
+.mobile-menu-close i {
+
+    font-size: 18px;
+
+    line-height: 1;
+}
+
+
+.mobile-menu-close:hover {
+
+    background: #0d47a1;
+
+    color: #ffffff;
+
+    transform: rotate(90deg);
+}
+
+
+.mobile-menu-close:active {
+
+    transform: scale(0.92);
+}
+
+
+/* =====================================================
+   MOBILE MENU BODY
+===================================================== */
+
+.mobile-menu-body {
+
+    padding: 12px 14px 25px;
+
+    background: #ffffff;
+}
+
+
+/* =====================================================
+   MOBILE NAV
+===================================================== */
+
+.mobile-nav {
+
+    margin: 0;
+
+    padding: 0;
+
+    list-style: none;
+}
+
+
+.mobile-nav li {
+
+    margin: 0;
+
+    padding: 0;
+
+    border-bottom: 1px solid #eeeeee;
+}
+
+
+.mobile-nav .nav-link {
+
+    min-height: 54px;
+
+    padding: 0 5px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 14px;
+
+    color: #17365f;
+
+    font-size: 15px;
+
+    font-weight: 500;
+
+    text-decoration: none;
+
+    transition: all 0.25s ease;
+}
+
+
+.mobile-nav .nav-link i {
+
+    width: 24px;
+
+    font-size: 17px;
+
+    color: #0d47a1;
+
+    text-align: center;
+}
+
+
+.mobile-nav .nav-link:hover {
+
+    padding-left: 10px;
+
+    color: #0d47a1;
+
+    background: #f7faff;
+}
+
+
+.mobile-nav .nav-link:hover i {
+
+    color: #ff9800;
+}
+
+
+/* Active Link */
+
+.mobile-nav .nav-link.active {
+
+    color: #0d47a1;
+
+    font-weight: 700;
+
+    background: #f7faff;
+
+    border-right: 3px solid #ff9800;
+}
+
+
+.mobile-nav .nav-link.active i {
+
+    color: #ff9800;
+}
+
+
+/* =====================================================
+   DIVIDER
+===================================================== */
+
+.mobile-menu-divider {
+
+    height: 1px;
+
+    width: 100%;
+
+    margin: 18px 0;
+
+    background: #e5e7eb;
+}
+
+
+/* =====================================================
+   LOGIN BUTTON
+===================================================== */
+
+.mobile-login-btn {
+
+    width: 100%;
+
+    min-height: 46px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 9px;
+
+    padding: 10px 15px;
+
+    border-radius: 9px;
+
+    background: #0d47a1;
+
+    color: #ffffff;
+
+    text-decoration: none;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    box-shadow:
+        0 7px 18px rgba(13, 71, 161, 0.20);
+
+    transition: all 0.25s ease;
+}
+
+
+.mobile-login-btn i {
+
+    font-size: 17px;
+}
+
+
+.mobile-login-btn:hover {
+
+    background: #ff9800;
+
+    color: #ffffff;
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 9px 20px rgba(255, 152, 0, 0.25);
+}
+
+
+/* =====================================================
+   MOBILE ONLY
+===================================================== */
+
+@media (min-width: 992px) {
+
+    .mobile-menu {
+        display: none !important;
+    }
+
+}
+
+
+/* =====================================================
+   SMALL MOBILE
+===================================================== */
+
+@media (max-width: 576px) {
+
+    .mobile-menu {
+
+        width: 280px !important;
+
+        max-width: 85vw;
+    }
+
+
+    .mobile-menu-header {
+
+        min-height: 72px;
+
+        padding: 12px;
+    }
+
+
+    .mobile-menu-title img {
+
+        width: 40px;
+        height: 40px;
+    }
+
+
+    .mobile-menu-title h5 {
+
+        font-size: 13px;
+    }
+
+
+    .mobile-menu-title small {
+
+        font-size: 7px;
+    }
+
+
+    .mobile-menu-close {
+
+        width: 38px;
+        height: 38px;
+    }
+
+
+    .mobile-nav .nav-link {
+
+        min-height: 51px;
+
+        font-size: 14px;
+    }
+
+}

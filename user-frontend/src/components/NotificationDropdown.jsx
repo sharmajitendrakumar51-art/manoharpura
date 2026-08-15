@@ -276,55 +276,68 @@ const NotificationDropdown = () => {
           DROPDOWN
       ================================================= */}
 
-      {open && (
+   {open && (
 
-        <>
+  <>
 
-          {/* Mobile overlay */}
+    {/* Mobile overlay */}
 
-          <div
-            className="notification-overlay"
-            onClick={() => setOpen(false)}
-          ></div>
-
-
-          <div className="notification-dropdown">
+    <div
+      className="notification-overlay"
+      onClick={() => setOpen(false)}
+    ></div>
 
 
-            {/* HEADER */}
+    {/* NOTIFICATION DROPDOWN */}
 
-            <div className="notification-header">
-
-              <div>
-
-                <h5>
-                  Notifications
-                </h5>
-
-                <span>
-
-                  {unreadNotifications.length} unread
-
-                </span>
-
-              </div>
+    <div className="notification-dropdown">
 
 
-              {notifications.length > 0 && (
+      {/* HEADER */}
 
-                <button
-                  type="button"
-                  onClick={markAllAsRead}
-                  className="mark-read-btn"
-                >
+      <div className="notification-header">
 
-                  Mark all read
+  <div className="notification-header-left">
 
-                </button>
+    <h5>
+      Notifications
+    </h5>
 
-              )}
+    <span>
+      {unreadNotifications.length} unread
+    </span>
 
-            </div>
+  </div>
+
+
+  <div className="notification-header-actions">
+
+    {notifications.length > 0 && (
+      <button
+        type="button"
+        onClick={markAllAsRead}
+        className="mark-read-btn"
+      >
+        Mark all read
+      </button>
+    )}
+
+
+    {/* CLOSE BUTTON */}
+
+    <button
+      type="button"
+      className="notification-close-btn"
+      onClick={() => setOpen(false)}
+      aria-label="Close notifications"
+      title="Close"
+    >
+      <i className="bi bi-x-lg"></i>
+    </button>
+
+  </div>
+
+</div>
 
 
             {/* BODY */}

@@ -377,7 +377,7 @@ const formatDate = (date) => {
           <div className="gallery-container">
 
             <span className="gallery-eyebrow">
-              Our Memories
+              Memories & Moments
             </span>
 
             <h1>
@@ -514,7 +514,7 @@ const formatDate = (date) => {
 
               <i className="bi bi-images"></i>
 
-              Our Memories
+              Memories & Moments
 
             </span>
 
@@ -524,11 +524,11 @@ const formatDate = (date) => {
             </h1>
 
 
-            <p>
+            {/* <p>
               Explore the memorable moments,
               events, celebrations and activities
               of Manoharpura Mokshdham Vikas Samiti.
-            </p>
+            </p> */}
 
           </div>
 
@@ -549,7 +549,7 @@ const formatDate = (date) => {
 
           <div className="gallery-section-heading">
 
-            <div>
+            {/* <div>
 
               <span className="gallery-small-title">
                 Memories & Moments
@@ -564,7 +564,7 @@ const formatDate = (date) => {
                 activities and memorable moments.
               </p>
 
-            </div>
+            </div> */}
 
 
             <div className="gallery-count">

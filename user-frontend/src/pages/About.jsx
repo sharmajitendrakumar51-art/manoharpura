@@ -88,7 +88,7 @@ const About = () => {
 
   <div className="container">
 
-    <div className="section-title">
+    {/* <div className="section-title">
 
       <h2>Our Mission & Vision</h2>
 
@@ -96,7 +96,7 @@ const About = () => {
         Dedicated to serving society with dignity, compassion and responsibility.
       </p>
 
-    </div>
+    </div> */}
 
     <div className="row g-4">
 

@@ -197,21 +197,21 @@ const formatTime = (time) => {
 
             <i className="bi bi-calendar-event-fill"></i>
 
-            Events & Activities
+           Social and Other Activities
 
           </span>
 
 
           <h1>
-            Our Events
+           Upcoming & Past Events
           </h1>
 
 
-          <p>
+          {/* <p>
             Stay connected with the latest events,
             activities and important programs
             organized by Manoharpura Mokshdham.
-          </p>
+          </p> */}
 
         </div>
 
@@ -227,7 +227,7 @@ const formatTime = (time) => {
         <div className="events-container">
 
 
-          <div className="events-heading">
+          {/* <div className="events-heading">
 
             <span>
 
@@ -238,10 +238,10 @@ const formatTime = (time) => {
             </span>
 
             <h2>
-              Upcoming & Recent Events
+              Upcoming & Past Events
             </h2>
 
-          </div>
+          </div> */}
 
 
           {/* ===============================
@@ -298,7 +298,7 @@ const formatTime = (time) => {
 
                         <i className="bi bi-star-fill"></i>
 
-                        New
+                        Upcoming
 
                       </span>
 
@@ -420,7 +420,7 @@ const formatTime = (time) => {
           BOTTOM CTA
       ================================= */}
 
-      <section className="events-cta">
+      {/* <section className="events-cta">
 
         <h2>
           Stay Connected With Us
@@ -431,7 +431,7 @@ const formatTime = (time) => {
           programs and activities.
         </p>
 
-      </section>
+      </section> */}
 
     </div>
 

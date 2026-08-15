@@ -18,17 +18,17 @@ const Membership = () => {
 
           <div className="membership-eyebrow">
             <i className="bi bi-people-fill"></i>
-            Membership
+           Apply Membership
           </div>
 
           <h1>
-            Become a Member
-          </h1>
+            Join the Samiti and contribute towards Seva, Samarpan & Sanskaar.
+          </h1> <br />
 
-          <p>
+          {/* <p>
             Join Manoharpura Mokshdham Vikas Samiti and
             contribute towards Seva, Samarpan & Sanskaar.
-          </p>
+          </p> */}
 
           <button
             className="membership-apply-btn"
@@ -36,7 +36,7 @@ const Membership = () => {
           >
             <i className="bi bi-person-plus-fill"></i>
 
-            Apply Membership
+            Sign Up
 
             <i className="bi bi-arrow-right"></i>
           </button>
@@ -65,10 +65,10 @@ const Membership = () => {
               Who Can Become a Member?
             </h2>
 
-            <p>
+            {/* <p>
               The person having the following eligibility
               can become a member of the society.
-            </p>
+            </p> */}
 
           </div>
 
@@ -177,9 +177,9 @@ const Membership = () => {
               Choose Your Membership
             </h2>
 
-            <p>
+            {/* <p>
               Select the membership plan that suits you.
-            </p>
+            </p> */}
 
           </div>
 
@@ -195,27 +195,27 @@ const Membership = () => {
               </div>
 
               <h3>
-                Annual Membership
+                Two Year Membership
               </h3>
 
               <div className="plan-price">
-                ₹500
+                ₹1000
               </div>
 
-              <p>
-                Membership Fee per year
-              </p>
-
+              {/* <p>
+                ₹500/- per year
+              </p> */}
+              <br />  
               <ul>
 
                 <li>
                   <i className="bi bi-check-circle-fill"></i>
-                  Valid for one year
+                 Membership fee ₹500/- per year
                 </li>
 
                 <li>
                   <i className="bi bi-check-circle-fill"></i>
-                  Society membership
+                  Renew membership every two years 
                 </li>
 
                 <li>
@@ -258,19 +258,19 @@ const Membership = () => {
               </div>
 
               <p>
-                One-time membership fee
+                {/* One-time  */}
               </p>
 
               <ul>
 
                 <li>
                   <i className="bi bi-check-circle-fill"></i>
-                  Lifetime membership
+                   One-time membership fee
                 </li>
 
                 <li>
                   <i className="bi bi-check-circle-fill"></i>
-                  Society membership
+                  Donors contributing ₹11,000
                 </li>
 
                 <li>
@@ -310,12 +310,12 @@ const Membership = () => {
 
             <span>
               <i className="bi bi-list-check"></i>
-              Application Process
+              Membership Application Process
             </span>
 
-            <h2>
+            {/* <h2>
               How to Become a Member?
-            </h2>
+            </h2> */}
 
           </div>
 
@@ -401,12 +401,12 @@ const Membership = () => {
 
             <span>
               <i className="bi bi-person-lines-fill"></i>
-              Membership Application
+              Contact Our Nominated Members
             </span>
 
-            <h2>
+            {/* <h2>
               Contact Our Nominated Members
-            </h2>
+            </h2> */}
 
             <p>
               Interested persons may apply for obtaining
@@ -432,7 +432,7 @@ const Membership = () => {
                 </h3>
 
                 <p>
-                  Nominated Member
+                  {/* Nominated Member */}
                 </p>
 
                 <a href="tel:+919782154208">
@@ -458,7 +458,7 @@ const Membership = () => {
                 </h3>
 
                 <p>
-                  Nominated Member
+                  {/* Nominated Member */}
                 </p>
 
                 <a href="tel:+918239630520">
@@ -481,7 +481,7 @@ const Membership = () => {
           CERTIFICATION
       ========================================= */}
 
-      <section className="membership-certification">
+      {/* <section className="membership-certification">
 
         <div className="membership-container">
 
@@ -509,14 +509,14 @@ const Membership = () => {
 
         </div>
 
-      </section>
+      </section> */}
 
 
       {/* =========================================
           FINAL CTA
       ========================================= */}
 
-      <section className="membership-cta">
+      {/* <section className="membership-cta">
 
         <div className="membership-container">
 
@@ -541,7 +541,7 @@ const Membership = () => {
 
         </div>
 
-      </section>
+      </section> */}
 
     </div>
   );

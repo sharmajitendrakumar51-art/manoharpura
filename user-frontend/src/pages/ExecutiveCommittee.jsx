@@ -179,14 +179,14 @@ const ExecutiveCommittee = () => {
         <div className="committee-container">
 
           <span className="committee-small-title">
-            Leadership & Service
+            Members of 
           </span>
 
           <h1>
             Executive Committee
           </h1>
 
-          <p>
+          {/* <p>
             Meet the dedicated members of
             Manoharpura Mokshdham Vikas Samiti
             serving the community with{" "}
@@ -194,7 +194,7 @@ const ExecutiveCommittee = () => {
             <strong>
               Seva, Samarpan & Sanskaar.
             </strong>
-          </p>
+          </p> */}
 
         </div>
 
@@ -205,7 +205,7 @@ const ExecutiveCommittee = () => {
           INTRODUCTION
       ====================================== */}
 
-      <section className="committee-intro">
+      {/* <section className="committee-intro">
 
         <div className="committee-container">
 
@@ -227,7 +227,7 @@ const ExecutiveCommittee = () => {
 
         </div>
 
-      </section>
+      </section> */}
 
 
       {/* ======================================
@@ -241,7 +241,7 @@ const ExecutiveCommittee = () => {
 
           {/* Section Heading */}
 
-          <div className="section-heading">
+          {/* <div className="section-heading">
 
             <span className="section-tag">
               Committee Members
@@ -256,7 +256,7 @@ const ExecutiveCommittee = () => {
               organization year by year.
             </p>
 
-          </div>
+          </div> */}
 
 
           {/* ==================================

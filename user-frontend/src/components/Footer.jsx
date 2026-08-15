@@ -21,7 +21,7 @@ const Footer = () => {
 
                 <div className="ms-3">
 
-                  <h4>Manoharpura Ideal Mokshdham</h4>
+                  <h4>Manoharpura Mokshdham Vikas Samiti</h4>
 
                   <p>Seva • Samarpan • Sanskaar</p>
 
@@ -31,7 +31,7 @@ const Footer = () => {
 
               <p className="footer-about mt-4">
 
-                Manoharpura Ideal Mokshdham Vikas Samiti is committed to
+                Manoharpura Mokshdham Vikas Samiti is committed to
                 providing respectful services, community welfare, and better
                 facilities with transparency and dedication.
 
@@ -147,8 +147,7 @@ const Footer = () => {
 
             <p>
 
-              © {new Date().getFullYear()} Manoharpura Ideal Mokshdham Vikas
-              Samiti. All Rights Reserved.
+              © {new Date().getFullYear()} Manoharpura Mokshdham Vikas Samiti. All Rights Reserved.
 
             </p>
 

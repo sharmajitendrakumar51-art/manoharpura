@@ -31,6 +31,14 @@ const Header = () => {
 
                 <span>
 
+                  <i className="bi bi-telephone-fill"></i>
+
+                  +91 98283 99184
+
+                </span>
+
+                <span>
+
                   <i className="bi bi-envelope-fill"></i>
 
                   mmvsjaipur@gmail.com
@@ -165,73 +173,79 @@ const Header = () => {
 
       </div>
 
-      {/* ================= Mobile Right ================= */}
+     
 
-      <div className="mobile-actions d-flex d-lg-none">
+    {/* ================= Mobile Right ================= */}
 
-        {/* Login */}
+<div className="mobile-actions d-flex d-lg-none">
 
-        <div className="dropdown">
+  {/* ================= Notification ================= */}
 
-          <button
-            className="btn user-icon"
-            data-bs-toggle="dropdown"
-          >
+  <NotificationDropdown />
 
-            <i className="bi bi-person-circle"></i>
 
-          </button>
+  {/* ================= Login ================= */}
 
-          <ul className="dropdown-menu dropdown-menu-end">
+  <div className="dropdown">
 
-            <li>
+    <button
+      className="btn user-icon"
+      data-bs-toggle="dropdown"
+    >
+      <i className="bi bi-person-circle"></i>
+    </button>
 
-              <Link
-                className="dropdown-item"
-                to="/login"
-              >
 
-                <i className="bi bi-box-arrow-in-right me-2"></i>
+    <ul className="dropdown-menu dropdown-menu-end">
 
-                Login
+      <li>
 
-              </Link>
-
-            </li>
-
-            <li>
-
-              <Link
-                className="dropdown-item"
-                to="/signup"
-              >
-
-                <i className="bi bi-person-plus-fill me-2"></i>
-
-                Sign Up
-
-              </Link>
-
-            </li>
-
-          </ul>
-
-        </div>
-
-        {/* Hamburger */}
-
-        <button
-          className="navbar-toggler"
-          type="button"
-          data-bs-toggle="offcanvas"
-          data-bs-target="#mobileMenu"
+        <Link
+          className="dropdown-item"
+          to="/login"
         >
+          <i className="bi bi-box-arrow-in-right me-2"></i>
 
-          <i className="bi bi-list"></i>
+          Login
 
-        </button>
+        </Link>
 
-      </div>
+      </li>
+
+
+      <li>
+
+        <Link
+          className="dropdown-item"
+          to="/signup"
+        >
+          <i className="bi bi-person-plus-fill me-2"></i>
+
+          Sign Up
+
+        </Link>
+
+      </li>
+
+    </ul>
+
+  </div>
+
+
+  {/* ================= Hamburger ================= */}
+
+  <button
+    className="navbar-toggler"
+    type="button"
+    data-bs-toggle="offcanvas"
+    data-bs-target="#mobileMenu"
+  >
+
+    <i className="bi bi-list"></i>
+
+  </button>
+
+</div>
 
     </div>
 
@@ -316,56 +330,179 @@ const Header = () => {
 
  </header>
 
-      {/* Mobile Menu */}
+     {/* =========================
+    MOBILE MENU
+========================= */}
 
-      <div
-        className="offcanvas offcanvas-start"
-        id="mobileMenu"
-      >
+<div
+  className="offcanvas offcanvas-start mobile-menu"
+  id="mobileMenu"
+  tabIndex="-1"
+>
 
-        <div className="offcanvas-header">
+  {/* =========================
+      Mobile Menu Header
+  ========================= */}
 
-          <h5>Menu</h5>
+  <div className="offcanvas-header mobile-menu-header">
 
-          <button
-            className="btn-close"
-            data-bs-dismiss="offcanvas"
-          ></button>
+    <div className="mobile-menu-title">
 
-        </div>
+      <img
+        src={mokshdhamlogo}
+        alt="Manoharpura Mokshdham"
+      />
 
-        <div className="offcanvas-body">
-
-          <ul className="navbar-nav">
-
-            <li><NavLink className="nav-link" to="/">Home</NavLink></li>
-
-            <li><NavLink className="nav-link" to="/about">About</NavLink></li>
-
-            <li><NavLink className="nav-link" to="/membership">Membership</NavLink></li>
-
-            <li><NavLink className="nav-link" to="/committee">Executive Committee</NavLink></li>
-
-            <li><NavLink className="nav-link" to="/events">Event</NavLink></li>
-
-            <li><NavLink className="nav-link" to="/gallery">Gallery</NavLink></li>
-
-            <li><NavLink className="nav-link" to="/contact">Contact</NavLink></li>
-
-          </ul>
-
-          <hr />
-
-          <button className="btn btn-primary w-100">
-            <i className="bi bi-person-circle me-2"></i>
-
-            Login / Profile
-
-          </button>
-
-        </div>
-
+      <div>
+        <h5>Manoharpura Mokshdham</h5>
+        <small>Seva • Samarpan • Sanskaar</small>
       </div>
+
+    </div>
+
+
+    {/* Custom Close Button */}
+
+    <button
+      type="button"
+      className="mobile-menu-close"
+      data-bs-dismiss="offcanvas"
+      aria-label="Close"
+    >
+      <i className="bi bi-x-lg"></i>
+    </button>
+
+  </div>
+
+
+  {/* =========================
+      Mobile Menu Body
+  ========================= */}
+
+  <div className="offcanvas-body mobile-menu-body">
+
+    <ul className="navbar-nav mobile-nav">
+
+      <li>
+        <NavLink
+          className="nav-link"
+          to="/"
+          data-bs-dismiss="offcanvas"
+        >
+          <i className="bi bi-house-door-fill"></i>
+          <span>Home</span>
+        </NavLink>
+      </li>
+
+
+      <li>
+        <NavLink
+          className="nav-link"
+          to="/about"
+          data-bs-dismiss="offcanvas"
+        >
+          <i className="bi bi-info-circle-fill"></i>
+          <span>About</span>
+        </NavLink>
+      </li>
+
+
+      <li>
+        <NavLink
+          className="nav-link"
+          to="/membership"
+          data-bs-dismiss="offcanvas"
+        >
+          <i className="bi bi-people-fill"></i>
+          <span>Membership</span>
+        </NavLink>
+      </li>
+
+
+      <li>
+        <NavLink
+          className="nav-link"
+          to="/committee"
+          data-bs-dismiss="offcanvas"
+        >
+          <i className="bi bi-person-badge-fill"></i>
+          <span>Executive Committee</span>
+        </NavLink>
+      </li>
+
+
+      <li>
+        <NavLink
+          className="nav-link"
+          to="/events"
+          data-bs-dismiss="offcanvas"
+        >
+          <i className="bi bi-calendar-event-fill"></i>
+          <span>Events</span>
+        </NavLink>
+      </li>
+
+
+      <li>
+        <NavLink
+          className="nav-link"
+          to="/news"
+          data-bs-dismiss="offcanvas"
+        >
+          <i className="bi bi-newspaper"></i>
+          <span>News</span>
+        </NavLink>
+      </li>
+
+
+      <li>
+        <NavLink
+          className="nav-link"
+          to="/gallery"
+          data-bs-dismiss="offcanvas"
+        >
+          <i className="bi bi-images"></i>
+          <span>Gallery</span>
+        </NavLink>
+      </li>
+
+
+      <li>
+        <NavLink
+          className="nav-link"
+          to="/contact"
+          data-bs-dismiss="offcanvas"
+        >
+          <i className="bi bi-envelope-fill"></i>
+          <span>Contact</span>
+        </NavLink>
+      </li>
+
+    </ul>
+
+
+    {/* Divider */}
+
+    <div className="mobile-menu-divider"></div>
+
+
+    {/* Login */}
+
+    <Link
+      to="/login"
+      className="mobile-login-btn"
+      data-bs-dismiss="offcanvas"
+    >
+
+      <i className="bi bi-person-circle"></i>
+
+      <span>Login / Profile</span>
+
+    </Link>
+
+  </div>
+
+</div>
 
     </>
   );

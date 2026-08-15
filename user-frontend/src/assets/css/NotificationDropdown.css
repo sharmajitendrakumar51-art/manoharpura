@@ -611,3 +611,99 @@
   }
 
 }
+
+/* =========================================
+   NOTIFICATION HEADER
+========================================= */
+
+.notification-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+}
+
+
+/* Left Side */
+
+.notification-header-left {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+
+/* Right Side */
+
+.notification-header-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+
+/* =========================================
+   CLOSE BUTTON
+========================================= */
+
+.notification-close-btn {
+  width: 36px;
+  height: 36px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: none;
+  background: transparent;
+
+  border-radius: 50%;
+
+  color: #64748b;
+
+  font-size: 16px;
+
+  cursor: pointer;
+
+  transition: all 0.25s ease;
+}
+
+
+.notification-close-btn:hover {
+  background: #f1f5f9;
+  color: #0d47a1;
+
+  transform: rotate(90deg);
+}
+
+
+.notification-close-btn:active {
+  transform: scale(0.92);
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 576px) {
+
+  .notification-header {
+    padding: 15px;
+  }
+
+  .notification-header-actions {
+    gap: 5px;
+  }
+
+  .mark-read-btn {
+    font-size: 12px;
+  }
+
+  .notification-close-btn {
+    width: 34px;
+    height: 34px;
+    font-size: 15px;
+  }
+
+}
