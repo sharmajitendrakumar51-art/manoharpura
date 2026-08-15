@@ -400,81 +400,89 @@
 
 .committee-image-wrapper {
   width: 100%;
-  height: 175px;
+  height: 300px;
 
   display: flex;
   align-items: center;
   justify-content: center;
 
-  background: radial-gradient(
-    circle at center,
-    #ffffff 0%,
-    #f4f8fd 70%,
-    #edf4fb 100%
+  padding: 18px;
+
+  background: linear-gradient(
+    135deg,
+    #f4f8fd,
+    #eaf1f9
   );
+
+  overflow: hidden;
+
+  border-radius: 20px 20px 0 0;
 }
 
 
 /* =========================================================
-   MEMBER IMAGE - RECTANGLE DESIGN
+   MEMBER IMAGE
+   35 : 45 RATIO
 ========================================================= */
 
 .committee-member-image {
-  width: 100%;
-  height: 175px;
+  width: 200px;
+  height: 250px;
 
   display: block;
 
   object-fit: cover;
+  object-position: center;
 
-  border-radius: 0;
+  border-radius: 14px;
 
-  border: none;
+  border: 4px solid #ffffff;
 
-  outline: none;
-
-  box-shadow: none;
+  box-shadow:
+    0 8px 22px rgba(13, 71, 161, 0.16);
 
   transition:
     transform 0.35s ease,
-    filter 0.35s ease;
+    box-shadow 0.35s ease;
 }
 
 
-/* Hover Effect */
+/* =========================================================
+   IMAGE HOVER
+========================================================= */
 
 .committee-card:hover .committee-member-image {
   transform: scale(1.03);
 
-  filter: brightness(1.05);
+  box-shadow:
+    0 12px 28px rgba(13, 71, 161, 0.22);
 }
 
+
 /* =========================================================
-   PLACEHOLDER IMAGE
+   PLACEHOLDER
 ========================================================= */
 
 .committee-placeholder {
-  width: 125px;
-  height: 125px;
+  width: 210px;
+  height: 270px;
 
   display: flex;
   align-items: center;
   justify-content: center;
-
-  border-radius: 50%;
 
   background: #ffffff;
 
   color: #1565c0;
 
-  font-size: 48px;
+  font-size: 45px;
 
-  border: 5px solid #ffffff;
+  border-radius: 14px;
 
-  outline: 3px solid #ff9800;
+  border: 4px solid #ffffff;
 
   box-shadow:
-    0 7px 18px rgba(13, 71, 161, 0.15);
+    0 8px 22px rgba(13, 71, 161, 0.16);
 }
 
 
@@ -812,14 +820,21 @@
     margin: 0 auto;
   }
 
-  .committee-image-wrapper {
-    height: 175px;
+ .committee-image-wrapper {
+    width: 100%;
+    height: 285px;
+
+    padding: 15px;
+
+    border-radius: 18px 18px 0 0;
   }
 
   .committee-member-image,
   .committee-placeholder {
-    width: 125px;
-    height: 125px;
+    width: 185px;
+    height: 238px;
+
+    border-radius: 12px;
   }
 
   .committee-year-heading h3 {
@@ -846,14 +861,18 @@
     width: 255px;
   }
 
-  .committee-image-wrapper {
-    height: 165px;
+ .committee-image-wrapper {
+    height: 270px;
+
+    padding: 12px;
   }
 
   .committee-member-image,
   .committee-placeholder {
-    width: 115px;
-    height: 115px;
+    width: 170px;
+    height: 219px;
+
+    border-radius: 11px;
   }
 
 }
