@@ -39,11 +39,36 @@ const Footer = () => {
 
               <div className="social-icons">
 
-                <a href="#"><i className="bi bi-facebook"></i></a>
+                
+  {/* Facebook */}
+  <a
+    href="https://www.facebook.com/ManoharpuraMokshdham"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Facebook"
+  >
+    <i className="bi bi-facebook"></i>
+  </a>
 
-                <a href="#"><i className="bi bi-instagram"></i></a>
+  {/* Instagram */}
+  <a
+    href="https://www.instagram.com/manoharpuramokshdham"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Instagram"
+  >
+    <i className="bi bi-instagram"></i>
+  </a>
 
-                <a href="#"><i className="bi bi-youtube"></i></a>
+{/* YouTube */}
+  <a
+    href="https://www.youtube.com/@ManoharpuraMokshdham"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="YouTube"
+  >
+    <i className="bi bi-youtube"></i>
+  </a>
 
                 <a href="#"><i className="bi bi-whatsapp"></i></a>
 
@@ -104,35 +129,32 @@ const Footer = () => {
               <ul className="contact-list">
 
                 <li>
-
-                  <i className="bi bi-geo-alt-fill"></i>
-
-                  Jaipur, Rajasthan
-
+                  <a href="https://maps.app.goo.gl/vdLQ3xyQyb5tZrZL6"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >
+                 <i className="bi bi-geo-alt-fill"></i>
+                 Jaipur, Rajasthan
+                 </a>
                 </li>
 
                 <li>
-
-                  <i className="bi bi-telephone-fill"></i>
-
-                  +91 9828226516
-
+                  <a href="tel:+919828226516">
+                    <i className="bi bi-telephone-fill"></i>
+                    +91 9828226516
+                  </a>
                 </li>
 
                 <li>
-
-                  <i className="bi bi-envelope-fill"></i>
-
-                  mmvsjaipur@gmail.com
-
+                    <a href="mailto:mmvsjaipur@gmail.com">
+                      <i className="bi bi-envelope-fill"></i>
+                       mmvsjaipur@gmail.com
+                    </a>
                 </li>
 
                 <li>
-
                   <i className="bi bi-globe2"></i>
-
                   www.mokshdham.com
-
                 </li>
 
               </ul>
@@ -146,15 +168,11 @@ const Footer = () => {
           <div className="footer-bottom">
 
             <p>
-
               © {new Date().getFullYear()} Manoharpura Mokshdham Vikas Samiti. All Rights Reserved.
-
             </p>
 
             <p>
-
               Designed & Developed by <strong>Jitendra Sharma</strong>
-
             </p>
 
           </div>
@@ -164,9 +182,7 @@ const Footer = () => {
         {/* Back To Top */}
 
         <a href="#" className="back-top">
-
           <i className="bi bi-arrow-up"></i>
-
         </a>
 
       </footer>

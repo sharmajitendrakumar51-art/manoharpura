@@ -18,18 +18,25 @@ const Membership = () => {
 
           <div className="membership-eyebrow">
             <i className="bi bi-people-fill"></i>
-           Apply Membership
+           Eligibility
           </div>
 
           <h1>
-            Join the Samiti and contribute towards Seva, Samarpan & Sanskaar.
-          </h1> <br />
+            Who Can Become a Member?
+            {/* Join the Samiti and contribute towards Seva, Samarpan & Sanskaar. */}
+          </h1> 
 
-          {/* <p>
-            Join Manoharpura Mokshdham Vikas Samiti and
+
+            {/* <p>
+              The person having the following eligibility
+              can become a member of the society.
+            </p> */}
+
+           <p>
+            Join the Samiti and
             contribute towards Seva, Samarpan & Sanskaar.
-          </p> */}
-
+          </p> 
+{/* 
           <button
             className="membership-apply-btn"
             onClick={() => navigate("/apply-membership")}
@@ -39,7 +46,7 @@ const Membership = () => {
             Sign Up
 
             <i className="bi bi-arrow-right"></i>
-          </button>
+          </button> */}
 
         </div>
 
@@ -56,14 +63,14 @@ const Membership = () => {
 
           <div className="section-heading">
 
-            <span>
+            {/* <span>
               <i className="bi bi-check-circle-fill"></i>
               Eligibility
             </span>
 
             <h2>
               Who Can Become a Member?
-            </h2>
+            </h2> */}
 
             {/* <p>
               The person having the following eligibility

@@ -181,13 +181,13 @@ const News = () => {
 
             <i className="bi bi-newspaper"></i>
 
-            Latest Updates
+            Our Work in the Media
 
           </span>
 
 
           <h1>
-            News
+           News and Media Coverage 
           </h1>
 
 

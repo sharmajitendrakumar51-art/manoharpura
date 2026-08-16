@@ -381,14 +381,14 @@ const formatDate = (date) => {
             </span>
 
             <h1>
-              Gallery
+             Our Gallery
             </h1>
 
-            <p>
+            {/* <p>
               Explore the memorable moments,
               events and activities of
               Manoharpura Mokshdham Vikas Samiti.
-            </p>
+            </p> */}
 
           </div>
 
