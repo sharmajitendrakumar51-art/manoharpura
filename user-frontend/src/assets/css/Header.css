@@ -433,6 +433,8 @@ body {
 
 @media (max-width: 991px) {
 
+    
+
     body {
         padding-top: 75px;
     }
@@ -1181,7 +1183,7 @@ body {
 ========================================= */
 
 .mobile-menu-body {
-  padding: 10px 14px 20px !important;
+  padding: 30px 14px 20px !important;
 }
 
 
@@ -1349,6 +1351,8 @@ body {
 
 @media (max-width: 991px) {
 
+    
+
     .mobile-topbar-slider {
         display: flex;
 
@@ -1446,6 +1450,7 @@ body {
 
 @media (max-width: 991px) {
 
+   
     body {
         padding-top: 113px !important;
     }
@@ -1476,4 +1481,311 @@ body {
         padding-top: 106px !important;
     }
 
+}
+
+
+/* =========================================
+   MOBILE FLOATING DONATE
+========================================= */
+
+.mobile-floating-donate {
+  display: none;
+}
+
+
+/* =========================================
+   MOBILE ONLY
+========================================= */
+
+@media (max-width: 991px) {
+
+
+  .mobile-floating-donate {
+    display: block;
+
+    position: fixed;
+
+    right: 18px;
+    bottom: 78px;
+
+    z-index: 9998;
+  }
+
+
+  .mobile-floating-donate button {
+
+    border: none;
+
+    background: #ff9800;
+
+    color: #ffffff;
+
+    height: 48px;
+
+    padding: 0 18px;
+
+    border-radius: 25px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 8px;
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+    box-shadow:
+      0 8px 20px rgba(0, 0, 0, 0.20);
+
+    cursor: pointer;
+
+    transition: all 0.3s ease;
+  }
+
+
+  .mobile-floating-donate button i {
+
+    font-size: 16px;
+  }
+
+
+  .mobile-floating-donate button:hover {
+
+    transform: translateY(-3px);
+
+    box-shadow:
+      0 12px 25px rgba(0, 0, 0, 0.25);
+  }
+
+
+  .mobile-floating-donate button:active {
+
+    transform: scale(0.95);
+  }
+
+}
+
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 480px) {
+
+  .mobile-floating-donate {
+
+    right: 14px;
+
+    bottom: 72px;
+  }
+
+
+  .mobile-floating-donate button {
+
+    height: 44px;
+
+    padding: 0 15px;
+
+    font-size: 13px;
+
+    border-radius: 23px;
+  }
+
+
+  .mobile-floating-donate button i {
+
+    font-size: 14px;
+  }
+
+}
+
+/* =====================================================
+   MOBILE HEADER ICONS - PERFECTLY EQUAL
+===================================================== */
+
+@media (max-width: 991px) {
+
+    .mobile-actions {
+        display: flex !important;
+        align-items: center;
+        gap: 8px;
+        flex-shrink: 0;
+    }
+
+    /* Notification */
+    .mobile-actions .notification {
+        display: flex !important;
+        width: 42px !important;
+        height: 42px !important;
+        min-width: 42px;
+        padding: 0 !important;
+
+        align-items: center;
+        justify-content: center;
+
+        border: 1px solid #e8eef7;
+        border-radius: 12px;
+
+        background: #ffffff;
+        color: #0d47a1;
+
+        box-shadow: 0 5px 15px rgba(13, 71, 161, 0.12);
+
+        transition: all 0.25s ease;
+    }
+
+    .mobile-actions .notification i {
+        font-size: 19px !important;
+        color: #0d47a1;
+        line-height: 1;
+    }
+
+
+    /* User Icon */
+    .mobile-actions .user-icon {
+        width: 42px !important;
+        height: 42px !important;
+        min-width: 42px;
+
+        padding: 0 !important;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        border: 1px solid #e8eef7;
+        border-radius: 12px;
+
+        background: #ffffff;
+        color: #111827;
+
+        box-shadow: 0 5px 15px rgba(13, 71, 161, 0.12);
+
+        transition: all 0.25s ease;
+    }
+
+    .mobile-actions .user-icon i {
+        font-size: 20px !important;
+        line-height: 1;
+    }
+
+
+    /* Menu Button */
+    .mobile-actions .navbar-toggler {
+        width: 42px !important;
+        height: 42px !important;
+        min-width: 42px;
+
+        padding: 0 !important;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        border: 1px solid #e8eef7 !important;
+        border-radius: 12px;
+
+        background: #ffffff;
+        color: #0d47a1;
+
+        box-shadow: 0 5px 15px rgba(13, 71, 161, 0.12);
+
+        transition: all 0.25s ease;
+    }
+
+    .mobile-actions .navbar-toggler i {
+        font-size: 22px;
+        line-height: 1;
+    }
+
+
+    /* Hover */
+    .mobile-actions .notification:hover,
+    .mobile-actions .user-icon:hover,
+    .mobile-actions .navbar-toggler:hover {
+        transform: translateY(-2px);
+
+        border-color: #0d47a1;
+
+        box-shadow:
+            0 8px 20px rgba(13, 71, 161, 0.20);
+    }
+
+
+    /* Active / Click */
+    .mobile-actions .notification:active,
+    .mobile-actions .user-icon:active,
+    .mobile-actions .navbar-toggler:active {
+        transform: scale(0.94);
+    }
+}
+
+
+/* =====================================================
+   SMALL MOBILE
+===================================================== */
+
+@media (max-width: 576px) {
+
+    .mobile-actions {
+        gap: 6px;
+    }
+
+    .mobile-actions .notification,
+    .mobile-actions .user-icon,
+    .mobile-actions .navbar-toggler {
+        width: 40px !important;
+        height: 40px !important;
+        min-width: 40px;
+        border-radius: 11px;
+    }
+
+    .mobile-actions .notification i {
+        font-size: 18px !important;
+    }
+
+    .mobile-actions .user-icon i {
+        font-size: 19px !important;
+    }
+
+    .mobile-actions .navbar-toggler i {
+        font-size: 21px !important;
+    }
+}
+
+
+/* =====================================================
+   VERY SMALL MOBILE
+===================================================== */
+
+@media (max-width: 380px) {
+
+    .mobile-actions {
+        gap: 5px;
+    }
+
+    .mobile-actions .notification,
+    .mobile-actions .user-icon,
+    .mobile-actions .navbar-toggler {
+        width: 38px !important;
+        height: 38px !important;
+        min-width: 38px;
+        border-radius: 10px;
+    }
+
+    .mobile-actions .notification i {
+        font-size: 17px !important;
+    }
+
+    .mobile-actions .user-icon i {
+        font-size: 18px !important;
+    }
+
+    .mobile-actions .navbar-toggler i {
+        font-size: 20px !important;
+    }
 }

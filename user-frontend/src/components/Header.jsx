@@ -453,6 +453,28 @@ const Header = () => {
 
  </header>
 
+
+ {/* ==============================
+    MOBILE FLOATING DONATE BUTTON
+================================ */}
+
+<div className="mobile-floating-donate">
+
+  <button
+    type="button"
+    onClick={() => {
+      // Yaha baad me donation page/link laga sakte ho
+      console.log("Donate clicked");
+    }}
+  >
+    <i className="bi bi-heart-fill"></i>
+    <span>Donate Now</span>
+  </button>
+
+</div>
+
+
+
      {/* =========================
     MOBILE MENU
 ========================= */}

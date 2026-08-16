@@ -233,9 +233,7 @@ const Membership = () => {
               </ul>
 
               <button
-                onClick={() =>
-                  navigate("/apply-membership?type=annual")
-                }
+                 onClick={() => navigate("/login")}
               >
                 Apply Now
                 <i className="bi bi-arrow-right"></i>
@@ -288,9 +286,7 @@ const Membership = () => {
               </ul>
 
               <button
-                onClick={() =>
-                  navigate("/apply-membership?type=lifetime")
-                }
+                onClick={() => navigate("/login")}
               >
                 Apply Now
                 <i className="bi bi-arrow-right"></i>
