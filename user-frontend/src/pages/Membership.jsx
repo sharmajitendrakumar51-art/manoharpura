@@ -11,42 +11,27 @@ const Membership = () => {
       {/* =========================================
           HERO
       ========================================= */}
+     <section className="news-hero">
 
-      <section className="membership-hero">
+        <div className="news-hero-content">
 
-        <div className="membership-hero-content">
+          <span className="news-eyebrow">
 
-          <div className="membership-eyebrow">
-            <i className="bi bi-people-fill"></i>
+            <i className="bi bi-newspaper"></i>
+
            Eligibility
-          </div>
+
+          </span>
+
 
           <h1>
             Who Can Become a Member?
-            {/* Join the Samiti and contribute towards Seva, Samarpan & Sanskaar. */}
-          </h1> 
+          </h1>
 
-
-            {/* <p>
-              The person having the following eligibility
-              can become a member of the society.
-            </p> */}
-
-           <p>
+          <p>
             Join the Samiti and
             contribute towards Seva, Samarpan & Sanskaar.
           </p> 
-{/* 
-          <button
-            className="membership-apply-btn"
-            onClick={() => navigate("/apply-membership")}
-          >
-            <i className="bi bi-person-plus-fill"></i>
-
-            Sign Up
-
-            <i className="bi bi-arrow-right"></i>
-          </button> */}
 
         </div>
 

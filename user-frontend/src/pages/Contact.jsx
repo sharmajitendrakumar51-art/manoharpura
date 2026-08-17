@@ -3,7 +3,26 @@ import "../assets/css/Contact.css";
 const Contact = () => {
   return (
     <>
-      
+        <section className="news-hero">
+
+        <div className="news-hero-content">
+
+          <span className="news-eyebrow">
+
+            <i className="bi bi-newspaper"></i>
+
+            Contact Us
+
+          </span>
+
+
+          <h1>
+           Get in touch with us 
+          </h1>
+
+        </div>
+
+      </section>
 
       {/* Contact Information */}
 
@@ -33,7 +52,6 @@ const Contact = () => {
                   Village Manoharpura,
                   <br />
                   Jagatpura,
-                  <br />
                   Jaipur - 302017
                   <br />
                   Rajasthan, India
@@ -53,23 +71,23 @@ const Contact = () => {
                   <i className="bi bi-envelope-fill"></i>
                 </div>
 
-                <h4>Email & Contact</h4>
+                <h4>Email</h4>
 
-                <p>
+                {/* <p>
 
                   <strong>Email</strong>
 
-                </p>
+                </p> */}
 
                 <p>mmvsjaipur@gmail.com</p>
 
-                <p>
+                {/* <p>
 
                   <strong>Contact</strong>
 
                 </p>
 
-                <p>+91 9828226516</p>
+                <p>+91 9828226516</p> */}
 
               </div>
 
@@ -90,28 +108,25 @@ const Contact = () => {
                 <p>
 
                   <strong>
-                    Lala Ram Sharma
+                    Lala Ram Sharma, Secretary
                   </strong>
 
                 </p>
 
-                <p>
+                {/* <p>
                   Secretary
-                </p>
+                </p> */}
 
                 <p>
                   Baknado ki Dhani,
-                  <br />
-                  Manoharpura,
-                  <br />
                   Mithila Vihar-II,
                   <br />
-                  Jagatpura,
+                   Manoharpura, Jagatpura,
                   <br />
                   Jaipur - 302017
                 </p>
 
-                <p>
+                {/* <p>
 
                   <strong>
                     Contact:
@@ -121,7 +136,7 @@ const Contact = () => {
 
                   +91 9828399184
 
-                </p>
+                </p> */}
 
               </div>
 

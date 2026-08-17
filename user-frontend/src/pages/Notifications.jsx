@@ -138,12 +138,12 @@ const Notifications = () => {
         </h1>
 
 
-        <p>
+        {/* <p>
           Stay informed about the latest
           announcements, events and important
           updates from Manoharpura Mokshdham
           Vikas Samiti.
-        </p>
+        </p> */}
 
       </section>
 

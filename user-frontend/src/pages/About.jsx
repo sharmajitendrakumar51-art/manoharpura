@@ -4,6 +4,27 @@ import certificate from "../assets/images/certificate.jpg";
 const About = () => {
   return (
     <>
+    
+     <section className="news-hero">
+
+        <div className="news-hero-content">
+
+          <span className="news-eyebrow">
+
+            <i className="bi bi-newspaper"></i>
+
+            About Us
+
+          </span>
+
+
+          <h1>
+           Manoharpura Mokshdham Vikas Samiti
+          </h1>
+
+        </div>
+
+      </section>
 
       {/* About Section */}
 
@@ -36,12 +57,12 @@ const About = () => {
               <div className="about-content">
 
               
-
+{/* 
                 <h2>
                   Manoharpura Mokshdham
                   <br />
                   Vikas Samiti
-                </h2>
+                </h2> */}
 
                 <p>
 

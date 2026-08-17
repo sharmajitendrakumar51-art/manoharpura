@@ -189,15 +189,17 @@ const formatTime = (time) => {
           HERO
       ================================= */}
 
-      <section className="events-hero">
+      
 
-        <div className="events-hero-content">
+      <section className="news-hero">
 
-          <span className="events-eyebrow">
+        <div className="news-hero-content">
 
-            <i className="bi bi-calendar-event-fill"></i>
+          <span className="news-eyebrow">
 
-           Social and Other Activities
+            <i className="bi bi-newspaper"></i>
+
+            Social and Other Activities
 
           </span>
 
@@ -205,13 +207,6 @@ const formatTime = (time) => {
           <h1>
            Upcoming & Past Events
           </h1>
-
-
-          {/* <p>
-            Stay connected with the latest events,
-            activities and important programs
-            organized by Manoharpura Mokshdham.
-          </p> */}
 
         </div>
 

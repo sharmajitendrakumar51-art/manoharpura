@@ -174,27 +174,24 @@ const ExecutiveCommittee = () => {
           HERO
       ====================================== */}
 
-      <section className="committee-hero">
+      
 
-        <div className="committee-container">
+       <section className="news-hero">
 
-          <span className="committee-small-title">
+        <div className="news-hero-content">
+
+          <span className="news-eyebrow">
+
+            <i className="bi bi-newspaper"></i>
+
             Members of 
+
           </span>
 
+
           <h1>
-            Executive Committee
+           Executive Committee
           </h1>
-
-          {/* <p>
-            Meet the dedicated members of
-            Manoharpura Mokshdham Vikas Samiti
-            serving the community with{" "}
-
-            <strong>
-              Seva, Samarpan & Sanskaar.
-            </strong>
-          </p> */}
 
         </div>
 
