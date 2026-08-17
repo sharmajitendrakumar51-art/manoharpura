@@ -144,6 +144,13 @@ const Footer = () => {
                     +91 9828226516
                   </a>
                 </li>
+                 
+                  <li>
+                  <a href="tel:+919828399184">
+                    <i className="bi bi-telephone-fill"></i>
+                    +91 9828399184
+                  </a>
+                </li>
 
                 <li>
                     <a href="mailto:mmvsjaipur@gmail.com">

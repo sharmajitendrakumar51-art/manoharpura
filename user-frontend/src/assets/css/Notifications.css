@@ -81,9 +81,12 @@
 
 
 .notifications-container {
-  max-width: 850px;
-
+  max-width: 1200px;
   margin: auto;
+
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
 }
 
 
@@ -96,19 +99,15 @@
 
   gap: 15px;
 
-  margin-bottom: 13px;
-
   padding: 17px;
 
   border: 1px solid #e3ebf4;
-
   border-radius: 13px;
 
   background: #ffffff;
 
   box-shadow:
-    0 7px 22px
-    rgba(20, 54, 90, 0.06);
+    0 7px 22px rgba(20, 54, 90, 0.06);
 
   transition:
     transform 0.3s ease,
@@ -383,6 +382,15 @@
 
   .notification-card-content h2 {
     font-size: 16px;
+  }
+
+}
+
+@media (max-width: 768px) {
+
+  .notifications-container {
+    grid-template-columns: 1fr;
+    gap: 15px;
   }
 
 }

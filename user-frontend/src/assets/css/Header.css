@@ -252,36 +252,138 @@ body {
 }
 
 
-/* =========================================================
-   PROFILE / DONATE BUTTON
-========================================================= */
+/* =====================================================
+   PREMIUM DONATE BUTTON
+===================================================== */
 
 .profile-btn {
+    position: relative;
+    overflow: hidden;
+
     border: none;
     padding: 10px 22px;
     border-radius: 40px;
+
     background: linear-gradient(
         135deg,
-        #7faaea,
-        #1565C0
+        #ff9800,
+        #f57c00
     );
-    color: #fff;
-    font-weight: 600;
-    transition: 0.35s ease;
-    box-shadow: 0 8px 20px rgba(13, 71, 161, 0.25);
+
+    color: #ffffff;
+    font-weight: 700;
+    cursor: pointer;
+
+    box-shadow:
+        0 8px 20px rgba(255, 152, 0, 0.30);
+
+    transition:
+        transform 0.35s ease,
+        box-shadow 0.35s ease;
+
+    animation: donatePulse 2.5s infinite;
 }
+
+
+/* =====================================================
+   SHINE EFFECT
+===================================================== */
+
+.profile-btn::before {
+    content: "";
+
+    position: absolute;
+    top: 0;
+    left: -120%;
+
+    width: 60%;
+    height: 100%;
+
+    background: linear-gradient(
+        120deg,
+        transparent,
+        rgba(255, 255, 255, 0.55),
+        transparent
+    );
+
+    transform: skewX(-25deg);
+
+    animation: donateShine 3s infinite;
+}
+
+
+/* =====================================================
+   HOVER
+===================================================== */
 
 .profile-btn:hover {
-    transform: translateY(-3px);
+    transform: translateY(-4px) scale(1.04);
+
     background: linear-gradient(
         135deg,
-        #1565C0,
-        #42A5F5
+        #f57c00,
+        #ffb300
     );
-    box-shadow: 0 12px 30px rgba(13, 71, 161, 0.4);
+
+    box-shadow:
+        0 12px 30px rgba(255, 152, 0, 0.50),
+        0 0 20px rgba(255, 152, 0, 0.30);
+
+    animation-play-state: paused;
 }
 
 
+/* =====================================================
+   CLICK
+===================================================== */
+
+.profile-btn:active {
+    transform: translateY(-1px) scale(0.97);
+}
+
+
+/* =====================================================
+   PULSE GLOW
+===================================================== */
+
+@keyframes donatePulse {
+
+    0% {
+        box-shadow:
+            0 8px 20px rgba(255, 152, 0, 0.30);
+    }
+
+    50% {
+        box-shadow:
+            0 8px 25px rgba(255, 152, 0, 0.50),
+            0 0 0 6px rgba(255, 152, 0, 0.08);
+    }
+
+    100% {
+        box-shadow:
+            0 8px 20px rgba(255, 152, 0, 0.30);
+    }
+}
+
+
+/* =====================================================
+   SHINE ANIMATION
+===================================================== */
+
+@keyframes donateShine {
+
+    0% {
+        left: -120%;
+    }
+
+    45% {
+        left: 140%;
+    }
+
+    100% {
+        left: 140%;
+    }
+}
 /* =========================================================
    NOTIFICATION
 ========================================================= */
@@ -384,7 +486,7 @@ body {
     margin-top: 12px !important;
     border: none;
     border-radius: 18px;
-    background: rgba(255, 255, 255, 0.92);
+    background: rgba(189, 27, 27, 0.92);
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
     box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
