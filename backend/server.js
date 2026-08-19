@@ -9,6 +9,7 @@ import newsRoutes from "./routes/newsRoutes.js";
 import notificationRoutes from "./routes/notificationRoutes.js";
 import authRoutes from "./routes/authRoutes.js";
 import heroRoutes from "./routes/heroRoutes.js";
+import userAuthRoutes from "./routes/userAuthRoutes.js";
 
 dotenv.config();
 
@@ -27,6 +28,7 @@ app.use("/api/event", eventRoutes);
 app.use("/api/news", newsRoutes);
 app.use("/api/notification", notificationRoutes);
 app.use("/api/hero", heroRoutes);
+app.use("/api/user", userAuthRoutes);
 
 const PORT = process.env.PORT || 3000;
 

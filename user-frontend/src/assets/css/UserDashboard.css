@@ -1,0 +1,655 @@
+/* =========================================
+   USER DASHBOARD
+========================================= */
+
+.user-dashboard {
+
+    width: 100%;
+
+    min-height: 100vh;
+
+    box-sizing: border-box;
+
+    padding: 18px 28px;
+
+    background: #f5f7fb;
+
+}
+
+
+/* =========================================
+   DASHBOARD HEADER
+========================================= */
+
+.user-dashboard-header {
+
+    width: 100%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 20px;
+
+    margin-bottom: 24px;
+
+}
+
+
+/* =========================================
+   HEADING
+========================================= */
+
+.dashboard-heading h2 {
+
+    margin: 0;
+
+    font-size: 34px;
+
+    line-height: 1.2;
+
+    font-weight: 700;
+
+    color: #1769e0;
+
+}
+
+
+.dashboard-heading p {
+
+    margin: 5px 0 0;
+
+    font-size: 19px;
+
+    line-height: 1.4;
+
+    font-weight: 400;
+
+    color: #596579;
+
+}
+
+
+/* =========================================
+   APPLY MEMBERSHIP BUTTON
+========================================= */
+
+.apply-membership-btn {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 8px;
+
+    height: 48px;
+
+    padding: 0 20px;
+
+    border-radius: 10px;
+
+    background: #1769e0;
+
+    color: #ffffff;
+
+    text-decoration: none;
+
+    font-size: 16px;
+
+    font-weight: 600;
+
+    white-space: nowrap;
+
+    box-shadow:
+        0 6px 18px rgba(23, 105, 224, 0.20);
+
+    transition:
+        background 0.25s ease,
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+
+}
+
+
+.apply-membership-btn i {
+
+    font-size: 18px;
+
+}
+
+
+.apply-membership-btn:hover {
+
+    background: #0d5bd0;
+
+    color: #ffffff;
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 10px 22px rgba(23, 105, 224, 0.28);
+
+}
+
+
+/* =========================================
+   CARDS ROW
+========================================= */
+
+.dashboard-cards-row {
+
+    width: 100%;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, minmax(0, 1fr));
+
+    gap: 24px;
+
+}
+
+
+/* =========================================
+   CARD WRAPPER
+========================================= */
+
+.dashboard-card-wrapper {
+
+    min-width: 0;
+
+}
+
+
+/* =========================================
+   DASHBOARD CARD
+========================================= */
+
+.user-dashboard-card {
+
+    position: relative;
+
+    width: 100%;
+
+    height: 160px;
+
+    padding: 24px 26px;
+
+    box-sizing: border-box;
+
+    border-radius: 18px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    overflow: hidden;
+
+    color: #ffffff;
+
+    box-shadow:
+        0 8px 20px rgba(0, 0, 0, 0.07);
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+
+}
+
+
+.user-dashboard-card:hover {
+
+    transform: translateY(-4px);
+
+    box-shadow:
+        0 13px 28px rgba(0, 0, 0, 0.11);
+
+}
+
+
+/* =========================================
+   CARD CONTENT
+========================================= */
+
+.card-content {
+
+    position: relative;
+
+    z-index: 2;
+
+}
+
+
+.user-dashboard-card h6 {
+
+    margin: 0 0 10px;
+
+    font-size: 20px;
+
+    line-height: 1.12;
+
+    font-weight: 600;
+
+    color: rgba(255, 255, 255, 0.96);
+
+}
+
+
+.user-dashboard-card h2 {
+
+    margin: 0;
+
+    font-size: 40px;
+
+    line-height: 1;
+
+    font-weight: 700;
+
+    color: #ffffff;
+
+}
+
+
+/* =========================================
+   CARD ICON
+========================================= */
+
+.card-icon {
+
+    position: absolute;
+
+    right: 10px;
+
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    width: 75px;
+
+    height: 75px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 50px;
+
+    color: rgba(255, 255, 255, 0.72);
+
+    z-index: 1;
+
+}
+
+
+/* =========================================
+   CARD COLORS
+========================================= */
+
+.card-blue {
+
+    background:
+        linear-gradient(
+            135deg,
+            #1976d2,
+            #42a5f5
+        );
+
+}
+
+
+.card-orange {
+
+    background:
+        linear-gradient(
+            135deg,
+            #f57c00,
+            #ffa726
+        );
+
+}
+
+
+.card-purple {
+
+    background:
+        linear-gradient(
+            135deg,
+            #7b1fa2,
+            #ab47bc
+        );
+
+}
+
+
+.card-green {
+
+    background:
+        linear-gradient(
+            135deg,
+            #2e7d32,
+            #66bb6a
+        );
+
+}
+
+
+/* =========================================
+   LARGE LAPTOP
+========================================= */
+
+@media (max-width: 1200px) {
+
+    .user-dashboard {
+
+        padding: 18px 22px;
+
+    }
+
+
+    .dashboard-cards-row {
+
+        gap: 18px;
+
+    }
+
+
+    .user-dashboard-card {
+
+        height: 155px;
+
+        padding: 22px;
+
+    }
+
+
+    .user-dashboard-card h6 {
+
+        font-size: 18px;
+
+    }
+
+
+    .user-dashboard-card h2 {
+
+        font-size: 37px;
+
+    }
+
+
+    .card-icon {
+
+        right: 7px;
+
+        font-size: 46px;
+
+    }
+
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 991px) {
+
+    .user-dashboard {
+
+        padding: 20px;
+
+    }
+
+
+    .user-dashboard-header {
+
+        margin-bottom: 22px;
+
+    }
+
+
+    .dashboard-heading h2 {
+
+        font-size: 31px;
+
+    }
+
+
+    .dashboard-heading p {
+
+        font-size: 18px;
+
+    }
+
+
+    .dashboard-cards-row {
+
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+
+        gap: 18px;
+
+    }
+
+
+    .user-dashboard-card {
+
+        height: 155px;
+
+    }
+
+
+    .user-dashboard-card h6 {
+
+        font-size: 19px;
+
+    }
+
+
+    .user-dashboard-card h2 {
+
+        font-size: 38px;
+
+    }
+
+
+    .card-icon {
+
+        font-size: 48px;
+
+        right: 8px;
+
+    }
+
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 767px) {
+
+    .user-dashboard {
+
+        padding: 18px 15px;
+
+    }
+
+
+    .user-dashboard-header {
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 15px;
+
+        margin-bottom: 20px;
+
+    }
+
+
+    .dashboard-heading h2 {
+
+        font-size: 28px;
+
+    }
+
+
+    .dashboard-heading p {
+
+        font-size: 16px;
+
+    }
+
+
+    .apply-membership-btn {
+
+        width: 100%;
+
+        height: 45px;
+
+        font-size: 15px;
+
+    }
+
+
+    .dashboard-cards-row {
+
+        grid-template-columns: 1fr;
+
+        gap: 15px;
+
+    }
+
+
+    .user-dashboard-card {
+
+        height: 145px;
+
+        padding: 22px;
+
+        border-radius: 16px;
+
+    }
+
+
+    .user-dashboard-card h6 {
+
+        font-size: 19px;
+
+        margin-bottom: 8px;
+
+    }
+
+
+    .user-dashboard-card h2 {
+
+        font-size: 36px;
+
+    }
+
+
+    .card-icon {
+
+        right: 8px;
+
+        font-size: 46px;
+
+    }
+
+}
+
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 480px) {
+
+    .user-dashboard {
+
+        padding: 15px 12px;
+
+    }
+
+
+    .dashboard-heading h2 {
+
+        font-size: 26px;
+
+    }
+
+
+    .dashboard-heading p {
+
+        font-size: 15px;
+
+    }
+
+
+    .apply-membership-btn {
+
+        height: 43px;
+
+        font-size: 14px;
+
+    }
+
+
+    .apply-membership-btn i {
+
+        font-size: 16px;
+
+    }
+
+
+    .dashboard-cards-row {
+
+        gap: 13px;
+
+    }
+
+
+    .user-dashboard-card {
+
+        height: 135px;
+
+        padding: 20px;
+
+        border-radius: 15px;
+
+    }
+
+
+    .user-dashboard-card h6 {
+
+        font-size: 18px;
+
+    }
+
+
+    .user-dashboard-card h2 {
+
+        font-size: 34px;
+
+    }
+
+
+    .card-icon {
+
+        right: 5px;
+
+        font-size: 42px;
+
+    }
+
+}

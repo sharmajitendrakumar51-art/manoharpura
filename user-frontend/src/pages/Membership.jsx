@@ -180,104 +180,96 @@ const Membership = () => {
 
             {/* Annual */}
 
-            <div className="membership-plan">
+           {/* Annual */}
 
-              <div className="plan-icon">
-                <i className="bi bi-calendar-check"></i>
-              </div>
+<div className="membership-plan featured">
 
-              <h3>
-                Two Year Membership
-              </h3>
+  <div className="recommended-badge">
+    Recommended
+  </div>
 
-              <div className="plan-price">
-                ₹1000
-              </div>
+  <div className="plan-icon">
+    <i className="bi bi-calendar-check"></i>
+  </div>
 
-              {/* <p>
-                ₹500/- per year
-              </p> */}
-              <br />  
-              <ul>
+  <h3>
+    Two Year Membership
+  </h3>
 
-                <li>
-                  <i className="bi bi-check-circle-fill"></i>
-                 Membership fee ₹500/- per year
-                </li>
+  <div className="plan-price">
+    ₹1000
+  </div>
 
-                <li>
-                  <i className="bi bi-check-circle-fill"></i>
-                  Renew membership every two years 
-                </li>
+  <br />
 
-                <li>
-                  <i className="bi bi-check-circle-fill"></i>
-                  Subject to approval
-                </li>
+  <ul>
+    <li>
+      <i className="bi bi-check-circle-fill"></i>
+      Membership fee ₹500/- per year
+    </li>
 
-              </ul>
+    <li>
+      <i className="bi bi-check-circle-fill"></i>
+      Renew membership every two years
+    </li>
 
-              <button
-                 onClick={() => navigate("/login")}
-              >
-                Apply Now
-                <i className="bi bi-arrow-right"></i>
-              </button>
+    <li>
+      <i className="bi bi-check-circle-fill"></i>
+      Subject to approval
+    </li>
+  </ul>
 
-            </div>
+  <button onClick={() => navigate("/login")}>
+    Apply Now
+    <i className="bi bi-arrow-right"></i>
+  </button>
+
+</div>
 
 
-            {/* Lifetime */}
+{/* Lifetime */}
 
-            <div className="membership-plan featured">
+<div className="membership-plan">
 
-              <div className="recommended-badge">
-                Recommended
-              </div>
+  <div className="plan-icon">
+    <i className="bi bi-infinity"></i>
+  </div>
 
-              <div className="plan-icon">
-                <i className="bi bi-infinity"></i>
-              </div>
+  <h3>
+    Lifetime Membership
+  </h3>
 
-              <h3>
-                Lifetime Membership
-              </h3>
+  <div className="plan-price">
+    ₹5,100
+  </div>
 
-              <div className="plan-price">
-                ₹5,100
-              </div>
+  <p>
+    {/* One-time */}
+  </p>
 
-              <p>
-                {/* One-time  */}
-              </p>
+  <ul>
+    <li>
+      <i className="bi bi-check-circle-fill"></i>
+      One-time membership fee
+    </li>
 
-              <ul>
+    <li>
+      <i className="bi bi-check-circle-fill"></i>
+      Donors contributing ₹11,000
+    </li>
 
-                <li>
-                  <i className="bi bi-check-circle-fill"></i>
-                   One-time membership fee
-                </li>
+    <li>
+      <i className="bi bi-check-circle-fill"></i>
+      Subject to approval
+    </li>
+  </ul>
 
-                <li>
-                  <i className="bi bi-check-circle-fill"></i>
-                  Donors contributing ₹11,000
-                </li>
+  <button onClick={() => navigate("/login")}>
+    Apply Now
+    <i className="bi bi-arrow-right"></i>
+  </button>
 
-                <li>
-                  <i className="bi bi-check-circle-fill"></i>
-                  Subject to approval
-                </li>
-
-              </ul>
-
-              <button
-                onClick={() => navigate("/login")}
-              >
-                Apply Now
-                <i className="bi bi-arrow-right"></i>
-              </button>
-
-            </div>
+</div>
 
           </div>
 

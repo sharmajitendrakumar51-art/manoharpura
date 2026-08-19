@@ -1,0 +1,615 @@
+/* =========================================
+   USER MEMBERS PAGE
+========================================= */
+
+.user-members-page {
+
+     width: 100%;
+
+    min-height: auto;
+
+    padding: 0;
+
+    margin: 0;
+
+    box-sizing: border-box;
+
+    background: transparent;
+
+    background: #f5f7fb;
+
+}
+
+
+/* =========================================
+   HEADER
+========================================= */
+
+.user-members-header {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    margin-bottom: 20px;
+
+}
+
+.user-members-header h2 {
+
+    margin: 0;
+
+    color: #1769e0;
+
+    font-size: 32px;
+
+    font-weight: 700;
+
+}
+
+.user-members-header p {
+
+    margin: 5px 0 0;
+
+    color: #6b7585;
+
+    font-size: 16px;
+
+}
+
+
+/* =========================================
+   TOOLBAR
+========================================= */
+
+.user-members-toolbar {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    margin-bottom: 18px;
+
+}
+
+
+/* =========================================
+   SEARCH
+========================================= */
+
+.user-member-search {
+
+    width: 320px;
+
+    height: 44px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    padding: 0 14px;
+
+    background: #ffffff;
+
+    border: 1px solid #e1e7ef;
+
+    border-radius: 10px;
+
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.03);
+
+}
+
+.user-member-search i {
+
+    color: #7c8796;
+
+    font-size: 16px;
+
+}
+
+.user-member-search input {
+
+    width: 100%;
+
+    height: 100%;
+
+    border: none;
+
+    outline: none;
+
+    background: transparent;
+
+    color: #344054;
+
+    font-size: 14px;
+
+}
+
+.user-member-search input::placeholder {
+
+    color: #9aa4b2;
+
+}
+
+
+/* =========================================
+   TABLE WRAPPER
+========================================= */
+
+.user-members-table-wrapper {
+
+    width: 100%;
+
+    background: #ffffff;
+
+    border-radius: 16px;
+
+    overflow: hidden;
+
+    border: 1px solid #edf0f4;
+
+    box-shadow:
+        0 7px 22px rgba(0, 0, 0, 0.05);
+
+}
+
+
+/* =========================================
+   TABLE
+========================================= */
+
+.user-members-table {
+
+    width: 100%;
+
+    margin: 0;
+
+    min-width: 750px;
+
+}
+
+
+/* =========================================
+   TABLE HEADER
+========================================= */
+
+.user-members-table thead th {
+
+    height: 62px;
+
+    padding: 0 18px;
+
+    background: #f8faff;
+
+    border-bottom: 1px solid #e8edf4;
+
+    color: #40516a;
+
+    font-size: 16px;
+
+    font-weight: 700;
+
+    vertical-align: middle;
+
+    white-space: nowrap;
+
+}
+
+
+/* =========================================
+   TABLE BODY
+========================================= */
+
+.user-members-table tbody td {
+
+    height: 82px;
+
+    padding: 10px 18px;
+
+    border-bottom: 1px solid #edf1f5;
+
+    color: #293444;
+
+    font-size: 15px;
+
+    vertical-align: middle;
+
+}
+
+.user-members-table tbody tr:last-child td {
+
+    border-bottom: none;
+
+}
+
+.user-members-table tbody tr {
+
+    transition: background 0.2s ease;
+
+}
+
+.user-members-table tbody tr:hover {
+
+    background: #f9fbff;
+
+}
+
+
+/* =========================================
+   NUMBER
+========================================= */
+
+.member-number {
+
+    width: 45px;
+
+    color: #667085 !important;
+
+    font-weight: 600;
+
+}
+
+
+/* =========================================
+   MEMBER PHOTO
+========================================= */
+
+.user-member-photo {
+
+    width: 52px;
+
+    height: 52px;
+
+    object-fit: cover;
+
+    border-radius: 50%;
+
+    display: block;
+
+    border: 3px solid #ffffff;
+
+    box-shadow:
+        0 4px 12px rgba(0, 0, 0, 0.12);
+
+}
+
+
+.user-member-photo-placeholder {
+
+    width: 52px;
+
+    height: 52px;
+
+    border-radius: 50%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background: #edf3fc;
+
+    color: #1769e0;
+
+    font-size: 22px;
+
+}
+
+
+/* =========================================
+   MEMBER NAME
+========================================= */
+
+.user-member-name {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 3px;
+
+}
+
+.user-member-name strong {
+
+    color: #202b3c;
+
+    font-size: 16px;
+
+    font-weight: 700;
+
+}
+
+.user-member-name span {
+
+    color: #788598;
+
+    font-size: 13px;
+
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+.user-member-mobile {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    color: #39465a;
+
+    font-size: 15px;
+
+    white-space: nowrap;
+
+}
+
+.user-member-mobile i {
+
+    color: #1769e0;
+
+    font-size: 13px;
+
+}
+
+
+/* =========================================
+   MEMBERSHIP BADGE
+========================================= */
+
+.membership-badge {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 7px;
+
+    padding: 7px 12px;
+
+    border-radius: 20px;
+
+    background: #eef5ff;
+
+    color: #1769e0;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    white-space: nowrap;
+
+}
+
+.membership-badge i {
+
+    font-size: 13px;
+
+}
+
+
+/* =========================================
+   EMPTY / LOADING
+========================================= */
+
+.user-members-message {
+
+    height: 220px !important;
+
+    text-align: center;
+
+    color: #8994a5 !important;
+
+}
+
+.user-members-message > i {
+
+    display: block;
+
+    font-size: 38px;
+
+    color: #1769e0;
+
+}
+
+.user-members-message p {
+
+    margin: 8px 0 0;
+
+    font-size: 14px;
+
+}
+
+
+/* =========================================
+   LOADING
+========================================= */
+
+.loading-members {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 12px;
+
+    color: #667085;
+
+    font-size: 14px;
+
+}
+
+
+/* =========================================
+   FOOTER
+========================================= */
+
+.user-members-footer {
+
+    margin-top: 12px;
+
+    color: #7b8797;
+
+    font-size: 13px;
+
+}
+
+.user-members-footer strong {
+
+    color: #1769e0;
+
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 991px) {
+
+    .user-members-page {
+
+        padding: 20px;
+
+    }
+
+    .user-members-header h2 {
+
+        font-size: 29px;
+
+    }
+
+    .user-member-search {
+
+        width: 280px;
+
+    }
+
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 767px) {
+
+    .user-members-page {
+
+        padding: 18px 14px;
+
+    }
+
+    .user-members-header {
+
+        margin-bottom: 16px;
+
+    }
+
+    .user-members-header h2 {
+
+        font-size: 27px;
+
+    }
+
+    .user-members-header p {
+
+        font-size: 14px;
+
+    }
+
+    .user-members-toolbar {
+
+        margin-bottom: 15px;
+
+    }
+
+    .user-member-search {
+
+        width: 100%;
+
+        height: 42px;
+
+    }
+
+    .user-members-table-wrapper {
+
+        border-radius: 13px;
+
+    }
+
+    /*
+       Mobile par table horizontal scroll karegi.
+       Isse columns crush nahi honge.
+    */
+
+    .user-members-table {
+
+        min-width: 720px;
+
+    }
+
+    .user-members-table thead th {
+
+        height: 55px;
+
+        padding: 0 14px;
+
+        font-size: 14px;
+
+    }
+
+    .user-members-table tbody td {
+
+        height: 75px;
+
+        padding: 9px 14px;
+
+        font-size: 14px;
+
+    }
+
+    .user-member-photo,
+    .user-member-photo-placeholder {
+
+        width: 46px;
+
+        height: 46px;
+
+    }
+
+    .user-member-name strong {
+
+        font-size: 14px;
+
+    }
+
+    .user-member-name span {
+
+        font-size: 12px;
+
+    }
+
+    .membership-badge {
+
+        font-size: 12px;
+
+        padding: 6px 10px;
+
+    }
+
+}

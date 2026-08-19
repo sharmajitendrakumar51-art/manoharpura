@@ -1,0 +1,977 @@
+/* =====================================================
+   APPLY MEMBERSHIP PAGE
+===================================================== */
+
+.apply-membership-page {
+    width: 100%;
+
+    padding: 0;
+
+    margin: 0;
+
+    box-sizing: border-box;
+
+    color: #27364a;
+}
+
+
+/* =====================================================
+   PAGE HEADER
+===================================================== */
+
+.apply-page-header {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 20px;
+
+    margin-bottom: 20px;
+}
+
+
+.apply-page-header h2 {
+    margin: 0;
+
+    font-size: 30px;
+
+    line-height: 1.2;
+
+    font-weight: 700;
+
+    color: #1769e0;
+}
+
+
+.apply-page-header p {
+    margin: 5px 0 0;
+
+    font-size: 15px;
+
+    color: #6f7d90;
+}
+
+
+/* =====================================================
+   BACK BUTTON
+===================================================== */
+
+.apply-back-btn {
+    height: 42px;
+
+    padding: 0 16px;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 7px;
+
+    border: 1px solid #dce4ee;
+
+    border-radius: 9px;
+
+    background: #ffffff;
+
+    color: #46566b;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: 0.2s ease;
+}
+
+
+.apply-back-btn:hover {
+    background: #f0f5fc;
+
+    color: #1769e0;
+
+    border-color: #c9d9ed;
+}
+
+
+/* =====================================================
+   MAIN CARD
+===================================================== */
+
+.apply-membership-card {
+    width: 100%;
+
+    background: #ffffff;
+
+    border: 1px solid #e8edf3;
+
+    border-radius: 16px;
+
+    box-shadow:
+        0 7px 25px rgba(25, 45, 75, 0.05);
+
+    overflow: hidden;
+}
+
+
+/* =====================================================
+   SECTION
+===================================================== */
+
+.apply-section {
+    padding: 24px 26px;
+
+    border-bottom: 1px solid #edf1f5;
+}
+
+
+.apply-section:last-of-type {
+    border-bottom: none;
+}
+
+
+/* =====================================================
+   SECTION TITLE
+===================================================== */
+
+.apply-section-title {
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    margin-bottom: 22px;
+}
+
+
+.section-icon {
+    width: 40px;
+
+    height: 40px;
+
+    flex-shrink: 0;
+
+    border-radius: 10px;
+
+    background: #eaf2ff;
+
+    color: #1769e0;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 18px;
+}
+
+
+.apply-section-title h4 {
+    margin: 0;
+
+    font-size: 18px;
+
+    font-weight: 700;
+
+    color: #26364a;
+}
+
+
+.apply-section-title p {
+    margin: 3px 0 0;
+
+    font-size: 12px;
+
+    color: #8a96a6;
+}
+
+
+/* =====================================================
+   FORM LABEL
+===================================================== */
+
+.apply-membership-card label {
+    display: block;
+
+    margin-bottom: 7px;
+
+    color: #435268;
+
+    font-size: 13px;
+
+    font-weight: 600;
+}
+
+
+.apply-membership-card label span {
+    color: #dc3545;
+}
+
+
+/* =====================================================
+   FORM CONTROL
+===================================================== */
+
+.apply-membership-card .form-control,
+.apply-membership-card .form-select {
+    width: 100%;
+
+    min-height: 44px;
+
+    border: 1px solid #dce3ec;
+
+    border-radius: 8px;
+
+    padding: 9px 12px;
+
+    color: #344054;
+
+    background: #ffffff;
+
+    font-size: 14px;
+
+    box-shadow: none;
+
+    transition: 0.2s ease;
+}
+
+
+.apply-membership-card .form-control:focus,
+.apply-membership-card .form-select:focus {
+    border-color: #1769e0;
+
+    box-shadow:
+        0 0 0 3px rgba(23, 105, 224, 0.10);
+
+    outline: none;
+}
+
+
+.apply-membership-card textarea.form-control {
+    min-height: 105px;
+
+    resize: vertical;
+}
+
+
+/* =====================================================
+   MEMBERSHIP OPTIONS
+===================================================== */
+
+.membership-options {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+
+    gap: 15px;
+}
+
+
+.membership-option {
+    position: relative;
+
+    min-height: 78px;
+
+    margin: 0 !important;
+
+    padding: 16px;
+
+    display: flex !important;
+
+    align-items: center;
+
+    gap: 12px;
+
+    border: 1px solid #dce4ee;
+
+    border-radius: 12px;
+
+    background: #ffffff;
+
+    cursor: pointer;
+
+    transition: 0.2s ease;
+}
+
+
+.membership-option:hover {
+    border-color: #a9c5ed;
+
+    background: #f8fbff;
+}
+
+
+.membership-option.selected {
+    border-color: #1769e0;
+
+    background: #eef5ff;
+
+    box-shadow:
+        0 4px 12px rgba(23, 105, 224, 0.08);
+}
+
+
+.membership-option input {
+    width: 18px;
+
+    height: 18px;
+
+    flex-shrink: 0;
+
+    accent-color: #1769e0;
+}
+
+
+.membership-option div {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 4px;
+}
+
+
+.membership-option strong {
+    color: #26364a;
+
+    font-size: 14px;
+}
+
+
+.membership-option span {
+    color: #7c899a;
+
+    font-size: 12px;
+}
+
+
+/* =====================================================
+   DOCUMENT BOX
+===================================================== */
+
+.document-box {
+    height: 100%;
+
+    padding: 16px;
+
+    border: 1px dashed #cfd9e6;
+
+    border-radius: 12px;
+
+    background: #fafcff;
+}
+
+
+.document-box > label {
+    margin-bottom: 10px;
+}
+
+
+.document-box .form-control {
+    background: #ffffff;
+}
+
+
+/* =====================================================
+   PHOTO PREVIEW
+===================================================== */
+
+.document-preview {
+    position: relative;
+
+    width: 110px;
+
+    height: 110px;
+
+    margin-top: 10px;
+}
+
+
+.document-preview img {
+    width: 110px;
+
+    height: 110px;
+
+    object-fit: cover;
+
+    border-radius: 12px;
+
+    border: 1px solid #dce4ee;
+}
+
+
+.document-preview button {
+    position: absolute;
+
+    top: -8px;
+
+    right: -8px;
+
+    width: 28px;
+
+    height: 28px;
+
+    padding: 0;
+
+    border: 2px solid #ffffff;
+
+    border-radius: 50%;
+
+    background: #dc3545;
+
+    color: #ffffff;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    cursor: pointer;
+}
+
+
+/* =====================================================
+   SELECTED FILE
+===================================================== */
+
+.selected-file {
+    margin-top: 9px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 6px;
+
+    color: #198754;
+
+    font-size: 11px;
+
+    font-weight: 600;
+
+    overflow: hidden;
+
+    white-space: nowrap;
+
+    text-overflow: ellipsis;
+}
+
+
+.selected-file i {
+    flex-shrink: 0;
+}
+
+
+/* =====================================================
+   FORM ACTIONS
+===================================================== */
+
+.apply-form-actions {
+    padding: 18px 26px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: flex-end;
+
+    gap: 10px;
+
+    background: #fafbfd;
+
+    border-top: 1px solid #edf1f5;
+}
+
+
+.btn-reset,
+.btn-cancel,
+.btn-submit {
+    height: 42px;
+
+    padding: 0 18px;
+
+    border-radius: 8px;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 7px;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: 0.2s ease;
+}
+
+
+.btn-reset {
+    border: 1px solid #d7dee8;
+
+    background: #ffffff;
+
+    color: #667085;
+}
+
+
+.btn-reset:hover {
+    background: #f3f5f8;
+}
+
+
+.btn-cancel {
+    border: 1px solid #d7dee8;
+
+    background: #ffffff;
+
+    color: #dc3545;
+}
+
+
+.btn-cancel:hover {
+    background: #fff3f3;
+}
+
+
+.btn-submit {
+    min-width: 190px;
+
+    border: none;
+
+    background: #1769e0;
+
+    color: #ffffff;
+
+    box-shadow:
+        0 5px 14px rgba(23, 105, 224, 0.20);
+}
+
+
+.btn-submit:hover {
+    background: #0f5ccc;
+
+    transform: translateY(-1px);
+}
+
+
+.btn-submit:disabled,
+.btn-reset:disabled,
+.btn-cancel:disabled {
+    opacity: 0.65;
+
+    cursor: not-allowed;
+
+    transform: none;
+}
+
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media (max-width: 991px) {
+
+    .apply-page-header h2 {
+        font-size: 27px;
+    }
+
+
+    .membership-options {
+        grid-template-columns: 1fr;
+    }
+
+
+    .apply-section {
+        padding: 22px;
+    }
+
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 767px) {
+
+    .apply-page-header {
+        align-items: flex-start;
+
+        flex-direction: column;
+
+        margin-bottom: 16px;
+    }
+
+
+    .apply-page-header h2 {
+        font-size: 25px;
+    }
+
+
+    .apply-page-header p {
+        font-size: 13px;
+    }
+
+
+    .apply-back-btn {
+        height: 38px;
+
+        padding: 0 13px;
+    }
+
+
+    .apply-membership-card {
+        border-radius: 12px;
+    }
+
+
+    .apply-section {
+        padding: 18px 15px;
+    }
+
+
+    .apply-section-title {
+        margin-bottom: 18px;
+    }
+
+
+    .section-icon {
+        width: 36px;
+
+        height: 36px;
+
+        font-size: 16px;
+    }
+
+
+    .apply-section-title h4 {
+        font-size: 16px;
+    }
+
+
+    .apply-section-title p {
+        font-size: 11px;
+    }
+
+
+    .apply-form-actions {
+        padding: 15px;
+
+        flex-direction: column-reverse;
+
+        align-items: stretch;
+    }
+
+
+    .btn-reset,
+    .btn-cancel,
+    .btn-submit {
+        width: 100%;
+    }
+
+}
+
+
+/* =====================================================
+   SMALL MOBILE
+===================================================== */
+
+@media (max-width: 480px) {
+
+    .apply-page-header h2 {
+        font-size: 23px;
+    }
+
+
+    .apply-membership-card .form-control,
+    .apply-membership-card .form-select {
+        min-height: 42px;
+
+        font-size: 13px;
+    }
+
+
+    .membership-option {
+        min-height: 70px;
+
+        padding: 13px;
+    }
+
+}
+
+/* =====================================================
+   UPLOADED DOCUMENT
+===================================================== */
+
+.uploaded-document {
+    width: 100%;
+    margin-top: 12px;
+    padding: 14px;
+    border: 1px solid #d9e2ef;
+    border-radius: 10px;
+    background: #f8fafc;
+
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+
+    box-sizing: border-box;
+}
+
+
+/* =========================
+   FILE NAME
+========================= */
+
+.uploaded-document-info {
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    min-width: 0;
+}
+
+
+.uploaded-document-info i {
+    font-size: 18px;
+    color: #245fb3;
+    flex-shrink: 0;
+}
+
+
+.uploaded-document-info span {
+    display: block;
+
+    max-width: 100%;
+
+    font-size: 15px;
+    font-weight: 500;
+
+    color: #26364d;
+
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+
+/* =========================
+   BUTTON CONTAINER
+========================= */
+
+.uploaded-document-actions {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+
+/* =========================
+   COMMON BUTTON
+========================= */
+
+.document-view-btn,
+.document-delete-btn {
+
+    border: none !important;
+
+    height: 34px;
+
+    padding: 0 13px;
+
+    border-radius: 6px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 6px;
+
+    font-family: inherit;
+
+    font-size: 13px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: all 0.2s ease;
+
+    box-shadow: none;
+}
+
+
+/* =========================
+   VIEW BUTTON
+========================= */
+
+.document-view-btn {
+
+    background: #1769e0 !important;
+
+    color: #ffffff !important;
+}
+
+
+.document-view-btn:hover {
+
+    background: #0d5ccc !important;
+
+    color: #ffffff !important;
+
+    transform: translateY(-1px);
+
+    box-shadow: 0 4px 10px rgba(23, 105, 224, 0.25);
+}
+
+
+.document-view-btn i {
+
+    font-size: 14px;
+
+    color: #ffffff;
+}
+
+
+/* =========================
+   DELETE BUTTON
+========================= */
+
+.document-delete-btn {
+
+    background: #dc3545 !important;
+
+    color: #ffffff !important;
+}
+
+
+.document-delete-btn:hover {
+
+    background: #bb2d3b !important;
+
+    color: #ffffff !important;
+
+    transform: translateY(-1px);
+
+    box-shadow: 0 4px 10px rgba(220, 53, 69, 0.25);
+}
+
+
+.document-delete-btn i {
+
+    font-size: 14px;
+
+    color: #ffffff;
+}
+
+
+/* =========================
+   DOCUMENT BOX
+========================= */
+
+.document-box {
+
+    width: 100%;
+
+    padding: 18px;
+
+    border: 1px dashed #cbd8e8;
+
+    border-radius: 12px;
+
+    background: #ffffff;
+
+    box-sizing: border-box;
+
+    transition: 0.2s ease;
+}
+
+
+.document-box:hover {
+
+    border-color: #1769e0;
+
+    background: #fbfdff;
+}
+
+
+.document-box > label {
+
+    display: block;
+
+    margin-bottom: 10px;
+
+    font-size: 15px;
+
+    font-weight: 600;
+
+    color: #334e6f;
+}
+
+
+/* =========================
+   FILE INPUT
+========================= */
+
+.document-box input[type="file"] {
+
+    width: 100%;
+
+    font-size: 13px;
+
+    border: 1px solid #d9e2ef;
+
+    border-radius: 7px;
+
+    padding: 8px;
+
+    background: #ffffff;
+
+    color: #555;
+
+    box-sizing: border-box;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 767px) {
+
+    .uploaded-document {
+
+        padding: 12px;
+
+    }
+
+
+    .uploaded-document-actions {
+
+        width: 100%;
+
+    }
+
+
+    .document-view-btn,
+    .document-delete-btn {
+
+        flex: 1;
+
+        height: 36px;
+
+    }
+
+}

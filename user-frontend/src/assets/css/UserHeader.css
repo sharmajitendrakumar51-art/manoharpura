@@ -1,0 +1,394 @@
+/* =========================================
+   USER HEADER
+========================================= */
+
+.user-header {
+    position: sticky;
+
+    top: 0;
+
+    z-index: 1000;
+
+    width: 100%;
+
+    height: 64px;
+
+    padding: 0 22px;
+
+    box-sizing: border-box;
+
+    background: #ffffff;
+
+    border-bottom: 1px solid #e8edf3;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
+}
+
+
+/* =========================================
+   LEFT SIDE
+========================================= */
+
+.user-header-left {
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    min-width: 0;
+}
+
+
+/* =========================================
+   MOBILE MENU BUTTON
+========================================= */
+
+.user-menu-btn {
+    width: 38px;
+
+    height: 38px;
+
+    padding: 0;
+
+    border: none;
+
+    border-radius: 9px;
+
+    background: #f1f5fb;
+
+    color: #1853a5;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 21px;
+
+    cursor: pointer;
+
+    transition: 0.25s ease;
+}
+
+.user-menu-btn:hover {
+    background: #1853a5;
+
+    color: #ffffff;
+}
+
+
+/* =========================================
+   HEADER TITLE
+========================================= */
+
+.user-header-title {
+    min-width: 0;
+}
+
+.user-header-title h2 {
+    margin: 0;
+
+    font-size: 24px;
+
+    line-height: 1.15;
+
+    font-weight: 700;
+
+    color: #202b3c;
+}
+
+.user-header-title p {
+    margin: 3px 0 0;
+
+    font-size: 13px;
+
+    line-height: 1.2;
+
+    color: #7c8795;
+}
+
+
+/* =========================================
+   RIGHT SIDE
+========================================= */
+
+.user-header-right {
+    display: flex;
+
+    align-items: center;
+
+    gap: 14px;
+}
+
+
+/* =========================================
+   NOTIFICATION BUTTON
+========================================= */
+
+.user-header-icon {
+    position: relative;
+
+    width: 42px;
+
+    height: 42px;
+
+    padding: 0;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background: #f3f6fa;
+
+    color: #1853a5;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 19px;
+
+    cursor: pointer;
+
+    transition: 0.25s ease;
+}
+
+.user-header-icon:hover {
+    background: #e8f0fc;
+
+    color: #1853a5;
+
+    transform: translateY(-1px);
+}
+
+
+/* =========================================
+   NOTIFICATION DOT
+========================================= */
+
+.notification-dot {
+    position: absolute;
+
+    top: 8px;
+
+    right: 8px;
+
+    width: 7px;
+
+    height: 7px;
+
+    background: #f28c00;
+
+    border: 2px solid #f3f6fa;
+
+    border-radius: 50%;
+}
+
+
+/* =========================================
+   USER PROFILE
+========================================= */
+
+.user-header-profile {
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    padding-left: 2px;
+}
+
+
+/* =========================================
+   AVATAR
+========================================= */
+
+.user-header-avatar {
+    width: 42px;
+
+    height: 42px;
+
+    flex-shrink: 0;
+
+    border-radius: 50%;
+
+    background: #2164b3;
+
+    color: #ffffff;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 18px;
+}
+
+
+/* =========================================
+   USER INFO
+========================================= */
+
+.user-header-user-info {
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    min-width: 65px;
+}
+
+.user-header-user-info strong {
+    margin: 0;
+
+    font-size: 15px;
+
+    line-height: 1.2;
+
+    font-weight: 700;
+
+    color: #20252d;
+}
+
+.user-header-user-info span {
+    margin-top: 3px;
+
+    font-size: 12px;
+
+    line-height: 1.2;
+
+    color: #858c96;
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 991px) {
+
+    .user-header {
+        height: 62px;
+
+        padding: 0 18px;
+    }
+
+    .user-header-title h2 {
+        font-size: 21px;
+    }
+
+    .user-header-title p {
+        font-size: 12px;
+    }
+
+    .user-header-right {
+        gap: 10px;
+    }
+
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+
+    .user-header {
+        height: 58px;
+
+        padding: 0 12px;
+    }
+
+    .user-header-left {
+        gap: 8px;
+    }
+
+    .user-menu-btn {
+        width: 36px;
+
+        height: 36px;
+
+        font-size: 20px;
+    }
+
+    .user-header-title h2 {
+        font-size: 16px;
+
+        max-width: 180px;
+
+        white-space: nowrap;
+
+        overflow: hidden;
+
+        text-overflow: ellipsis;
+    }
+
+    .user-header-title p {
+        display: none;
+    }
+
+    .user-header-right {
+        gap: 7px;
+    }
+
+    .user-header-icon {
+        width: 36px;
+
+        height: 36px;
+
+        font-size: 16px;
+    }
+
+    .user-header-avatar {
+        width: 36px;
+
+        height: 36px;
+
+        font-size: 15px;
+    }
+
+    .user-header-user-info {
+        display: none;
+    }
+
+    .notification-dot {
+        top: 6px;
+
+        right: 6px;
+
+        width: 6px;
+
+        height: 6px;
+    }
+
+}
+
+
+/* =========================================
+   VERY SMALL MOBILE
+========================================= */
+
+@media (max-width: 400px) {
+
+    .user-header-title h2 {
+        max-width: 145px;
+
+        font-size: 15px;
+    }
+
+}
+

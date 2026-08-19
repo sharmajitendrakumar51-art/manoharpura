@@ -432,7 +432,7 @@
   display: block;
 
   object-fit: cover;
-  object-position: center;
+  object-position:  center 2%;
 
   border-radius: 14px;
 
@@ -502,26 +502,21 @@
 ========================================================= */
 
 .committee-designation {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    min-height: 34px;
+    width: fit-content;
+    margin: 0 auto; /* badge ko center karega */
 
-  gap: 6px;
-
-  min-height: 34px;
-
-  padding: 6px 14px;
-
-  border-radius: 25px;
-
-  background: #fff4e3;
-
-  border: 1px solid #ffe1b0;
-
-  color: #df8500;
-
-  font-size: 12px;
-  font-weight: 700;
+    padding: 6px 14px;
+    border-radius: 25px;
+    background: #fff4e3;
+    border: 1px solid #ffe1b0;
+    color: #df8500;
+    font-size: 12px;
+    font-weight: 700;
 }
 
 .committee-designation i {
@@ -830,12 +825,15 @@
   }
 
   .committee-member-image,
-  .committee-placeholder {
+.committee-placeholder {
     width: 185px;
     height: 238px;
 
     border-radius: 12px;
-  }
+
+    object-fit: cover;
+    object-position: center 35%;
+}
 
   .committee-year-heading h3 {
     font-size: 23px;

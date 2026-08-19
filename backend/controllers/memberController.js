@@ -418,6 +418,66 @@ export const getMemberById = async (req, res) => {
   }
 };
 
+// ==========================
+// Get Member By Email
+// ==========================
+
+export const getMemberByEmail = async (req, res) => {
+
+    try {
+
+        const { email } = req.params;
+
+        if (!email) {
+
+            return res.status(400).json({
+                success: false,
+                message: "Email is required",
+            });
+
+        }
+
+        const member = await Member.findOne({
+            email: email.toLowerCase().trim(),
+        });
+
+        if (!member) {
+
+            return res.status(404).json({
+                success: false,
+                message: "Member profile not found",
+            });
+
+        }
+
+        return res.status(200).json({
+
+            success: true,
+
+            member,
+
+        });
+
+    } catch (error) {
+
+        console.error(
+            "GET MEMBER BY EMAIL ERROR:",
+            error
+        );
+
+        return res.status(500).json({
+
+            success: false,
+
+            message: "Internal Server Error",
+
+            error: error.message,
+
+        });
+
+    }
+
+};
 
 // ==========================
 // Update Member

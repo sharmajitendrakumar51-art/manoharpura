@@ -2,15 +2,16 @@ import express from "express";
 import upload from "../middleware/upload.js";
 
 import {
-  addMember,
-  getMembers,
-  getMemberById,
-  updateMember,
-  updateMemberStatus,
-  deleteMember,
-  getInactiveMembers,
-  getDashboardCounts,
-  getRecentMembers,
+    addMember,
+    getMembers,
+    getMemberById,
+    getMemberByEmail,
+    updateMember,
+    updateMemberStatus,
+    deleteMember,
+    getInactiveMembers,
+    getDashboardCounts,
+    getRecentMembers,
 } from "../controllers/memberController.js";
 
 const router = express.Router();
@@ -51,6 +52,11 @@ router.get("/get-members", getMembers);
 
 // Get Single Member
 router.get("/get-member/:id", getMemberById);
+
+router.get(
+    "/get-member-by-email/:email",
+    getMemberByEmail
+);
 
 // Update Member
 router.put(
