@@ -40,6 +40,7 @@ import UserDashboard from "../pages/user/UserDashboard";
 import UserProfile from "../pages/user/UserProfile";
 import UserMembers from "../pages/user/UserMembers";
 import RenewMembership from "../pages/user/RenewMembership";
+import FeeMembership from "../pages/user/FeeMembership";
 import UserDonation from "../pages/user/UserDonation";
 import ChangePassword from "../pages/user/ChangePassword";
 
@@ -228,6 +229,11 @@ const MainContent = () => {
         path="renew-membership"
         element={<RenewMembership />}
     />
+     <Route
+        path="fee-membership"
+        element={<FeeMembership />}
+    />
+
 
     <Route
   path="profile/edit"

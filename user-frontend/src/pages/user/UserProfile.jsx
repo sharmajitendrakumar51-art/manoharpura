@@ -105,7 +105,9 @@ const UserProfile = () => {
         }
 
     };
+      
 
+    
 
     useEffect(() => {
 
@@ -187,82 +189,84 @@ const UserProfile = () => {
                 PROFILE HERO
             ================================= */}
 
-            <div className="profile-hero">
+           <div className="profile-hero">
 
+    {/* PROFILE PHOTO */}
+    <div className="profile-photo-wrapper">
 
-                <div className="profile-photo-wrapper">
+        {profile.profilePhoto?.url ? (
 
-                    {profile.profilePhoto?.url ? (
+            <img
+                src={profile.profilePhoto.url}
+                alt={profile.fullName}
+                className="profile-main-photo"
+            />
 
-                        <img
-                            src={profile.profilePhoto.url}
-                            alt={profile.fullName}
-                            className="profile-main-photo"
-                        />
+        ) : (
 
-                    ) : (
+            <div className="profile-main-placeholder">
 
-                        <div className="profile-main-placeholder">
-
-                            <i className="bi bi-person-fill"></i>
-
-                        </div>
-
-                    )}
-
-                </div>
-
-
-                <h1>
-
-                    {profile.title || ""}
-                    {" "}
-                    {profile.fullName}
-
-                </h1>
-
-
-                <div className="profile-badges">
-
-
-                    <span
-                        className={`profile-status ${
-                            profile.status === "Active"
-                                ? "active"
-                                : "inactive"
-                        }`}
-                    >
-
-                        {profile.status || "Inactive"}
-
-                    </span>
-
-
-                    <span className="profile-membership">
-
-                        {profile.membershipType ||
-                            "Membership"}
-
-                    </span>
-
-
-                </div>
-
-
-                <p className="membership-number">
-
-                    Membership No :
-
-                    {" "}
-
-                    <strong>
-                        {profile.membershipNo || "-"}
-                    </strong>
-
-                </p>
-
+                <i className="bi bi-person-fill"></i>
 
             </div>
+
+        )}
+
+    </div>
+
+
+    {/* PROFILE DETAILS */}
+    <div className="profile-hero-details">
+
+        <h1>
+
+            {profile.title || ""}
+            {" "}
+            {profile.fullName}
+
+        </h1>
+
+
+        <div className="profile-badges">
+
+            <span
+                className={`profile-status ${
+                    profile.status === "Active"
+                        ? "active"
+                        : "inactive"
+                }`}
+            >
+
+                {profile.status || "Inactive"}
+
+            </span>
+
+
+            <span className="profile-membership">
+
+                {profile.membershipType ||
+                    "Membership"}
+
+            </span>
+
+        </div>
+
+
+        <p className="membership-number">
+
+            Membership No :
+
+            {" "}
+
+            <strong>
+                {profile.membershipNo || "-"}
+            </strong>
+
+        </p>
+
+    </div>
+
+</div>
 
 
             {/* =================================
@@ -351,6 +355,25 @@ const UserProfile = () => {
                         }
                     />
 
+                    <ProfileItem
+                        label="Aadhaar Number"
+                        value={profile.aadhaar}
+                    />
+
+
+                    <ProfileItem
+                        label="PAN Number"
+                        value={profile.pan}
+                    />
+
+
+                    <ProfileItem
+                        label="Jan Aadhaar Number"
+                        value={
+                            profile.janAadhaar
+                        }
+                    />
+
 
                     <ProfileItem
                         label="Occupation"
@@ -406,7 +429,7 @@ const UserProfile = () => {
                     />
 
 
-                    <ProfileItem
+                    {/* <ProfileItem
                         label="Aadhaar Number"
                         value={profile.aadhaar}
                     />
@@ -423,7 +446,7 @@ const UserProfile = () => {
                         value={
                             profile.janAadhaar
                         }
-                    />
+                    /> */}
 
 
                 </div>

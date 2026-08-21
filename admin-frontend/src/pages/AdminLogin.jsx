@@ -52,7 +52,7 @@ const AdminLogin = () => {
       // ==========================
 
       const response = await api.post(
-        "/auth/login",
+        "/admin/auth/login",
         {
           email: email.trim(),
           password: password,

@@ -259,7 +259,86 @@ const EditProfile = () => {
     }
 
   };
+  
 
+  const handleDeletePhoto = async () => {
+
+  const result = await Swal.fire({
+    title: "Delete Profile Photo?",
+    text: "Are you sure you want to delete your profile photo?",
+    icon: "warning",
+
+    showCancelButton: true,
+
+    confirmButtonColor: "#dc3545",
+    cancelButtonColor: "#6c757d",
+
+    confirmButtonText: "Yes, Delete",
+    cancelButtonText: "Cancel",
+  });
+
+  if (!result.isConfirmed) {
+    return;
+  }
+
+  try {
+
+    const data = new FormData();
+
+    // Empty value bhej rahe hain
+    data.append("profilePhoto", "");
+
+    const res = await api.put(
+      `/member/update-member/${profile._id}`,
+      data,
+      {
+        headers: {
+          "Content-Type": "multipart/form-data",
+        },
+      }
+    );
+
+    if (res.data?.success) {
+
+      setProfilePhoto(null);
+
+      await Swal.fire({
+        icon: "success",
+        title: "Deleted!",
+        text: "Profile photo deleted successfully.",
+        timer: 1500,
+        showConfirmButton: false,
+      });
+
+      // Updated profile reload
+      getProfile();
+
+    } else {
+
+      throw new Error(
+        res.data?.message ||
+        "Unable to delete profile photo"
+      );
+
+    }
+
+  } catch (error) {
+
+    console.error(
+      "DELETE PROFILE PHOTO ERROR:",
+      error
+    );
+
+    Swal.fire({
+      icon: "error",
+      title: "Delete Failed",
+      text:
+        error.response?.data?.message ||
+        "Unable to delete profile photo",
+    });
+
+  }
+};
 
   // ==========================================
   // LOAD PROFILE
@@ -858,6 +937,7 @@ const EditProfile = () => {
               name="nickName"
               value={formData.nickName}
               onChange={handleChange}
+              disabled
             />
 
 
@@ -882,21 +962,28 @@ const EditProfile = () => {
               onChange={handleChange}
             />
 
-
-            <FormInput
-              label="Category"
-              name="category"
-              value={formData.category}
-              onChange={handleChange}
-            />
-
-
-            <FormInput
+            <FormSelect
+  label="Category"
+  name="category"
+  value={formData.category}
+  onChange={handleChange}
+  options={[
+    "General",
+    "EWS",
+    "SC",
+    "ST",
+    "OBC",
+    "MBC"
+  ]}
+/>
+          
+      
+             <FormInput
               label="Caste"
               name="caste"
               value={formData.caste}
               onChange={handleChange}
-            />
+            /> 
 
 
             <FormSelect
@@ -913,6 +1000,29 @@ const EditProfile = () => {
               ]}
             />
 
+            
+            <FormInput
+              label="Aadhaar Number"
+              name="aadhaar"
+              value={formData.aadhaar}
+              onChange={handleChange}
+            />
+
+
+            <FormInput
+              label="PAN Number"
+              name="pan"
+              value={formData.pan}
+              onChange={handleChange}
+            />
+
+
+            <FormInput
+              label="Jan Aadhaar Number"
+              name="janAadhaar"
+              value={formData.janAadhaar}
+              onChange={handleChange}
+            />
 
             <FormInput
               label="Occupation"
@@ -974,7 +1084,7 @@ const EditProfile = () => {
               type="email"
             />
 
-
+{/* 
             <FormInput
               label="Aadhaar Number"
               name="aadhaar"
@@ -996,7 +1106,7 @@ const EditProfile = () => {
               name="janAadhaar"
               value={formData.janAadhaar}
               onChange={handleChange}
-            />
+            /> */}
 
           </div>
 
@@ -1216,6 +1326,7 @@ const FormInput = ({
   value,
   onChange,
   type = "text",
+  disabled = false,
 }) => {
 
   return (
@@ -1231,6 +1342,7 @@ const FormInput = ({
         name={name}
         value={value}
         onChange={onChange}
+         disabled={disabled}
       />
 
     </div>

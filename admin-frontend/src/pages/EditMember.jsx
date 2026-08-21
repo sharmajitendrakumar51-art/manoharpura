@@ -214,22 +214,46 @@ const handleSubmit = async (e) => {
     const form = new FormData();
 
     // ==========================
-    // Text Fields
+// Text + Deleted File Fields
+// ==========================
+
+Object.keys(formData).forEach((key) => {
+
+    const fileFields = [
+        "profilePhoto",
+        "aadhaarFront",
+        "aadhaarBack",
+        "janAadhaarCard",
+        "panCard"
+    ];
+
+    // ==========================
+    // FILE FIELDS
     // ==========================
 
-    Object.keys(formData).forEach((key) => {
+    if (fileFields.includes(key)) {
 
-      if (
-        key !== "profilePhoto" &&
-        key !== "aadhaarFront" &&
-        key !== "aadhaarBack" &&
-        key !== "janAadhaarCard" &&
-        key !== "panCard"
-      ) {
-        form.append(key, formData[key] ?? "");
-      }
+        // Agar document delete kiya hai
+        if (formData[key] === null) {
 
-    });
+            form.append(key, "");
+
+        }
+
+        return;
+    }
+
+
+    // ==========================
+    // NORMAL TEXT FIELDS
+    // ==========================
+
+    form.append(
+        key,
+        formData[key] ?? ""
+    );
+
+});
 
 
     // ==========================

@@ -3,50 +3,104 @@
 ===================================================== */
 
 .edit-profile-page {
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 10px 5px 50px;
+    width: 100%;
+    min-height: 100vh;
+
+    padding: 30px;
+
+    background: #f5f7fb;
+
+    box-sizing: border-box;
 }
 
 
 /* =====================================================
-   HEADER
+   PAGE HEADER
 ===================================================== */
 
 .edit-page-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 25px;
+    margin-bottom: 25px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 20px;
 }
 
 .edit-page-header h1 {
-  margin: 0;
-  color: #1769e0;
-  font-size: 32px;
-  font-weight: 800;
+    margin: 0;
+
+    font-size: 30px;
+    font-weight: 600;
+
+    color: #0d47a1;
 }
 
 .edit-page-header p {
-  margin: 5px 0 0;
-  color: #64748b;
-  font-size: 15px;
+    margin: 5px 0 0;
+
+    color: #777;
+
+    font-size: 14px;
 }
+
+
+/* =====================================================
+   BACK BUTTON
+===================================================== */
 
 .back-profile-btn {
-  border: none;
-  background: #64748b;
-  color: white;
-  padding: 11px 20px;
-  border-radius: 9px;
-  font-size: 15px;
-  font-weight: 600;
-  cursor: pointer;
+    height: 40px;
+
+    padding: 0 16px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 7px;
+
+    border: 1px solid #dce4ee;
+
+    border-radius: 10px;
+
+    background: #ffffff;
+
+    color: #0d47a1;
+
+    font-size: 13px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: 0.2s ease;
 }
 
-.back-profile-btn i {
-  margin-right: 7px;
+.back-profile-btn:hover {
+    background: #f0f5fc;
+
+    border-color: #0d47a1;
+}
+
+
+
+/* =====================================================
+   MAIN FORM CARD
+===================================================== */
+
+.edit-profile-form {
+    width: 100%;
+
+    background: #ffffff;
+
+    border-radius: 15px;
+
+    padding: 30px;
+
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+
+    box-sizing: border-box;
 }
 
 
@@ -55,524 +109,375 @@
 ===================================================== */
 
 .edit-section {
-  background: #ffffff;
-  border-radius: 18px;
-  padding: 28px;
-  margin-bottom: 22px;
-  box-shadow: 0 5px 20px rgba(15, 23, 42, 0.06);
+    margin-bottom: 35px;
+
+    padding: 25px;
+
+    border: 1px solid #e9ecef;
+
+    border-radius: 12px;
+
+    background: #ffffff;
+
+    box-sizing: border-box;
 }
 
+.edit-section:last-of-type {
+    margin-bottom: 0;
+}
+
+
+/* =====================================================
+   SECTION TITLE
+===================================================== */
+
 .edit-section-title {
-  border-bottom: 2px solid #e8eef5;
-  margin-bottom: 25px;
+    margin-bottom: 22px;
+
+    padding-bottom: 12px;
+
+    border-bottom: 2px solid #f1f1f1;
 }
 
 .edit-section-title h2 {
-  margin: 0 0 14px;
-  color: #1769e0;
-  font-size: 24px;
-  font-weight: 800;
+    margin: 0;
+
+    display: flex;
+    align-items: center;
+
+    gap: 10px;
+
+    color: #0d47a1;
+
+    font-size: 18px;
+
+    font-weight: 700;
 }
 
-.edit-section-title i {
-  margin-right: 10px;
+.edit-section-title h2 i {
+    font-size: 18px;
 }
 
 
 /* =====================================================
    FORM GRID
+   2 INPUTS PER ROW
 ===================================================== */
 
 .edit-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 20px 25px;
-}
+    display: grid;
 
-.form-group {
-  display: flex;
-  flex-direction: column;
-}
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
 
-.form-group label {
-  margin-bottom: 8px;
-  color: #475569;
-  font-size: 14px;
-  font-weight: 700;
-}
+    column-gap: 20px;
 
-.form-group input,
-.form-group select,
-.form-group textarea {
-  width: 100%;
-  box-sizing: border-box;
-  border: 1px solid #dbe3ec;
-  border-radius: 9px;
-  background: #ffffff;
-  padding: 12px 14px;
-  color: #1e293b;
-  font-size: 15px;
-  outline: none;
-  transition: 0.2s ease;
-}
-
-.form-group input:focus,
-.form-group select:focus,
-.form-group textarea:focus {
-  border-color: #1769e0;
-  box-shadow: 0 0 0 3px rgba(23, 105, 224, 0.08);
-}
-
-.form-group textarea {
-  resize: vertical;
-}
-
-.readonly-input {
-  background: #f1f5f9 !important;
-  cursor: not-allowed;
+    row-gap: 18px;
 }
 
 
 /* =====================================================
-   PROFILE PHOTO
+   FORM FIELD
 ===================================================== */
 
-.photo-edit-area {
-  display: flex;
-  align-items: center;
-  gap: 25px;
+.form-field {
+    min-width: 0;
 }
 
-.edit-photo-preview {
-  width: 120px;
-  height: 120px;
-  border-radius: 50%;
-  overflow: hidden;
-  border: 4px solid #1769e0;
-  background: #f1f5f9;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #94a3b8;
-  font-size: 45px;
+.form-field label {
+    display: block;
+
+    margin-bottom: 7px;
+
+    color: #444;
+
+    font-size: 13px;
+
+    font-weight: 600;
 }
 
-.edit-photo-preview img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+
+/* =====================================================
+   INPUT / SELECT
+===================================================== */
+
+.form-field input,
+.form-field select,
+.form-field textarea {
+
+    width: 100%;
+
+    min-height: 42px;
+
+    padding: 8px 12px;
+
+    border: 1px solid #ced4da;
+
+    border-radius: 8px;
+
+    background: #ffffff;
+
+    color: #333;
+
+    font-size: 14px;
+
+    font-family: inherit;
+
+    outline: none;
+
+    box-sizing: border-box;
+
+    transition: 0.2s ease;
 }
 
-.upload-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 11px 17px;
-  background: #1769e0;
-  color: white;
-  border-radius: 8px;
-  cursor: pointer;
-  font-weight: 600;
+
+/* Focus */
+
+.form-field input:focus,
+.form-field select:focus,
+.form-field textarea:focus {
+
+    border-color: #0d47a1;
+
+    box-shadow:
+        0 0 0 3px rgba(13, 71, 161, 0.10);
+
+    outline: none;
 }
 
-.upload-btn input {
-  display: none;
+
+/* Textarea */
+
+.form-field textarea {
+
+    min-height: 105px;
+
+    resize: vertical;
 }
 
-.upload-help {
-  margin: 8px 0 0;
-  color: #94a3b8;
-  font-size: 12px;
+
+/* =====================================================
+   DISABLED INPUT
+===================================================== */
+
+.form-field input:disabled,
+.form-field select:disabled {
+
+    background: #f1f3f5;
+
+    color: #777;
+
+    cursor: not-allowed;
+
+    opacity: 1;
 }
 
 
 /* =====================================================
    ADDRESS
+   2 COLUMNS
 ===================================================== */
-
-.address-edit-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 25px;
-}
-
-
-/* =====================================================
-   DOCUMENTS
-===================================================== */
-
-.document-edit-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 20px;
-}
-
-.document-upload-card {
-  display: flex;
-  align-items: center;
-  gap: 18px;
-  padding: 20px;
-  background: #f8fafc;
-  border: 1px solid #e2e8f0;
-  border-radius: 14px;
-}
-
-.document-icon {
-  width: 52px;
-  height: 52px;
-  min-width: 52px;
-  border-radius: 12px;
-  background: #eaf2ff;
-  color: #1769e0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 24px;
-}
-
-.document-content {
-  flex: 1;
-}
-
-.document-content h4 {
-  margin: 0 0 9px;
-  color: #1e293b;
-  font-size: 17px;
-}
-
-.view-document-btn {
-  border: none;
-  background: #1769e0;
-  color: white;
-  padding: 7px 12px;
-  border-radius: 7px;
-  cursor: pointer;
-  margin-bottom: 8px;
-}
-
-.choose-document-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  border: 1px solid #1769e0;
-  color: #1769e0;
-  background: white;
-  padding: 7px 11px;
-  border-radius: 7px;
-  cursor: pointer;
-  font-size: 13px;
-  font-weight: 600;
-}
-
-.choose-document-btn:hover {
-  background: #1769e0;
-  color: white;
-}
-
-.choose-document-btn input {
-  display: none;
-}
-
-.selected-file {
-  color: #16804b;
-  font-size: 13px;
-  margin: 0 0 8px;
-  word-break: break-all;
-}
-
-.selected-file i {
-  margin-right: 5px;
-}
-
-.no-document {
-  color: #94a3b8;
-  font-size: 13px;
-  margin: 0 0 8px;
-}
-
-
-/* =====================================================
-   ACTIONS
-===================================================== */
-
-.edit-actions {
-  display: flex;
-  justify-content: center;
-  gap: 18px;
-  margin-top: 10px;
-}
-
-.cancel-edit-btn,
-.save-edit-btn {
-  min-width: 180px;
-  border: none;
-  padding: 13px 25px;
-  border-radius: 10px;
-  font-size: 16px;
-  font-weight: 700;
-  cursor: pointer;
-}
-
-.cancel-edit-btn {
-  background: #64748b;
-  color: white;
-}
-
-.save-edit-btn {
-  background: #1769e0;
-  color: white;
-}
-
-.save-edit-btn:disabled {
-  opacity: 0.6;
-  cursor: not-allowed;
-}
-
-
-/* =====================================================
-   LOADING
-===================================================== */
-
-.edit-profile-loading {
-  min-height: 500px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  color: #64748b;
-}
-
-.spinner {
-  width: 40px;
-  height: 40px;
-  border: 4px solid #e2e8f0;
-  border-top-color: #1769e0;
-  border-radius: 50%;
-  animation: spin 0.8s linear infinite;
-}
-
-@keyframes spin {
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-
-/* =====================================================
-   MOBILE
-===================================================== */
-
-@media (max-width: 768px) {
-
-  .edit-profile-page {
-    padding: 5px 0 35px;
-  }
-
-  .edit-page-header {
-    align-items: flex-start;
-    gap: 15px;
-  }
-
-  .edit-page-header h1 {
-    font-size: 25px;
-  }
-
-  .back-profile-btn {
-    padding: 9px 12px;
-  }
-
-  .edit-section {
-    padding: 20px;
-    border-radius: 14px;
-  }
-
-  .edit-grid,
-  .address-edit-grid,
-  .document-edit-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .photo-edit-area {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .document-upload-card {
-    padding: 15px;
-  }
-
-  .edit-actions {
-    flex-direction: column;
-  }
-
-  .cancel-edit-btn,
-  .save-edit-btn {
-    width: 100%;
-  }
-
-}
-
-.edit-profile-page {
-  width: 100%;
-  max-width: 1200px;
-  margin: auto;
-  padding-bottom: 40px;
-}
-
-.edit-page-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 25px;
-}
-
-.edit-page-header h1 {
-  margin: 0;
-  color: #1457b8;
-  font-size: 30px;
-  font-weight: 700;
-}
-
-.edit-page-header p {
-  margin: 5px 0 0;
-  color: #777;
-}
-
-.back-profile-btn {
-  border: none;
-  background: #6c757d;
-  color: white;
-  padding: 11px 20px;
-  border-radius: 8px;
-  font-weight: 600;
-  cursor: pointer;
-}
-
-.edit-profile-form {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-
-.edit-section {
-  background: white;
-  border-radius: 16px;
-  padding: 25px;
-  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.06);
-}
-
-.edit-section-title {
-  border-bottom: 2px solid #edf1f5;
-  margin-bottom: 22px;
-}
-
-.edit-section-title h2 {
-  margin: 0 0 12px;
-  color: #1769e0;
-  font-size: 22px;
-}
-
-.edit-section-title i {
-  margin-right: 10px;
-}
-
-.edit-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
-}
-
-.form-field {
-  display: flex;
-  flex-direction: column;
-  gap: 7px;
-}
-
-.form-field label {
-  font-weight: 600;
-  color: #53677d;
-}
-
-.form-field input,
-.form-field select,
-.form-field textarea {
-  width: 100%;
-  border: 1px solid #dce3eb;
-  border-radius: 8px;
-  padding: 12px 13px;
-  font-size: 15px;
-  outline: none;
-  box-sizing: border-box;
-  background: #fff;
-}
-
-.form-field input:focus,
-.form-field select:focus,
-.form-field textarea:focus {
-  border-color: #1769e0;
-  box-shadow: 0 0 0 3px rgba(23, 105, 224, 0.1);
-}
 
 .edit-address-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 20px;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap: 20px;
 }
+
+.edit-address-grid .form-field {
+    min-width: 0;
+}
+
+.edit-address-grid label {
+    display: block;
+
+    margin-bottom: 7px;
+
+    color: #444;
+
+    font-size: 13px;
+
+    font-weight: 600;
+}
+
+.edit-address-grid textarea {
+
+    width: 100%;
+
+    min-height: 105px;
+
+    padding: 10px 12px;
+
+    border: 1px solid #ced4da;
+
+    border-radius: 8px;
+
+    background: #ffffff;
+
+    color: #333;
+
+    font-size: 14px;
+
+    font-family: inherit;
+
+    resize: vertical;
+
+    outline: none;
+
+    box-sizing: border-box;
+
+    transition: 0.2s ease;
+}
+
+.edit-address-grid textarea:focus {
+
+    border-color: #0d47a1;
+
+    box-shadow:
+        0 0 0 3px rgba(13, 71, 161, 0.10);
+}
+
+
+/* =====================================================
+   PROFILE PHOTO SECTION
+===================================================== */
 
 .profile-photo-edit {
-  display: flex;
-  align-items: center;
-  gap: 25px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 20px;
+
+    padding: 18px;
+
+    background: #fafafa;
+
+    border: 1px dashed #ccc;
+
+    border-radius: 12px;
 }
 
+
+/* =====================================================
+   PHOTO PREVIEW
+===================================================== */
+
 .edit-photo-preview {
-  width: 120px;
-  height: 120px;
-  border-radius: 50%;
-  overflow: hidden;
-  border: 4px solid #1769e0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: #f1f5f9;
-  font-size: 50px;
-  color: #1769e0;
+
+    width: 110px;
+
+    height: 110px;
+
+    flex-shrink: 0;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    overflow: hidden;
+
+    border-radius: 50%;
+
+    border: 4px solid #0d47a1;
+
+    background: #eef4fc;
+
+    color: #0d47a1;
+
+    font-size: 45px;
 }
 
 .edit-photo-preview img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
 }
 
-.upload-btn,
-.document-upload-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  background: #1769e0;
-  color: white;
-  padding: 10px 16px;
-  border-radius: 8px;
-  cursor: pointer;
-  font-weight: 600;
+
+/* =====================================================
+   PHOTO UPLOAD
+===================================================== */
+
+.profile-photo-edit > div:last-child {
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    gap: 7px;
+}
+
+.upload-btn {
+
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 7px;
+
+    min-height: 40px;
+
+    padding: 0 15px;
+
+    border-radius: 8px;
+
+    background: #0d47a1;
+
+    color: #ffffff;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: 0.2s ease;
+}
+
+.upload-btn:hover {
+
+    background: #083b8a;
+
+    transform: translateY(-1px);
 }
 
 .upload-note {
-  margin: 8px 0 0;
-  color: #888;
-  font-size: 13px;
+
+    margin: 0;
+
+    color: #777;
+
+    font-size: 12px;
 }
 
+
 /* =====================================================
-   DOCUMENT SECTION
+   DOCUMENT GRID
+   2 DOCUMENTS PER ROW
 ===================================================== */
 
 .document-grid {
-  width: 100%;
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 20px;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap: 20px;
 }
 
 
@@ -581,901 +486,550 @@
 ===================================================== */
 
 .document-upload-card {
-  width: 100%;
-  min-width: 0;
-  box-sizing: border-box;
 
-  border: 1px dashed #cbd7e6;
-  border-radius: 14px;
+    min-height: 150px;
 
-  padding: 20px;
-
-  background: #fafcff;
-
-  overflow: hidden;
-}
-
-
-/* =====================================================
-   DOCUMENT TITLE
-===================================================== */
-
-.document-upload-card h3 {
-  margin: 0 0 15px;
-
-  color: #304b6a;
-
-  font-size: 18px;
-  font-weight: 600;
-
-  line-height: 1.3;
-
-  word-break: break-word;
-}
-
-
-/* =====================================================
-   EXISTING DOCUMENT
-===================================================== */
-
-.existing-document {
-  width: 100%;
-  margin-bottom: 15px;
-}
-
-
-/* =====================================================
-   DOCUMENT NAME
-===================================================== */
-
-.document-name {
-  width: 100%;
-  max-width: 100%;
-
-  box-sizing: border-box;
-
-  display: flex;
-  align-items: center;
-
-  gap: 8px;
-
-  padding: 10px 12px;
-
-  background: #eef5ff;
-
-  border-radius: 8px;
-
-  color: #245a91;
-
-  font-weight: 600;
-
-  margin-bottom: 12px;
-
-  overflow: hidden;
-}
-
-
-.document-name i {
-  flex-shrink: 0;
-
-  font-size: 20px;
-
-  color: #1769e0;
-}
-
-
-.document-name span {
-  min-width: 0;
-
-  overflow: hidden;
-
-  text-overflow: ellipsis;
-
-  white-space: nowrap;
-}
-
-
-/* =====================================================
-   DOCUMENT ACTIONS
-===================================================== */
-
-.document-actions {
-  width: 100%;
-
-  display: flex;
-
-  gap: 10px;
-
-  flex-wrap: wrap;
-}
-
-
-/* =====================================================
-   VIEW BUTTON
-===================================================== */
-
-.document-view-btn {
-  border: none;
-
-  background: #1769e0;
-
-  color: white;
-
-  padding: 9px 18px;
-
-  border-radius: 7px;
-
-  cursor: pointer;
-
-  font-size: 14px;
-
-  font-weight: 600;
-
-  transition: 0.2s;
-}
-
-
-.document-view-btn:hover {
-  background: #0d55c7;
-}
-
-
-.document-view-btn i {
-  margin-right: 6px;
-}
-
-
-/* =====================================================
-   DELETE BUTTON
-===================================================== */
-
-.document-delete-btn {
-  border: none;
-
-  background: #dc3545;
-
-  color: white;
-
-  padding: 9px 18px;
-
-  border-radius: 7px;
-
-  cursor: pointer;
-
-  font-size: 14px;
-
-  font-weight: 600;
-
-  transition: 0.2s;
-}
-
-
-.document-delete-btn:hover {
-  background: #bb2d3b;
-}
-
-
-.document-delete-btn i {
-  margin-right: 6px;
-}
-
-
-/* =====================================================
-   NEW SELECTED FILE
-===================================================== */
-
-.new-selected-document {
-  width: 100%;
-
-  margin-bottom: 15px;
-}
-
-
-.new-selected-document .document-name {
-  background: #e9f7ef;
-
-  color: #198754;
-}
-
-
-.new-selected-document .document-name i {
-  color: #198754;
-}
-
-
-/* =====================================================
-   REMOVE NEW FILE
-===================================================== */
-
-.document-remove-btn {
-  border: none;
-
-  background: #6c757d;
-
-  color: white;
-
-  padding: 8px 14px;
-
-  border-radius: 7px;
-
-  cursor: pointer;
-
-  font-size: 14px;
-
-  font-weight: 600;
-}
-
-
-/* =====================================================
-   CHANGE FILE BUTTON
-===================================================== */
-
-.document-upload-btn {
-  width: auto;
-
-  display: inline-flex;
-
-  align-items: center;
-
-  justify-content: center;
-
-  gap: 8px;
-
-  background: #6c757d;
-
-  color: white;
-
-  padding: 11px 18px;
-
-  border-radius: 8px;
-
-  cursor: pointer;
-
-  font-weight: 600;
-
-  transition: 0.2s;
-
-  box-sizing: border-box;
-}
-
-
-.document-upload-btn:hover {
-  background: #555b61;
-}
-
-
-.document-upload-btn i {
-  font-size: 17px;
-}
-
-.edit-actions {
-  display: flex;
-  justify-content: center;
-  gap: 18px;
-  padding: 10px 0;
-}
-
-.cancel-btn,
-.save-btn {
-  border: none;
-  min-width: 170px;
-  padding: 13px 22px;
-  border-radius: 9px;
-  font-size: 16px;
-  font-weight: 600;
-  cursor: pointer;
-}
-
-.cancel-btn {
-  background: #6c757d;
-  color: white;
-}
-
-.save-btn {
-  background: #1769e0;
-  color: white;
-}
-
-.save-btn:disabled {
-  opacity: 0.7;
-  cursor: not-allowed;
-}
-
-.cancel-btn i,
-.save-btn i {
-  margin-right: 8px;
-}
-
-.edit-profile-loading {
-  min-height: 400px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 12px;
-  color: #555;
-}
-
-
-/* =====================================
-   RESPONSIVE
-===================================== */
-
-@media (max-width: 900px) {
-
-  .edit-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .document-grid {
-    grid-template-columns: 1fr;
-  }
-
-}
-
-@media (max-width: 600px) {
-
-  .edit-profile-page {
-    padding: 10px;
-  }
-
-  .edit-page-header {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 15px;
-  }
-
-  .edit-page-header h1 {
-    font-size: 25px;
-  }
-
-  .edit-section {
     padding: 18px;
-  }
 
-  .edit-grid,
-  .edit-address-grid {
-    grid-template-columns: 1fr;
-  }
+    border: 1px solid #e9ecef;
 
-  .profile-photo-edit {
-    flex-direction: column;
-    align-items: flex-start;
-  }
+    border-radius: 12px;
 
-  .edit-actions {
-    flex-direction: column;
-  }
-
-  .cancel-btn,
-  .save-btn {
-    width: 100%;
-  }
-
-}
-
-.document-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 20px;
-}
-
-.document-upload-card {
-  border: 1px dashed #cbd7e6;
-  border-radius: 14px;
-  padding: 20px;
-  background: #fafcff;
-}
-
-.document-upload-card h3 {
-  margin: 0 0 16px;
-  color: #304b6a;
-  font-size: 18px;
-  font-weight: 600;
-}
-
-
-/* =====================================
-   EXISTING DOCUMENT
-===================================== */
-
-.existing-document {
-  margin-bottom: 15px;
-}
-
-.document-name {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-
-  padding: 10px 12px;
-
-  background: #eef5ff;
-
-  border-radius: 8px;
-
-  color: #245a91;
-
-  font-weight: 600;
-
-  margin-bottom: 12px;
-
-  word-break: break-word;
-}
-
-.document-name i {
-  font-size: 20px;
-  color: #1769e0;
-}
-
-
-/* =====================================
-   DOCUMENT ACTIONS
-===================================== */
-
-.document-actions {
-  display: flex;
-  gap: 10px;
-}
-
-
-/* VIEW */
-
-.document-view-btn {
-  border: none;
-
-  background: #1769e0;
-
-  color: white;
-
-  padding: 9px 18px;
-
-  border-radius: 7px;
-
-  cursor: pointer;
-
-  font-size: 14px;
-
-  font-weight: 600;
-
-  transition: 0.2s;
-}
-
-.document-view-btn:hover {
-  background: #0d55c7;
-}
-
-.document-view-btn i {
-  margin-right: 6px;
-}
-
-
-/* DELETE */
-
-.document-delete-btn {
-  border: none;
-
-  background: #dc3545;
-
-  color: white;
-
-  padding: 9px 18px;
-
-  border-radius: 7px;
-
-  cursor: pointer;
-
-  font-size: 14px;
-
-  font-weight: 600;
-
-  transition: 0.2s;
-}
-
-.document-delete-btn:hover {
-  background: #bb2d3b;
-}
-
-.document-delete-btn i {
-  margin-right: 6px;
-}
-
-
-/* =====================================
-   NEW SELECTED FILE
-===================================== */
-
-.new-selected-document {
-  margin-bottom: 15px;
-}
-
-.new-selected-document .document-name {
-  background: #e9f7ef;
-  color: #198754;
-}
-
-.new-selected-document .document-name i {
-  color: #198754;
-}
-
-
-/* REMOVE NEW FILE */
-
-.document-remove-btn {
-  border: none;
-
-  background: #6c757d;
-
-  color: white;
-
-  padding: 8px 14px;
-
-  border-radius: 7px;
-
-  cursor: pointer;
-
-  font-size: 14px;
-
-  font-weight: 600;
-}
-
-.document-remove-btn:hover {
-  background: #555b61;
-}
-
-
-/* =====================================
-   UPLOAD / CHANGE BUTTON
-===================================== */
-
-.document-upload-btn {
-  display: inline-flex;
-
-  align-items: center;
-
-  gap: 8px;
-
-  background: #6c757d;
-
-  color: white;
-
-  padding: 11px 18px;
-
-  border-radius: 8px;
-
-  cursor: pointer;
-
-  font-weight: 600;
-
-  transition: 0.2s;
-}
-
-.document-upload-btn:hover {
-  background: #555b61;
-}
-
-.document-upload-btn i {
-  font-size: 17px;
-}
-
-/* =========================================
-   DOCUMENTS - MOBILE RESPONSIVE FIX
-========================================= */
-
-@media (max-width: 600px) {
-
-  /* Document grid */
-  .document-grid {
-    grid-template-columns: 1fr !important;
-    width: 100%;
-    gap: 15px;
-  }
-
-
-  /* Document card */
-  .document-upload-card {
-    width: 100%;
-    max-width: 100%;
-    min-width: 0;
+    background: #fafafa;
 
     box-sizing: border-box;
 
     display: flex;
+
     flex-direction: column;
-    align-items: stretch;
+}
 
-    gap: 12px;
+.document-upload-card h3 {
 
-    padding: 15px;
+    margin: 0 0 15px;
 
-    overflow: hidden;
-  }
+    color: #26364a;
 
+    font-size: 15px;
 
-  /* Document title */
-  .document-upload-card h3 {
-    width: 100%;
-    margin: 0;
-
-    font-size: 16px;
-    line-height: 1.3;
-
-    word-break: break-word;
-  }
+    font-weight: 700;
+}
 
 
-  /* Existing document */
-  .existing-document {
-    width: 100%;
-    margin: 0;
-  }
+/* =====================================================
+   EXISTING DOCUMENT
+===================================================== */
 
+.existing-document {
 
-  /* Document name */
-  .document-name {
-    width: 100%;
-    max-width: 100%;
+    padding: 12px;
 
-    box-sizing: border-box;
+    border: 1px solid #dce4ee;
 
-    font-size: 14px;
+    border-radius: 9px;
 
-    padding: 9px 10px;
+    background: #ffffff;
 
-    overflow: hidden;
-  }
+    margin-bottom: 12px;
+}
 
+.document-name {
 
-  .document-name span {
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
     min-width: 0;
 
+    margin-bottom: 10px;
+
+    color: #344054;
+
+    font-size: 13px;
+
+    font-weight: 600;
+}
+
+.document-name i {
+
+    color: #0d47a1;
+
+    font-size: 17px;
+
+    flex-shrink: 0;
+}
+
+.document-name span {
+
     overflow: hidden;
+
     text-overflow: ellipsis;
+
     white-space: nowrap;
-  }
+}
 
 
-  /* View + Delete */
-  .document-actions {
-    width: 100%;
+/* =====================================================
+   DOCUMENT ACTIONS
+===================================================== */
+
+.document-actions {
 
     display: flex;
 
     gap: 8px;
+}
 
-    flex-wrap: wrap;
-  }
+.document-view-btn,
+.document-delete-btn {
 
+    height: 34px;
 
-  .document-view-btn,
-  .document-delete-btn {
-    flex: 1;
+    padding: 0 12px;
 
-    min-width: 100px;
+    border: none;
 
-    padding: 9px 10px;
+    border-radius: 7px;
 
-    font-size: 13px;
+    display: inline-flex;
 
-    margin: 0;
-  }
-
-
-  /* Change / Upload */
-  .document-upload-btn {
-    width: 100%;
-
-    box-sizing: border-box;
+    align-items: center;
 
     justify-content: center;
 
-    padding: 10px 12px;
+    gap: 6px;
+
+    font-size: 12px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: 0.2s ease;
+}
+
+.document-view-btn {
+
+    background: #0d47a1;
+
+    color: #ffffff;
+}
+
+.document-view-btn:hover {
+
+    background: #083b8a;
+
+    transform: translateY(-1px);
+}
+
+.document-delete-btn {
+
+    background: #dc3545;
+
+    color: #ffffff;
+}
+
+.document-delete-btn:hover {
+
+    background: #bb2d3b;
+
+    transform: translateY(-1px);
+}
+
+
+/* =====================================================
+   NEW SELECTED DOCUMENT
+===================================================== */
+
+.new-selected-document {
+
+    padding: 12px;
+
+    margin-bottom: 12px;
+
+    border: 1px solid #dce4ee;
+
+    border-radius: 9px;
+
+    background: #ffffff;
+}
+
+.document-remove-btn {
+
+    height: 32px;
+
+    padding: 0 11px;
+
+    border: none;
+
+    border-radius: 7px;
+
+    background: #dc3545;
+
+    color: #ffffff;
+
+    font-size: 12px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+}
+
+
+/* =====================================================
+   DOCUMENT UPLOAD BUTTON
+===================================================== */
+
+.document-upload-btn {
+
+    min-height: 40px;
+
+    margin-top: auto;
+
+    padding: 0 15px;
+
+    border: 1px dashed #b8c5d6;
+
+    border-radius: 8px;
+
+    background: #ffffff;
+
+    color: #0d47a1;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 7px;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: 0.2s ease;
+}
+
+.document-upload-btn:hover {
+
+    background: #eef5ff;
+
+    border-color: #0d47a1;
+}
+
+
+/* =====================================================
+   FORM ACTIONS
+===================================================== */
+
+.edit-actions {
+
+    margin-top: 20px;
+
+    padding: 18px 25px;
+
+    border-top: 1px solid #e9ecef;
+
+    background: #fafafa;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: flex-end;
+
+    gap: 15px;
+}
+
+
+/* =====================================================
+   CANCEL BUTTON
+===================================================== */
+
+.cancel-btn {
+
+    min-width: 140px;
+
+    height: 40px;
+
+    padding: 0 18px;
+
+    border: 1px solid #d7dee8;
+
+    border-radius: 10px;
+
+    background: #ffffff;
+
+    color: #6c757d;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 7px;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: 0.2s ease;
+}
+
+.cancel-btn:hover {
+
+    background: #f3f5f8;
+
+    border-color: #c5ccd6;
+}
+
+
+/* =====================================================
+   SAVE BUTTON
+===================================================== */
+
+.save-btn {
+
+    min-width: 160px;
+
+    height: 40px;
+
+    padding: 0 18px;
+
+    border: none;
+
+    border-radius: 10px;
+
+    background: #0d47a1;
+
+    color: #ffffff;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 7px;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 5px 14px rgba(13, 71, 161, 0.20);
+
+    transition: 0.2s ease;
+}
+
+.save-btn:hover {
+
+    background: #083b8a;
+
+    transform: translateY(-1px);
+}
+
+.save-btn:disabled {
+
+    opacity: 0.65;
+
+    cursor: not-allowed;
+
+    transform: none;
+}
+
+
+/* =====================================================
+   LOADING
+===================================================== */
+
+.edit-profile-loading {
+
+    min-height: 400px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 10px;
+
+    color: #0d47a1;
+}
+
+.edit-profile-loading p {
+
+    margin: 0;
 
     font-size: 14px;
 
-    text-align: center;
-  }
-
-
-  /* New selected file */
-  .new-selected-document {
-    width: 100%;
-    margin: 0;
-  }
-
-
-  .new-selected-document .document-name {
-    width: 100%;
-    box-sizing: border-box;
-  }
-
-
-  .document-remove-btn {
-    width: 100%;
-    margin-top: 8px;
-  }
-
+    color: #777;
 }
 
+
 /* =====================================================
-   FINAL DOCUMENT RESPONSIVE FIX
+   TABLET
 ===================================================== */
 
-@media (max-width: 900px) {
+@media (max-width: 991px) {
 
-  /* ===============================
-     DOCUMENT GRID
-  =============================== */
+    .edit-profile-page {
 
-  .document-grid {
-    display: grid !important;
+        padding: 25px;
+    }
 
-    grid-template-columns: 1fr !important;
+    .edit-profile-form {
 
-    width: 100% !important;
+        padding: 25px;
+    }
 
-    gap: 15px !important;
-  }
+    .edit-section {
 
+        padding: 22px;
+    }
 
-  /* ===============================
-     DOCUMENT CARD
-  =============================== */
+    .edit-grid {
 
-  .document-upload-card {
-    width: 100% !important;
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
 
-    max-width: 100% !important;
+    .document-grid {
 
-    min-width: 0 !important;
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
 
-    box-sizing: border-box !important;
+    .edit-page-header h1 {
 
-    display: flex !important;
+        font-size: 27px;
+    }
+}
 
-    flex-direction: column !important;
 
-    align-items: stretch !important;
+/* =====================================================
+   MOBILE
+===================================================== */
 
-    gap: 12px !important;
+@media (max-width: 767px) {
 
-    padding: 15px !important;
+    .edit-profile-page {
 
-    overflow: hidden !important;
-  }
+        padding: 15px;
+    }
 
+    .edit-page-header {
 
-  /* ===============================
-     DOCUMENT TITLE
-  =============================== */
+        flex-direction: column;
 
-  .document-upload-card h3 {
-    width: 100% !important;
+        align-items: flex-start;
 
-    margin: 0 0 5px !important;
+        margin-bottom: 16px;
+    }
 
-    font-size: 17px !important;
+    .edit-page-header h1 {
 
-    line-height: 1.3 !important;
+        font-size: 25px;
+    }
 
-    word-break: break-word !important;
-  }
+    .edit-page-header p {
 
+        font-size: 13px;
+    }
 
-  /* ===============================
-     EXISTING DOCUMENT
-  =============================== */
+    .back-profile-btn {
 
-  .existing-document {
-    width: 100% !important;
+        height: 38px;
+    }
 
-    margin: 0 !important;
-  }
+    .edit-profile-form {
 
+        padding: 20px;
 
-  /* ===============================
-     DOCUMENT NAME
-  =============================== */
+        border-radius: 12px;
+    }
 
-  .document-name {
-    width: 100% !important;
+    .edit-section {
 
-    max-width: 100% !important;
+        padding: 18px 15px;
 
-    box-sizing: border-box !important;
+        margin-bottom: 20px;
+    }
 
-    display: flex !important;
+    .edit-section-title {
 
-    align-items: center !important;
+        margin-bottom: 18px;
+    }
 
-    gap: 8px !important;
+    .edit-section-title h2 {
 
-    padding: 9px 10px !important;
+        font-size: 16px;
+    }
 
-    font-size: 14px !important;
+    /* Mobile = 1 input per row */
 
-    overflow: hidden !important;
-  }
+    .edit-grid {
 
+        grid-template-columns: 1fr;
 
-  .document-name span {
-    min-width: 0 !important;
+        gap: 16px;
+    }
 
-    overflow: hidden !important;
+    .edit-address-grid {
 
-    text-overflow: ellipsis !important;
+        grid-template-columns: 1fr;
 
-    white-space: nowrap !important;
-  }
+        gap: 16px;
+    }
 
+    .document-grid {
 
-  /* ===============================
-     VIEW + DELETE
-  =============================== */
+        grid-template-columns: 1fr;
 
-  .document-actions {
-    width: 100% !important;
+        gap: 16px;
+    }
 
-    display: flex !important;
+    .profile-photo-edit {
 
-    flex-wrap: wrap !important;
+        flex-direction: column;
 
-    gap: 8px !important;
-  }
+        align-items: flex-start;
+    }
 
+    .edit-photo-preview {
 
-  .document-view-btn,
-  .document-delete-btn {
-    flex: 1 !important;
+        width: 100px;
 
-    min-width: 0 !important;
+        height: 100px;
+    }
 
-    margin: 0 !important;
+    .edit-actions {
 
-    padding: 9px 10px !important;
+        flex-direction: column-reverse;
 
-    font-size: 13px !important;
+        align-items: stretch;
 
-    white-space: nowrap !important;
-  }
+        padding: 15px;
+    }
 
+    .cancel-btn,
+    .save-btn {
 
-  /* ===============================
-     CHANGE FILE
-  =============================== */
-
-  .document-upload-btn {
-    width: 100% !important;
-
-    box-sizing: border-box !important;
-
-    justify-content: center !important;
-
-    padding: 10px 12px !important;
-
-    font-size: 14px !important;
-
-    text-align: center !important;
-  }
-
-
-  /* ===============================
-     NEW FILE
-  =============================== */
-
-  .new-selected-document {
-    width: 100% !important;
-
-    margin: 0 !important;
-  }
-
-
-  .document-remove-btn {
-    width: 100% !important;
-
-    margin-top: 8px !important;
-  }
-
+        width: 100%;
+    }
 }
 
 
@@ -1485,963 +1039,35 @@
 
 @media (max-width: 480px) {
 
-  .document-upload-card {
-    padding: 13px !important;
-  }
+    .edit-profile-page {
 
-
-  .document-upload-card h3 {
-    font-size: 16px !important;
-  }
-
-
-  .document-view-btn,
-  .document-delete-btn {
-    font-size: 12px !important;
-
-    padding: 8px 9px !important;
-  }
-
-
-  .document-name {
-    font-size: 13px !important;
-  }
-
-
-  .document-upload-btn {
-    font-size: 13px !important;
-  }
-
-}
-
-/* =====================================================
-   DOCUMENT RESPONSIVE
-===================================================== */
-
-
-/* =========================================
-   TABLET
-   901px - 1200px
-========================================= */
-
-@media (max-width: 1200px) {
-
-  .document-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-}
-
-
-/* =========================================
-   TABLET / IPAD
-   601px - 900px
-========================================= */
-
-@media (max-width: 900px) {
-
-  .document-grid {
-    grid-template-columns: 1fr;
-  }
-
-
-  .document-upload-card {
-    padding: 18px;
-  }
-
-
-  .document-upload-btn {
-    width: 100%;
-  }
-
-}
-
-
-/* =========================================
-   MOBILE
-   0px - 600px
-========================================= */
-
-@media (max-width: 600px) {
-
-  .document-grid {
-    width: 100%;
-
-    grid-template-columns: 1fr !important;
-
-    gap: 15px;
-  }
-
-
-  .document-upload-card {
-    width: 100% !important;
-
-    min-width: 0 !important;
-
-    padding: 15px !important;
-
-    box-sizing: border-box;
-
-    overflow: hidden;
-  }
-
-
-  .document-upload-card h3 {
-    font-size: 16px;
-
-    line-height: 1.3;
-
-    margin-bottom: 12px;
-  }
-
-
-  .document-name {
-    width: 100%;
-
-    padding: 9px 10px;
-
-    font-size: 14px;
-
-    box-sizing: border-box;
-  }
-
-
-  .document-actions {
-    width: 100%;
-
-    display: flex;
-
-    gap: 8px;
-
-    flex-wrap: nowrap;
-  }
-
-
-  .document-view-btn,
-  .document-delete-btn {
-    flex: 1;
-
-    width: 50%;
-
-    min-width: 0;
-
-    padding: 9px 8px;
-
-    font-size: 13px;
-
-    margin: 0;
-  }
-
-
-  .document-upload-btn {
-    width: 100%;
-
-    padding: 10px;
-
-    font-size: 14px;
-
-    box-sizing: border-box;
-  }
-
-
-  .document-remove-btn {
-    width: 100%;
-  }
-
-}
-
-
-/* =========================================
-   SMALL MOBILE
-   0px - 400px
-========================================= */
-
-@media (max-width: 400px) {
-
-  .document-upload-card {
-    padding: 12px !important;
-  }
-
-
-  .document-upload-card h3 {
-    font-size: 15px;
-  }
-
-
-  .document-name {
-    font-size: 13px;
-  }
-
-
-  .document-view-btn,
-  .document-delete-btn {
-    font-size: 12px;
-
-    padding: 8px 5px;
-  }
-
-
-  .document-view-btn i,
-  .document-delete-btn i {
-    margin-right: 4px;
-  }
-
-
-  .document-upload-btn {
-    font-size: 13px;
-  }
-
-}
-
-/* =========================================================
-   FINAL DOCUMENT RESPONSIVE FIX
-   Desktop  -> 2 columns
-   Tablet   -> 1 column
-   Mobile   -> 1 column
-========================================================= */
-
-
-/* ===============================
-   DESKTOP
-=============================== */
-
-.document-grid {
-    width: 100%;
-    max-width: 100%;
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 20px;
-    box-sizing: border-box;
-}
-
-
-/* ===============================
-   DOCUMENT CARD
-=============================== */
-
-.document-upload-card {
-    width: 100%;
-    max-width: 100%;
-    min-width: 0;
-
-    box-sizing: border-box;
-
-    overflow: hidden;
-}
-
-
-/* Don't allow title to break letter-by-letter */
-
-.document-upload-card h3 {
-    min-width: 0;
-
-    white-space: normal;
-    word-break: normal;
-    overflow-wrap: break-word;
-
-    line-height: 1.3;
-}
-
-
-/* ===============================
-   DOCUMENT NAME
-=============================== */
-
-.document-name {
-    width: 100%;
-    max-width: 100%;
-
-    min-width: 0;
-
-    box-sizing: border-box;
-
-    display: flex;
-    align-items: center;
-
-    overflow: hidden;
-}
-
-
-.document-name span {
-    min-width: 0;
-
-    overflow: hidden;
-
-    text-overflow: ellipsis;
-
-    white-space: nowrap;
-}
-
-
-/* ===============================
-   BUTTONS
-=============================== */
-
-.document-actions {
-    width: 100%;
-
-    display: flex;
-
-    flex-wrap: wrap;
-
-    gap: 10px;
-
-    box-sizing: border-box;
-}
-
-
-/* =========================================================
-   IPAD / TABLET
-   IMPORTANT
-========================================================= */
-
-@media (max-width: 1200px) {
-
-    .document-grid {
-        grid-template-columns: 1fr !important;
-        width: 100% !important;
+        padding: 10px;
     }
 
+    .edit-profile-form {
 
-    .document-upload-card {
-        width: 100% !important;
-        min-width: 0 !important;
+        padding: 14px;
     }
 
+    .edit-section {
 
-    .document-upload-card h3 {
-        font-size: 18px;
-
-        white-space: normal;
-
-        word-break: normal;
-
-        overflow-wrap: break-word;
+        padding: 15px 12px;
     }
 
+    .edit-page-header h1 {
 
-    .document-name {
-        width: 100%;
+        font-size: 23px;
     }
 
-
-    .document-actions {
-        flex-wrap: wrap;
-    }
-
-}
-
-
-/* =========================================================
-   IPAD / SMALL TABLET
-========================================================= */
-
-@media (max-width: 900px) {
-
-    .document-grid {
-        grid-template-columns: 1fr !important;
-
-        gap: 16px;
-    }
-
-
-    .document-upload-card {
-        padding: 18px !important;
-    }
-
-
-    .document-upload-card h3 {
-        font-size: 17px;
-    }
-
-
-    .document-actions {
-        display: flex;
-
-        flex-wrap: wrap;
-
-        gap: 8px;
-    }
-
-
-    .document-view-btn,
-    .document-delete-btn {
-        min-width: 100px;
-    }
-
-
-    .document-upload-btn {
-        width: 100%;
-    }
-
-}
-
-
-/* =========================================================
-   MOBILE
-========================================================= */
-
-@media (max-width: 600px) {
-
-    .document-grid {
-        width: 100% !important;
-
-        grid-template-columns: 1fr !important;
-
-        gap: 14px;
-    }
-
-
-    .document-upload-card {
-        width: 100% !important;
-
-        padding: 14px !important;
-
-        box-sizing: border-box;
-    }
-
-
-    .document-upload-card h3 {
-        font-size: 16px;
-
-        margin-bottom: 12px;
-
-        word-break: normal;
-
-        overflow-wrap: break-word;
-    }
-
-
-    .document-name {
-        width: 100%;
-
-        font-size: 14px;
-
-        padding: 9px 10px;
-    }
-
-
-    .document-actions {
-        width: 100%;
-
-        display: flex;
-
-        flex-wrap: nowrap;
-
-        gap: 8px;
-    }
-
-
-    .document-view-btn,
-    .document-delete-btn {
-        flex: 1;
-
-        width: 50%;
-
-        min-width: 0;
-
-        padding: 9px 8px;
+    .form-field input,
+    .form-field select,
+    .form-field textarea {
 
         font-size: 13px;
     }
 
-
-    .document-upload-btn {
-        width: 100%;
-
-        font-size: 14px;
-    }
-
-}
-
-
-/* =========================================================
-   VERY SMALL MOBILE
-========================================================= */
-
-@media (max-width: 400px) {
-
     .document-upload-card {
-        padding: 12px !important;
+
+        padding: 15px;
     }
-
-
-    .document-upload-card h3 {
-        font-size: 15px;
-    }
-
-
-    .document-name {
-        font-size: 13px;
-    }
-
-
-    .document-view-btn,
-    .document-delete-btn {
-        font-size: 12px;
-
-        padding: 8px 5px;
-    }
-
-}
-
-/* =========================================================
-   FINAL DOCUMENT CARD FIX
-   Desktop + iPad + Mobile
-========================================================= */
-
-/* Document Grid */
-.document-grid {
-  width: 100% !important;
-  max-width: 100% !important;
-
-  display: grid !important;
-
-  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
-
-  gap: 20px !important;
-
-  box-sizing: border-box !important;
-}
-
-
-/* =========================================================
-   DOCUMENT CARD
-========================================================= */
-
-.document-upload-card {
-  width: 100% !important;
-  max-width: 100% !important;
-  min-width: 0 !important;
-
-  box-sizing: border-box !important;
-
-  /* IMPORTANT */
-  display: flex !important;
-  flex-direction: column !important;
-  align-items: stretch !important;
-
-  gap: 14px !important;
-
-  padding: 20px !important;
-
-  border: 1px dashed #cbd7e6 !important;
-  border-radius: 14px !important;
-
-  background: #fafcff !important;
-
-  overflow: hidden !important;
-}
-
-
-/* =========================================================
-   DOCUMENT TITLE
-========================================================= */
-
-.document-upload-card h3 {
-  width: 100% !important;
-  max-width: 100% !important;
-
-  margin: 0 !important;
-
-  color: #304b6a !important;
-
-  font-size: 18px !important;
-  font-weight: 700 !important;
-
-  line-height: 1.4 !important;
-
-  /* VERY IMPORTANT */
-  white-space: normal !important;
-  word-break: normal !important;
-  overflow-wrap: break-word !important;
-
-  writing-mode: horizontal-tb !important;
-}
-
-
-/* =========================================================
-   EXISTING DOCUMENT
-========================================================= */
-
-.existing-document {
-  width: 100% !important;
-  max-width: 100% !important;
-
-  margin: 0 !important;
-
-  box-sizing: border-box !important;
-}
-
-
-/* =========================================================
-   DOCUMENT NAME
-========================================================= */
-
-.document-name {
-  width: 100% !important;
-  max-width: 100% !important;
-  min-width: 0 !important;
-
-  box-sizing: border-box !important;
-
-  display: flex !important;
-  align-items: center !important;
-
-  gap: 8px !important;
-
-  padding: 11px 12px !important;
-
-  background: #eef5ff !important;
-
-  border-radius: 9px !important;
-
-  color: #245a91 !important;
-
-  font-size: 14px !important;
-  font-weight: 600 !important;
-
-  overflow: hidden !important;
-}
-
-
-/* Document Icon */
-
-.document-name i {
-  flex-shrink: 0 !important;
-
-  color: #1769e0 !important;
-
-  font-size: 18px !important;
-}
-
-
-/* Document Text */
-
-.document-name span {
-  min-width: 0 !important;
-
-  overflow: hidden !important;
-
-  text-overflow: ellipsis !important;
-
-  white-space: nowrap !important;
-}
-
-
-/* =========================================================
-   DOCUMENT ACTIONS
-========================================================= */
-
-.document-actions {
-  width: 100% !important;
-
-  display: flex !important;
-
-  align-items: center !important;
-
-  gap: 10px !important;
-
-  flex-wrap: wrap !important;
-
-  box-sizing: border-box !important;
-}
-
-
-/* =========================================================
-   VIEW BUTTON
-========================================================= */
-
-.document-view-btn {
-  border: none !important;
-
-  background: #1769e0 !important;
-
-  color: white !important;
-
-  padding: 9px 18px !important;
-
-  border-radius: 7px !important;
-
-  cursor: pointer !important;
-
-  font-size: 14px !important;
-
-  font-weight: 600 !important;
-
-  white-space: nowrap !important;
-
-  flex: 0 0 auto !important;
-}
-
-.document-view-btn:hover {
-  background: #0d55c7 !important;
-}
-
-.document-view-btn i {
-  margin-right: 6px !important;
-}
-
-
-/* =========================================================
-   DELETE BUTTON
-========================================================= */
-
-.document-delete-btn {
-  border: none !important;
-
-  background: #dc3545 !important;
-
-  color: white !important;
-
-  padding: 9px 18px !important;
-
-  border-radius: 7px !important;
-
-  cursor: pointer !important;
-
-  font-size: 14px !important;
-
-  font-weight: 600 !important;
-
-  white-space: nowrap !important;
-
-  flex: 0 0 auto !important;
-}
-
-.document-delete-btn:hover {
-  background: #bb2d3b !important;
-}
-
-.document-delete-btn i {
-  margin-right: 6px !important;
-}
-
-
-/* =========================================================
-   CHANGE FILE BUTTON
-========================================================= */
-
-.document-upload-btn {
-  width: fit-content !important;
-
-  max-width: 100% !important;
-
-  box-sizing: border-box !important;
-
-  display: inline-flex !important;
-
-  align-items: center !important;
-
-  justify-content: center !important;
-
-  gap: 8px !important;
-
-  background: #6c757d !important;
-
-  color: white !important;
-
-  padding: 11px 18px !important;
-
-  border-radius: 8px !important;
-
-  cursor: pointer !important;
-
-  font-size: 14px !important;
-
-  font-weight: 600 !important;
-
-  white-space: nowrap !important;
-}
-
-.document-upload-btn:hover {
-  background: #555b61 !important;
-}
-
-.document-upload-btn i {
-  font-size: 17px !important;
-}
-
-
-/* =========================================================
-   NEW SELECTED DOCUMENT
-========================================================= */
-
-.new-selected-document {
-  width: 100% !important;
-
-  margin: 0 !important;
-}
-
-.new-selected-document .document-name {
-  background: #e9f7ef !important;
-
-  color: #198754 !important;
-}
-
-.new-selected-document .document-name i {
-  color: #198754 !important;
-}
-
-
-/* =========================================================
-   REMOVE NEW FILE
-========================================================= */
-
-.document-remove-btn {
-  border: none !important;
-
-  background: #6c757d !important;
-
-  color: white !important;
-
-  padding: 8px 14px !important;
-
-  border-radius: 7px !important;
-
-  cursor: pointer !important;
-
-  font-size: 14px !important;
-
-  font-weight: 600 !important;
-}
-
-
-/* =========================================================
-   TABLET / IPAD
-========================================================= */
-
-@media (max-width: 1200px) {
-
-  .document-grid {
-    grid-template-columns: 1fr !important;
-    gap: 18px !important;
-  }
-
-  .document-upload-card {
-    width: 100% !important;
-    padding: 18px !important;
-  }
-
-}
-
-
-/* =========================================================
-   MOBILE
-========================================================= */
-
-@media (max-width: 600px) {
-
-  .document-grid {
-    width: 100% !important;
-
-    grid-template-columns: 1fr !important;
-
-    gap: 15px !important;
-  }
-
-
-  .document-upload-card {
-    width: 100% !important;
-
-    padding: 15px !important;
-
-    gap: 12px !important;
-
-    box-sizing: border-box !important;
-  }
-
-
-  .document-upload-card h3 {
-    width: 100% !important;
-
-    font-size: 16px !important;
-
-    line-height: 1.3 !important;
-
-    word-break: normal !important;
-
-    overflow-wrap: break-word !important;
-  }
-
-
-  .document-name {
-    width: 100% !important;
-
-    font-size: 13px !important;
-
-    padding: 9px 10px !important;
-  }
-
-
-  .document-actions {
-    width: 100% !important;
-
-    display: flex !important;
-
-    flex-direction: row !important;
-
-    gap: 8px !important;
-
-    flex-wrap: nowrap !important;
-  }
-
-
-  .document-view-btn,
-  .document-delete-btn {
-    flex: 1 1 0 !important;
-
-    width: 50% !important;
-
-    min-width: 0 !important;
-
-    padding: 9px 7px !important;
-
-    font-size: 13px !important;
-
-    white-space: nowrap !important;
-  }
-
-
-  .document-upload-btn {
-    width: 100% !important;
-
-    padding: 10px !important;
-
-    font-size: 13px !important;
-
-    white-space: normal !important;
-  }
-
-}
-
-
-/* =========================================================
-   VERY SMALL MOBILE
-========================================================= */
-
-@media (max-width: 400px) {
-
-  .document-upload-card {
-    padding: 12px !important;
-  }
-
-
-  .document-upload-card h3 {
-    font-size: 15px !important;
-  }
-
-
-  .document-view-btn,
-  .document-delete-btn {
-    font-size: 12px !important;
-
-    padding: 8px 5px !important;
-  }
-
-
-  .document-upload-btn {
-    font-size: 13px !important;
-  }
-
 }

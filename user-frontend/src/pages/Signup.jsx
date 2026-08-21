@@ -5,7 +5,6 @@ import "../assets/css/Auth.css";
 import mokshdhamlogo from "../assets/images/mokshdhamlogo.jpg";
 
 import api from "../api/axios";
-
 import { toast } from "react-toastify";
 
 
@@ -13,13 +12,11 @@ const Signup = () => {
 
   const navigate = useNavigate();
 
-
   const [showPassword, setShowPassword] =
     useState(false);
 
   const [showConfirmPassword, setShowConfirmPassword] =
     useState(false);
-
 
   const [loading, setLoading] =
     useState(false);
@@ -37,7 +34,7 @@ const Signup = () => {
 
 
   // ==========================
-  // Input Change
+  // INPUT CHANGE
   // ==========================
 
   const handleChange = (e) => {
@@ -46,8 +43,7 @@ const Signup = () => {
 
       ...formData,
 
-      [e.target.name]:
-        e.target.value,
+      [e.target.name]: e.target.value,
 
     });
 
@@ -55,7 +51,7 @@ const Signup = () => {
 
 
   // ==========================
-  // Signup
+  // SIGNUP
   // ==========================
 
   const handleSignup = async (e) => {
@@ -73,7 +69,7 @@ const Signup = () => {
 
 
     // ==========================
-    // Validation
+    // VALIDATION
     // ==========================
 
     if (
@@ -84,16 +80,14 @@ const Signup = () => {
       !confirmPassword
     ) {
 
-      toast.warning(
-        "Please fill all fields"
-      );
+      toast.warning("Please fill all fields");
 
       return;
 
     }
 
 
-    if (fullName.length < 3) {
+    if (fullName.trim().length < 3) {
 
       toast.error(
         "Full name must be at least 3 characters"
@@ -115,9 +109,9 @@ const Signup = () => {
     }
 
 
-    if (
-      !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)
-    ) {
+    // IMPORTANT: correct email regex
+
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
 
       toast.error(
         "Invalid email address"
@@ -150,21 +144,31 @@ const Signup = () => {
     }
 
 
+    // ==========================
+    // API REQUEST
+    // ==========================
+
     try {
 
       setLoading(true);
 
 
-      // ==========================
-      // API
-      // ==========================
-
-      const res = await api.post(
-        "/auth/signup",
+      console.log(
+        "SIGNUP REQUEST:",
         {
           fullName,
           mobile,
           email,
+        }
+      );
+
+
+      const res = await api.post(
+        "/auth/signup",
+        {
+          fullName: fullName.trim(),
+          mobile: mobile.trim(),
+          email: email.trim().toLowerCase(),
           password,
         }
       );
@@ -176,6 +180,10 @@ const Signup = () => {
       );
 
 
+      // ==========================
+      // SUCCESS
+      // ==========================
+
       if (res.data.success) {
 
         toast.success(
@@ -183,7 +191,17 @@ const Signup = () => {
         );
 
 
-        // Login page
+        setFormData({
+
+          fullName: "",
+          mobile: "",
+          email: "",
+          password: "",
+          confirmPassword: "",
+
+        });
+
+
         setTimeout(() => {
 
           navigate("/login");
@@ -192,22 +210,53 @@ const Signup = () => {
 
       }
 
-    } catch (error) {
+      else {
 
-      console.log(
+        toast.error(
+          res.data.message ||
+          "Registration failed"
+        );
+
+      }
+
+
+    }
+
+    // ==========================
+    // ERROR
+    // ==========================
+
+    catch (error) {
+
+      console.error(
         "SIGNUP ERROR:",
         error
+      );
+
+
+      console.log(
+        "STATUS:",
+        error.response?.status
+      );
+
+
+      console.log(
+        "ERROR RESPONSE:",
+        error.response?.data
       );
 
 
       toast.error(
 
         error.response?.data?.message ||
+
         "Registration failed"
 
       );
 
-    } finally {
+    }
+
+    finally {
 
       setLoading(false);
 
@@ -221,7 +270,9 @@ const Signup = () => {
     <div className="auth-page">
 
 
-      {/* LEFT */}
+      {/* ==========================
+          LEFT SIDE
+      ========================== */}
 
       <div className="auth-left">
 
@@ -233,19 +284,26 @@ const Signup = () => {
             className="auth-logo"
           />
 
+
           <h1>
             Manoharpura Ideal Mokshdham
           </h1>
+
 
           <h4>
             Seva • Samarpan • Sanskaar
           </h4>
 
+
           <p>
+
             Join our community by creating
             your account
+
             <br />
+
             and become a registered member.
+
           </p>
 
         </div>
@@ -253,7 +311,10 @@ const Signup = () => {
       </div>
 
 
-      {/* RIGHT */}
+
+      {/* ==========================
+          RIGHT SIDE
+      ========================== */}
 
       <div className="auth-right">
 
@@ -264,14 +325,13 @@ const Signup = () => {
             Create Account ✨
           </h2>
 
+
           <p>
             Fill your details to register
           </p>
 
 
-          <form
-            onSubmit={handleSignup}
-          >
+          <form onSubmit={handleSignup}>
 
 
             {/* FULL NAME */}
@@ -282,9 +342,11 @@ const Signup = () => {
                 Full Name
               </label>
 
+
               <div className="input-box">
 
                 <i className="bi bi-person-fill"></i>
+
 
                 <input
                   type="text"
@@ -299,6 +361,7 @@ const Signup = () => {
             </div>
 
 
+
             {/* MOBILE */}
 
             <div className="form-group">
@@ -307,9 +370,11 @@ const Signup = () => {
                 Mobile Number
               </label>
 
+
               <div className="input-box">
 
                 <i className="bi bi-telephone-fill"></i>
+
 
                 <input
                   type="tel"
@@ -317,12 +382,13 @@ const Signup = () => {
                   placeholder="Enter mobile number"
                   value={formData.mobile}
                   onChange={handleChange}
-                  maxLength="10"
+                  maxLength={10}
                 />
 
               </div>
 
             </div>
+
 
 
             {/* EMAIL */}
@@ -333,9 +399,11 @@ const Signup = () => {
                 Email Address
               </label>
 
+
               <div className="input-box">
 
                 <i className="bi bi-envelope-fill"></i>
+
 
                 <input
                   type="email"
@@ -350,6 +418,7 @@ const Signup = () => {
             </div>
 
 
+
             {/* PASSWORD */}
 
             <div className="form-group">
@@ -358,9 +427,11 @@ const Signup = () => {
                 Password
               </label>
 
+
               <div className="input-box">
 
                 <i className="bi bi-lock-fill"></i>
+
 
                 <input
                   type={
@@ -373,6 +444,7 @@ const Signup = () => {
                   value={formData.password}
                   onChange={handleChange}
                 />
+
 
                 <i
                   className={`bi ${
@@ -393,6 +465,7 @@ const Signup = () => {
             </div>
 
 
+
             {/* CONFIRM PASSWORD */}
 
             <div className="form-group">
@@ -401,9 +474,11 @@ const Signup = () => {
                 Confirm Password
               </label>
 
+
               <div className="input-box">
 
                 <i className="bi bi-shield-lock-fill"></i>
+
 
                 <input
                   type={
@@ -418,6 +493,7 @@ const Signup = () => {
                   }
                   onChange={handleChange}
                 />
+
 
                 <i
                   className={`bi ${
@@ -438,6 +514,7 @@ const Signup = () => {
             </div>
 
 
+
             {/* BUTTON */}
 
             <button
@@ -448,16 +525,24 @@ const Signup = () => {
 
               {loading
                 ? "Creating Account..."
-                : "Create Account"}
+                : "Create Account"
+              }
 
             </button>
+
 
           </form>
 
 
+
           <div className="divider">
-            <span>OR</span>
+
+            <span>
+              OR
+            </span>
+
           </div>
+
 
 
           <button
@@ -472,12 +557,16 @@ const Signup = () => {
           </button>
 
 
+
           <div className="bottom-text">
 
             Already have an account?
 
+
             <Link to="/login">
+
               Login
+
             </Link>
 
           </div>

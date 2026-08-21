@@ -117,14 +117,14 @@ const UserSidebar = ({ isOpen, onClose }) => {
 
 
           <NavLink
-            to="/user/renew-membership"
+            to="/user/fee-membership"
             className="user-sidebar-link"
             onClick={handleMenuClick}
           >
-            <i className="bi bi-arrow-repeat"></i>
+            <i className="bi bi-credit-card"></i>
 
             <span>
-              Renew Membership
+              Pay Membership Fee
             </span>
           </NavLink>
 

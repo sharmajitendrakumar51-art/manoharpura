@@ -42,163 +42,146 @@ const Login = () => {
   // Login
   // ===============================
 
-  const handleLogin = async (e) => {
+ const handleLogin = async (e) => {
 
-    e.preventDefault();
+  e.preventDefault();
 
+  // ===============================
+  // VALIDATION
+  // ===============================
 
-    // ===============================
-    // Validation
-    // ===============================
+  if (!formData.email || !formData.password) {
 
-    if (!formData.email || !formData.password) {
+    toast.warning("Please fill all fields");
 
-      toast.warning("Please fill all fields");
-
-      return;
-
-    }
+    return;
+  }
 
 
-    const emailRegex =
-      /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  const emailRegex =
+    /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 
-    if (!emailRegex.test(formData.email)) {
+  if (!emailRegex.test(formData.email.trim())) {
 
-      toast.error("Invalid email address");
+    toast.error("Invalid email address");
 
-      return;
-
-    }
-
-
-    if (formData.password.length < 8) {
-
-      toast.error(
-        "Password must be at least 8 characters"
-      );
-
-      return;
-
-    }
+    return;
+  }
 
 
-    // ===============================
-    // API LOGIN
-    // ===============================
+  if (formData.password.length < 8) {
 
-    try {
+    toast.error(
+      "Password must be at least 8 characters"
+    );
 
-      setLoading(true);
-
-
-      console.log("LOGIN REQUEST:", {
-        email: formData.email,
-      });
+    return;
+  }
 
 
-      const res = await api.post(
-        "/user/login",
-        {
-          email: formData.email.trim(),
-          password: formData.password,
-        }
-      );
+  // ===============================
+  // LOGIN API
+  // ===============================
+
+  try {
+
+    setLoading(true);
 
 
-      console.log(
-        "LOGIN RESPONSE:",
-        res.data
-      );
+    console.log("LOGIN REQUEST:", {
+      email: formData.email.trim(),
+    });
 
 
-      // ===============================
-      // LOGIN SUCCESS
-      // ===============================
-
-      if (res.data.success) {
-
-
-        // ===============================
-        // Save JWT Token
-        // ===============================
-
-        localStorage.setItem(
-          "token",
-          res.data.token
-        );
-
-
-        // ===============================
-        // Save User
-        // ===============================
-
-        localStorage.setItem(
-          "user",
-          JSON.stringify(res.data.user)
-        );
-
-
-        // ===============================
-        // Login Status
-        // ===============================
-
-        localStorage.setItem(
-          "isLoggedIn",
-          "true"
-        );
-
-
-        // ===============================
-        // User Email
-        // ===============================
-
-        localStorage.setItem(
-          "userEmail",
-          res.data.user.email
-        );
-
-
-        toast.success(
-          "Login Successfully 🎉"
-        );
-
-
-        // ===============================
-        // User Dashboard
-        // ===============================
-
-        setTimeout(() => {
-
-          navigate("/user/dashboard");
-
-        }, 500);
-
+    const res = await api.post(
+        "/auth/login",
+      {
+        email: formData.email.trim(),
+        password: formData.password,
       }
+    );
 
 
-    } catch (error) {
+    console.log(
+      "LOGIN RESPONSE:",
+      res.data
+    );
 
-      console.log(
-        "LOGIN ERROR:",
-        error
+
+    // ===============================
+    // SUCCESS
+    // ===============================
+
+    if (res.data.success) {
+
+      // JWT TOKEN
+      localStorage.setItem(
+        "token",
+        res.data.token
       );
 
 
-      toast.error(
-        error.response?.data?.message ||
-        "Login failed. Please try again."
+      // USER DATA
+      localStorage.setItem(
+        "user",
+        JSON.stringify(res.data.user)
       );
 
 
-    } finally {
+      // LOGIN STATUS
+      localStorage.setItem(
+        "isLoggedIn",
+        "true"
+      );
 
-      setLoading(false);
+
+      // USER EMAIL
+      localStorage.setItem(
+        "userEmail",
+        res.data.user.email
+      );
+
+
+      toast.success(
+        "Login Successfully 🎉"
+      );
+
+
+      setTimeout(() => {
+
+        navigate("/user/dashboard");
+
+      }, 500);
 
     }
 
-  };
+  } catch (error) {
+
+    console.log(
+      "LOGIN ERROR:",
+      error
+    );
+
+
+    console.log(
+      "SERVER ERROR:",
+      error.response?.data
+    );
+
+
+    toast.error(
+      error.response?.data?.message ||
+      "Login failed. Please try again."
+    );
+
+  } finally {
+
+    setLoading(false);
+
+  }
+
+};
 
 
   return (

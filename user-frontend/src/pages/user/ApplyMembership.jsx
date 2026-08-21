@@ -560,7 +560,7 @@ const ApplyMembership = () => {
 
                             {/* Title */}
 
-                            <div className="col-lg-3 col-md-6">
+                            <div className="col-lg-6 col-md-6">
 
                                 <label>
                                     Title
@@ -600,7 +600,7 @@ const ApplyMembership = () => {
 
                             {/* Full Name */}
 
-                            <div className="col-lg-5 col-md-6">
+                            <div className="col-lg-6 col-md-6">
 
                                 <label>
                                     Full Name <span>*</span>
@@ -620,7 +620,7 @@ const ApplyMembership = () => {
 
                             {/* Nick Name */}
 
-                            <div className="col-lg-4 col-md-6">
+                            <div className="col-lg-6 col-md-6">
 
                                 <label>
                                     Nick Name
@@ -632,7 +632,8 @@ const ApplyMembership = () => {
                                     name="nickName"
                                     value={formData.nickName}
                                     onChange={handleChange}
-                                    placeholder="Enter nick name"
+                                    placeholder="To be provided by Admin"
+                                    disabled
                                 />
 
                             </div>
@@ -640,7 +641,7 @@ const ApplyMembership = () => {
 
                             {/* Father Name */}
 
-                            <div className="col-lg-6 col-md-6">
+                           <div className="col-lg-6 col-md-6">
 
                                 <label>
                                     Father / Husband Name
@@ -660,7 +661,7 @@ const ApplyMembership = () => {
 
                             {/* Gender */}
 
-                            <div className="col-lg-3 col-md-6">
+                           <div className="col-lg-6 col-md-6">
 
                                 <label>
                                     Gender
@@ -696,7 +697,7 @@ const ApplyMembership = () => {
 
                             {/* DOB */}
 
-                            <div className="col-lg-3 col-md-6">
+                            <div className="col-lg-6 col-md-6">
 
                                 <label>
                                     Date of Birth
@@ -715,7 +716,7 @@ const ApplyMembership = () => {
 
                             {/* Category */}
 
-                            <div className="col-lg-4 col-md-6">
+                            <div className="col-lg-6 col-md-6">
 
                                 <label>
                                     Category <span>*</span>
@@ -763,7 +764,7 @@ const ApplyMembership = () => {
 
                             {/* Caste */}
 
-                            <div className="col-lg-4 col-md-6">
+                            <div className="col-lg-6 col-md-6">
 
                                 <label>
                                     Caste
@@ -783,7 +784,7 @@ const ApplyMembership = () => {
 
                             {/* Marital Status */}
 
-                            <div className="col-lg-4 col-md-6">
+                            <div className="col-lg-6 col-md-6">
 
                                 <label>
                                     Marital Status
@@ -815,7 +816,60 @@ const ApplyMembership = () => {
                                 </select>
 
                             </div>
+                            
+                            
+                            <div className="col-lg-6 col-md-6">
 
+                                <label>
+                                    Aadhaar Number
+                                </label>
+
+                                <input
+                                    type="text"
+                                    className="form-control"
+                                    name="aadhaar"
+                                    value={formData.aadhaar}
+                                    onChange={handleChange}
+                                    placeholder="Enter Aadhaar number"
+                                />
+
+                            </div>
+
+
+                            <div className="col-lg-6 col-md-6">
+
+                                <label>
+                                    PAN Number
+                                </label>
+
+                                <input
+                                    type="text"
+                                    className="form-control"
+                                    name="pan"
+                                    value={formData.pan}
+                                    onChange={handleChange}
+                                    placeholder="Enter PAN number"
+                                />
+
+                            </div>
+
+
+                            <div className="col-lg-6 col-md-6">
+
+                                <label>
+                                    Jan Aadhaar
+                                </label>
+
+                                <input
+                                    type="text"
+                                    className="form-control"
+                                    name="janAadhaar"
+                                    value={formData.janAadhaar}
+                                    onChange={handleChange}
+                                    placeholder="Enter Jan Aadhaar"
+                                />
+
+                            </div>
 
                             {/* Occupation */}
 
@@ -872,7 +926,7 @@ const ApplyMembership = () => {
                         <div className="row g-3">
 
 
-                            <div className="col-lg-4 col-md-6">
+                            <div className="col-lg-6 col-md-6">
 
                                 <label>
                                     Mobile Number <span>*</span>
@@ -890,7 +944,7 @@ const ApplyMembership = () => {
                             </div>
 
 
-                            <div className="col-lg-4 col-md-6">
+                           <div className="col-lg-6 col-md-6">
 
                                 <label>
                                     WhatsApp Number
@@ -908,7 +962,7 @@ const ApplyMembership = () => {
                             </div>
 
 
-                            <div className="col-lg-4 col-md-6">
+                            <div className="col-lg-6 col-md-6">
 
                                 <label>
                                     Email <span>*</span>
@@ -926,7 +980,7 @@ const ApplyMembership = () => {
                             </div>
 
 
-                            <div className="col-lg-4 col-md-6">
+                            {/* <div className="col-lg-4 col-md-6">
 
                                 <label>
                                     Aadhaar Number
@@ -977,7 +1031,7 @@ const ApplyMembership = () => {
                                     placeholder="Enter Jan Aadhaar"
                                 />
 
-                            </div>
+                            </div> */}
 
                         </div>
 
@@ -1085,6 +1139,43 @@ const ApplyMembership = () => {
 
                         <div className="membership-options">
 
+                           
+                            
+                            <label
+                                className={
+                                    `membership-option ${
+                                        formData.membershipType ===
+                                        "2 Years Membership"
+                                            ? "selected"
+                                            : ""
+                                    }`
+                                }
+                            >
+
+                                <input
+                                    type="radio"
+                                    name="membershipType"
+                                    value="2 Years Membership"
+                                    checked={
+                                        formData.membershipType ===
+                                        "2 Years Membership"
+                                    }
+                                    onChange={handleChange}
+                                />
+
+                                <div>
+
+                                    <strong>
+                                        2 Years Membership
+                                    </strong>
+
+                                    <span>
+                                        Valid for two year only
+                                    </span>
+
+                                </div>
+
+                            </label>
 
                             <label
                                 className={
@@ -1115,7 +1206,7 @@ const ApplyMembership = () => {
                                     </strong>
 
                                     <span>
-                                        One-time membership
+                                        if donated ₹11000
                                     </span>
 
                                 </div>
@@ -1123,44 +1214,9 @@ const ApplyMembership = () => {
                             </label>
 
 
-                            <label
-                                className={
-                                    `membership-option ${
-                                        formData.membershipType ===
-                                        "2 Years Membership"
-                                            ? "selected"
-                                            : ""
-                                    }`
-                                }
-                            >
-
-                                <input
-                                    type="radio"
-                                    name="membershipType"
-                                    value="2 Years Membership"
-                                    checked={
-                                        formData.membershipType ===
-                                        "2 Years Membership"
-                                    }
-                                    onChange={handleChange}
-                                />
-
-                                <div>
-
-                                    <strong>
-                                        2 Years Membership
-                                    </strong>
-
-                                    <span>
-                                        Valid for two years
-                                    </span>
-
-                                </div>
-
-                            </label>
 
 
-                            <label
+                            {/* <label
                                 className={
                                     `membership-option ${
                                         formData.membershipType ===
@@ -1194,7 +1250,7 @@ const ApplyMembership = () => {
 
                                 </div>
 
-                            </label>
+                            </label> */}
 
                         </div>
 

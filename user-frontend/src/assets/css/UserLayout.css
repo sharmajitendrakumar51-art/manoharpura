@@ -830,3 +830,27 @@
   }
 
 }
+
+html,
+body,
+#root {
+    margin: 0 !important;
+    padding: 0 !important;
+    width: 100% !important;
+    min-height: 100% !important;
+
+    background: #f5f7fb !important;
+    background-image: none !important;
+}
+
+.user-layout,
+.user-main,
+.user-content,
+.user-header {
+    background: #f5f7fb !important;
+    background-image: none !important;
+}
+
+.user-header {
+    background-color: #ffffff !important;
+}

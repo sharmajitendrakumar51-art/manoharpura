@@ -482,6 +482,9 @@ export const getMemberByEmail = async (req, res) => {
 // ==========================
 // Update Member
 // ==========================
+// ==========================
+// Update Member
+// ==========================
 export const updateMember = async (req, res) => {
   try {
 
@@ -490,9 +493,7 @@ export const updateMember = async (req, res) => {
     console.log("=================================");
 
     console.log("MEMBER ID:", req.params.id);
-
     console.log("BODY =>", req.body);
-
     console.log("FILES =>", req.files);
 
 
@@ -506,10 +507,12 @@ export const updateMember = async (req, res) => {
     const member = await Member.findById(id);
 
     if (!member) {
+
       return res.status(404).json({
         success: false,
         message: "Member not found",
       });
+
     }
 
 
@@ -527,24 +530,54 @@ export const updateMember = async (req, res) => {
 
 
     // ==========================
-    // Update Text Fields
+    // FILE FIELDS
+    // ==========================
+
+    const fileFields = [
+      "profilePhoto",
+      "aadhaarFront",
+      "aadhaarBack",
+      "janAadhaarCard",
+      "panCard",
+    ];
+
+
+    // ==========================
+    // DELETE FILE
+    // ==========================
+
+    fileFields.forEach((field) => {
+
+      if (
+        Object.prototype.hasOwnProperty.call(
+          req.body,
+          field
+        ) &&
+        req.body[field] === "" &&
+        !req.files?.[field]?.[0]
+      ) {
+
+        console.log(`Deleting ${field}`);
+
+        member[field] = null;
+
+      }
+
+    });
+
+
+    // ==========================
+    // UPDATE TEXT FIELDS
     // ==========================
 
     Object.keys(req.body).forEach((key) => {
 
-      // Don't overwrite files
-      if (
-        key === "profilePhoto" ||
-        key === "aadhaarFront" ||
-        key === "aadhaarBack" ||
-        key === "janAadhaarCard" ||
-        key === "panCard"
-      ) {
+      // File fields ko yaha process nahi karna
+      if (fileFields.includes(key)) {
         return;
       }
 
 
-      // Convert null/empty values
       if (
         req.body[key] === "null" ||
         req.body[key] === "" ||
@@ -568,17 +601,24 @@ export const updateMember = async (req, res) => {
 
     const uploadImage = async (fieldName, folder) => {
 
-      // Check file
       if (!req.files?.[fieldName]?.[0]) {
-        console.log(`No new ${fieldName} selected`);
+
+        console.log(
+          `No new ${fieldName} selected`
+        );
+
         return;
+
       }
 
 
-      const file = req.files[fieldName][0];
+      const file =
+        req.files[fieldName][0];
 
 
-      console.log(`Uploading ${fieldName}:`);
+      console.log(
+        `Uploading ${fieldName}:`
+      );
 
       console.log({
         originalname: file.originalname,
@@ -591,17 +631,17 @@ export const updateMember = async (req, res) => {
       // Upload To Cloudinary
       // ==========================
 
-      const result = await uploadToCloudinary(
-        file.buffer,
-        folder
-      );
+      const result =
+        await uploadToCloudinary(
+          file.buffer,
+          folder
+        );
 
 
       console.log(
         `${fieldName} Cloudinary URL:`,
         result.secure_url
       );
-
 
       console.log(
         `${fieldName} Cloudinary ID:`,
@@ -613,10 +653,14 @@ export const updateMember = async (req, res) => {
       // Replace Old Image
       // ==========================
 
-     member[fieldName] = {
-  url: result.url,
-  public_id: result.public_id,
-};
+      member[fieldName] = {
+
+        url: result.url,
+
+        public_id:
+          result.public_id,
+
+      };
 
     };
 
@@ -676,7 +720,8 @@ export const updateMember = async (req, res) => {
 
       success: true,
 
-      message: "Member updated successfully",
+      message:
+        "Member updated successfully",
 
       member,
 
@@ -695,9 +740,11 @@ export const updateMember = async (req, res) => {
 
       success: false,
 
-      message: "Failed to update member",
+      message:
+        "Failed to update member",
 
-      error: error.message,
+      error:
+        error.message,
 
     });
 

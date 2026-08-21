@@ -5,12 +5,51 @@ import "../../assets/css/UserDashboard.css";
 
 const UserDashboard = () => {
 
+  const [member, setMember] = useState(null);
   const [counts, setCounts] = useState({
     totalMembers: 0,
     activeMembers: 0,
     inactiveMembers: 0,
     executiveMembers: 0,
   });
+
+ const getMyMember = async () => {
+  try {
+
+    const user = JSON.parse(
+      localStorage.getItem("user")
+    );
+
+    if (!user?.email) {
+      console.log("User email not found");
+      return;
+    }
+
+    const res = await api.get(
+      `/member/get-member-by-email/${encodeURIComponent(user.email)}`
+    );
+
+    console.log("MY MEMBER:", res.data);
+
+    if (res.data.success) {
+      setMember(res.data.member);
+    }
+
+  } catch (error) {
+
+    // 404 ka matlab member abhi apply nahi kiya
+    if (error.response?.status === 404) {
+      setMember(null);
+      return;
+    }
+
+    console.log(
+      "Get Member Error:",
+      error
+    );
+
+  }
+};
 
   // =========================
   // Get Dashboard Counts
@@ -50,6 +89,7 @@ const UserDashboard = () => {
   useEffect(() => {
 
     getDashboardCounts();
+    getMyMember();
 
   }, []);
 
@@ -79,12 +119,27 @@ const UserDashboard = () => {
 
         {/* Apply Membership */}
 
-        <Link
-    to="/user/membership/apply"
-    className="apply-membership-btn"
+        <Link   
+  to={
+    member?.membershipNo
+      ? "/user/renew-membership"
+      : "/user/membership/apply"
+  }
+  className="apply-membership-btn"
 >
-    <i className="bi bi-person-plus-fill"></i>
-    Apply Membership
+  <i
+    className={
+      member?.membershipNo
+        ? "bi bi-arrow-repeat"
+        : "bi bi-person-plus-fill"
+    }
+  ></i>
+
+  {member?.membershipNo
+    ? "Renew Membership"
+    : "Apply Membership"
+  }
+
 </Link>
 
       </div>

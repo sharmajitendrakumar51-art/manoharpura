@@ -33,11 +33,22 @@
 .profile-hero {
     background: #ffffff;
     border-radius: 20px;
-    padding: 28px 25px 24px;
-    text-align: center;
+
+    padding: 35px 45px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 35px;
+
+    text-align: left;
+
     box-shadow: 0 8px 25px rgba(15, 23, 42, 0.06);
+
     margin-bottom: 20px;
 }
+
+
 
 
 /* =====================================================
@@ -47,12 +58,45 @@
 .profile-photo-wrapper {
     width: 170px;
     height: 170px;
-    margin: 0 auto 14px;
+
+    margin: 0;
+
     padding: 6px;
+
+    flex-shrink: 0;
+
     border-radius: 50%;
+
     background: #1769e0;
-    box-shadow: 0 8px 22px rgba(23, 105, 224, 0.20);
+
+    box-shadow:
+        0 8px 22px rgba(23, 105, 224, 0.20);
+
     box-sizing: border-box;
+}
+
+.profile-hero-details {
+    flex: 1;
+    min-width: 0;
+}
+
+.profile-hero-details h1 {
+    margin: 0 0 14px;
+
+    color: #172033;
+
+    font-size: 30px;
+    font-weight: 700;
+
+    line-height: 1.2;
+}
+
+.profile-hero-details .profile-badges {
+    justify-content: flex-start;
+}
+
+.profile-hero-details .membership-number {
+    margin: 12px 0 0;
 }
 
 .profile-main-photo,
@@ -743,32 +787,43 @@
 
 @media (max-width: 768px) {
 
-    .user-profile-page {
-        padding: 5px 0 25px;
-    }
-
-
-    /* Hero */
-
-    .profile-hero {
+   .profile-hero {
         padding: 22px 15px 20px;
+
+        flex-direction: column;
+
+        align-items: center;
+
+        text-align: center;
+
+        gap: 15px;
+
         border-radius: 14px;
     }
 
     .profile-photo-wrapper {
         width: 125px;
         height: 125px;
+
+        margin: 0;
+    }
+
+    .profile-hero-details {
+        width: 100%;
+    }
+
+    .profile-hero-details h1 {
+        font-size: 22px;
         margin-bottom: 11px;
     }
 
-    .profile-hero h1 {
-        font-size: 22px;
+    .profile-hero-details .profile-badges {
+        justify-content: center;
     }
 
-    .membership-number {
+    .profile-hero-details .membership-number {
         font-size: 15px;
     }
-
 
     /* Sections */
 

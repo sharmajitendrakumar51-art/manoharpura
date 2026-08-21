@@ -13,35 +13,19 @@ const UserLayout = () => {
   return (
     <div className="user-layout">
 
-      {/* =========================
-          SIDEBAR
-      ========================= */}
-
       <UserSidebar
         isOpen={sidebarOpen}
         onClose={() => setSidebarOpen(false)}
       />
 
-
-      {/* =========================
-          MAIN AREA
-      ========================= */}
-
       <div className="user-main">
-
-        {/* FIXED HEADER */}
 
         <UserHeader
           onMenuClick={() => setSidebarOpen(true)}
         />
 
-
-        {/* SCROLLABLE CONTENT */}
-
         <main className="user-content">
-
           <Outlet />
-
         </main>
 
       </div>
